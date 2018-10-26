@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "navcoinunits.h"
+#include "HTSunits.h"
 
 #include "primitives/transaction.h"
 #include "util.h"
@@ -16,31 +16,31 @@
 #include <string>
 #include <iomanip>
 
-NavCoinUnits::NavCoinUnits(QObject *parent):
+HTSUnits::HTSUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<NavCoinUnits::Unit> NavCoinUnits::availableUnits()
+QList<HTSUnits::Unit> HTSUnits::availableUnits()
 {
-    QList<NavCoinUnits::Unit> unitlist;
-    unitlist.append(NAV);
-//    unitlist.append(mNAV);
-//    unitlist.append(uNAV);
+    QList<HTSUnits::Unit> unitlist;
+    unitlist.append(HTS);
+//    unitlist.append(mHTS);
+//    unitlist.append(uHTS);
     unitlist.append(BTC);
     unitlist.append(EUR);
     unitlist.append(USD);
     return unitlist;
 }
 
-bool NavCoinUnits::valid(int unit)
+bool HTSUnits::valid(int unit)
 {
     switch(unit)
     {
-    case NAV:
-//    case mNAV:
-//    case uNAV:
+    case HTS:
+//    case mHTS:
+//    case uHTS:
     case BTC:
     case EUR:
     case USD:
@@ -50,13 +50,13 @@ bool NavCoinUnits::valid(int unit)
     }
 }
 
-QString NavCoinUnits::name(int unit)
+QString HTSUnits::name(int unit)
 {
     switch(unit)
     {
-    case NAV: return QString("NAV");
-//    case mNAV: return QString("mNAV");
-//    case uNAV: return QString::fromUtf8("μNAV");
+    case HTS: return QString("HTS");
+//    case mHTS: return QString("mHTS");
+//    case uHTS: return QString::fromUtf8("μHTS");
     case BTC: return QString::fromUtf8("BTC");
     case EUR: return QString::fromUtf8("EUR");
     case USD: return QString::fromUtf8("USD");
@@ -64,13 +64,13 @@ QString NavCoinUnits::name(int unit)
     }
 }
 
-QString NavCoinUnits::description(int unit)
+QString HTSUnits::description(int unit)
 {
     switch(unit)
     {
-    case NAV: return QString("NavCoins");
-//    case mNAV: return QString("Milli-NavCoins (1 / 1" THIN_SP_UTF8 "000)");
-//    case uNAV: return QString("Micro-NavCoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case HTS: return QString("HTSs");
+//    case mHTS: return QString("Milli-HTSs (1 / 1" THIN_SP_UTF8 "000)");
+//    case uHTS: return QString("Micro-HTSs (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case BTC: return QString("BTC");
     case EUR: return QString("Euro");
     case USD: return QString("US Dolar");
@@ -78,16 +78,16 @@ QString NavCoinUnits::description(int unit)
     }
 }
 
-qint64 NavCoinUnits::factor(int unit)
+qint64 HTSUnits::factor(int unit)
 {
 
     QSettings settings;
 
     switch(unit)
     {
-    case NAV:  return 100000000;
-//    case mNAV: return 100000;
-//    case uNAV: return 100;
+    case HTS:  return 100000000;
+//    case mHTS: return 100000;
+//    case uHTS: return 100;
     case BTC:  return settings.value("btcFactor", 0).toFloat();
     case EUR:  return settings.value("eurFactor", 0).toFloat();
     case USD:  return settings.value("usdFactor", 0).toFloat();
@@ -95,13 +95,13 @@ qint64 NavCoinUnits::factor(int unit)
     }
 }
 
-int NavCoinUnits::decimals(int unit)
+int HTSUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case NAV: return 8;
-//    case mNAV: return 5;
-//    case uNAV: return 2;
+    case HTS: return 8;
+//    case mHTS: return 5;
+//    case uHTS: return 2;
     case BTC: return 8;
     case EUR: return 6;
     case USD: return 6;
@@ -109,7 +109,7 @@ int NavCoinUnits::decimals(int unit)
     }
 }
 
-QString NavCoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString HTSUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -160,12 +160,12 @@ QString NavCoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString NavCoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString HTSUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + name(unit);
 }
 
-QString NavCoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString HTSUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
@@ -173,7 +173,7 @@ QString NavCoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool p
 }
 
 
-bool NavCoinUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool HTSUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -212,23 +212,23 @@ bool NavCoinUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString NavCoinUnits::getAmountColumnTitle(int unit)
+QString HTSUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (NavCoinUnits::valid(unit))
+    if (HTSUnits::valid(unit))
     {
-        amountTitle += " ("+NavCoinUnits::name(unit) + ")";
+        amountTitle += " ("+HTSUnits::name(unit) + ")";
     }
     return amountTitle;
 }
 
-int NavCoinUnits::rowCount(const QModelIndex &parent) const
+int HTSUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant NavCoinUnits::data(const QModelIndex &index, int role) const
+QVariant HTSUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -248,7 +248,7 @@ QVariant NavCoinUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount NavCoinUnits::maxMoney()
+CAmount HTSUnits::maxMoney()
 {
     return MAX_MONEY;
 }

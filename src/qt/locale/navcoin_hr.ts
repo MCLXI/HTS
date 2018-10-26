@@ -152,11 +152,11 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Oznaka navcoin adrese</translation>
+        <translation>Oznaka HTS adrese</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>NavCoin adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
+        <translation>HTS adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
     </message>
     <message>
         <source>&amp;Address</source>
@@ -207,7 +207,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>P&amp;otpišite poruku...</translation>
@@ -289,8 +289,8 @@
         <translation>Re-indeksiranje blokova na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Slanje novca na navcoin adresu</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Slanje novca na HTS adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -313,8 +313,8 @@
         <translation>&amp;Potvrdite poruku...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -341,12 +341,12 @@
         <translation>Šifriranje privatnih ključeva koji u novčaniku</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Poruku potpišemo s navcoin adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Poruku potpišemo s HTS adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom navcoin adresom</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom HTS adresom</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -361,8 +361,8 @@
         <translation>&amp;Pomoć</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Zatraži uplatu (stvara QR kod i navcoin: URI adresu)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Zatraži uplatu (stvara QR kod i HTS: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -373,16 +373,16 @@
         <translation>Prikaži popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Otvori navcoin: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Otvori HTS: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opcije &amp;naredbene linije</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n aktivna veza na NavCoin mrežu</numerusform><numerusform>%n aktivnih veza na NavCoin mrežu</numerusform><numerusform>%n aktivnih veza na NavCoin mrežu</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n aktivna veza na HTS mrežu</numerusform><numerusform>%n aktivnih veza na HTS mrežu</numerusform><numerusform>%n aktivnih veza na HTS mrežu</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -560,8 +560,8 @@
         <translation>&amp;Trošenje nepotvrđenih vraćenih iznosa</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvori port NavCoin klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvori port HTS klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -609,7 +609,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio navcoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio HTSa koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1016,7 +1016,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Postavke:</translation>
@@ -1038,8 +1038,8 @@
         <translation>Izvršavaj u pozadini kao uslužnik i prihvaćaj komande</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>Block creation options:</source>

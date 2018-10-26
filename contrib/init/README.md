@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: navcoind.service
-Upstart: navcoind.conf
-OpenRC:  navcoind.openrc
-         navcoind.openrcconf
-CentOS:  navcoind.init
-OS X:    org.navcoin.navcoind.plist
+SystemD: HTSd.service
+Upstart: HTSd.conf
+OpenRC:  HTSd.openrc
+         HTSd.openrcconf
+CentOS:  HTSd.init
+OS X:    org.HTS.HTSd.plist
 
 have been made available to assist packagers in creating node packages here.
 

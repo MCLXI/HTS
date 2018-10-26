@@ -1,12 +1,12 @@
 *.tar.gz
-navcoincore.*
+HTScore.*
 *.exe
-src/navcoin
-src/navcoind
-src/navcoin-cli
-src/navcoin-tx
-src/test/test_navcoin
-src/qt/test/test_navcoin-qt
+src/HTS
+src/HTSd
+src/HTS-cli
+src/HTS-tx
+src/test/test_HTS
+src/qt/test/test_HTS-qt
 src/qt/ui_*.h
 *.autosave
 
@@ -31,8 +31,8 @@ config.log
 config.status
 configure
 libtool
-src/config/navcoin-config.h
-src/config/navcoin-config.h.in
+src/config/HTS-config.h
+src/config/HTS-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -57,7 +57,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 *.patch
-.navcoin
+.HTS
 *.a
 *.pb.cc
 *.pb.h
@@ -76,12 +76,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-navcoin-qt
-navcoin-Qt.app
+HTS-qt
+HTS-Qt.app
 
 # Unit-tests
 Makefile.test
-navcoin-qt_test
+HTS-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -95,7 +95,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_navcoin.coverage/
+test_HTS.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -103,22 +103,22 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
-qa/pull-tester/run-navcoind-for-test.sh
+qa/pull-tester/run-HTSd-for-test.sh
 qa/pull-tester/tests_config.py
 qa/pull-tester/cache/*
 qa/pull-tester/test.*/*
 qa/tmp
 cache/
-share/NavcoindComparisonTool.jar
+share/HTSdComparisonTool.jar
 
 !src/leveldb*/Makefile
 
 /doc/doxygen/
 
-libnavcoinconsensus.pc
+libHTSconsensus.pc
 contrib/devtools/split-debug.sh
 
-src/config/navcoin-config.h.in
+src/config/HTS-config.h.in
 src/secp256k1/build-aux/config.guess
 src/secp256k1/build-aux/config.sub
 src/secp256k1/build-aux/install-sh
@@ -128,7 +128,7 @@ src/secp256k1/build-aux/m4/ltoptions.m4
 src/secp256k1/build-aux/m4/ltsugar.m4
 src/secp256k1/build-aux/m4/ltversion.m4
 src/secp256k1/build-aux/m4/lt~obsolete.m4
-src/NavCoin4-Qt.creator.user
+src/HTS4-Qt.creator.user
 
 
 .idea/*

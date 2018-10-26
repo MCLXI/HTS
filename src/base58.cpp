@@ -208,13 +208,13 @@ int CBase58Data::CompareTo(const CBase58Data& b58) const
 
 namespace
 {
-class CNavCoinAddressVisitor : public boost::static_visitor<bool>
+class CHTSAddressVisitor : public boost::static_visitor<bool>
 {
 private:
-    CNavCoinAddress* addr;
+    CHTSAddress* addr;
 
 public:
-    CNavCoinAddressVisitor(CNavCoinAddress* addrIn) : addr(addrIn) {}
+    CHTSAddressVisitor(CHTSAddress* addrIn) : addr(addrIn) {}
 
     bool operator()(const CKeyID& id) const { return addr->Set(id); }
     bool operator()(const CScriptID& id) const { return addr->Set(id); }
@@ -223,29 +223,29 @@ public:
 
 } // anon namespace
 
-bool CNavCoinAddress::Set(const CKeyID& id)
+bool CHTSAddress::Set(const CKeyID& id)
 {
     SetData(Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS), &id, 20);
     return true;
 }
 
-bool CNavCoinAddress::Set(const CScriptID& id)
+bool CHTSAddress::Set(const CScriptID& id)
 {
     SetData(Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS), &id, 20);
     return true;
 }
 
-bool CNavCoinAddress::Set(const CTxDestination& dest)
+bool CHTSAddress::Set(const CTxDestination& dest)
 {
-    return boost::apply_visitor(CNavCoinAddressVisitor(this), dest);
+    return boost::apply_visitor(CHTSAddressVisitor(this), dest);
 }
 
-bool CNavCoinAddress::IsValid() const
+bool CHTSAddress::IsValid() const
 {
     return IsValid(Params());
 }
 
-bool CNavCoinAddress::IsValid(const CChainParams& params) const
+bool CHTSAddress::IsValid(const CChainParams& params) const
 {
     bool fCorrectSize = vchData.size() == 20;
     bool fKnownVersion = vchVersion == params.Base58Prefix(CChainParams::PUBKEY_ADDRESS) ||
@@ -253,7 +253,7 @@ bool CNavCoinAddress::IsValid(const CChainParams& params) const
     return fCorrectSize && fKnownVersion;
 }
 
-CTxDestination CNavCoinAddress::Get() const
+CTxDestination CHTSAddress::Get() const
 {
     if (!IsValid())
         return CNoDestination();
@@ -267,7 +267,7 @@ CTxDestination CNavCoinAddress::Get() const
         return CNoDestination();
 }
 
-bool CNavCoinAddress::GetIndexKey(uint160& hashBytes, int& type) const
+bool CHTSAddress::GetIndexKey(uint160& hashBytes, int& type) const
 {
     if (!IsValid()) {
         return false;
@@ -284,7 +284,7 @@ bool CNavCoinAddress::GetIndexKey(uint160& hashBytes, int& type) const
     return false;
 }
 
-bool CNavCoinAddress::GetKeyID(CKeyID& keyID) const
+bool CHTSAddress::GetKeyID(CKeyID& keyID) const
 {
     if (!IsValid() || vchVersion != Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS))
         return false;
@@ -294,12 +294,12 @@ bool CNavCoinAddress::GetKeyID(CKeyID& keyID) const
     return true;
 }
 
-bool CNavCoinAddress::IsScript() const
+bool CHTSAddress::IsScript() const
 {
     return IsValid() && vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS);
 }
 
-void CNavCoinSecret::SetKey(const CKey& vchSecret)
+void CHTSSecret::SetKey(const CKey& vchSecret)
 {
     assert(vchSecret.IsValid());
     SetData(Params().Base58Prefix(CChainParams::SECRET_KEY), vchSecret.begin(), vchSecret.size());
@@ -307,7 +307,7 @@ void CNavCoinSecret::SetKey(const CKey& vchSecret)
         vchData.push_back(1);
 }
 
-CKey CNavCoinSecret::GetKey()
+CKey CHTSSecret::GetKey()
 {
     CKey ret;
     assert(vchData.size() >= 32);
@@ -315,19 +315,19 @@ CKey CNavCoinSecret::GetKey()
     return ret;
 }
 
-bool CNavCoinSecret::IsValid() const
+bool CHTSSecret::IsValid() const
 {
     bool fExpectedFormat = vchData.size() == 32 || (vchData.size() == 33 && vchData[32] == 1);
     bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY);
     return fExpectedFormat && fCorrectVersion;
 }
 
-bool CNavCoinSecret::SetString(const char* pszSecret)
+bool CHTSSecret::SetString(const char* pszSecret)
 {
     return CBase58Data::SetString(pszSecret) && IsValid();
 }
 
-bool CNavCoinSecret::SetString(const std::string& strSecret)
+bool CHTSSecret::SetString(const std::string& strSecret)
 {
     return SetString(strSecret.c_str());
 }

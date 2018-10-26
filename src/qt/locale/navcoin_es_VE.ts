@@ -215,7 +215,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -261,8 +261,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Enviar monedas a una dirección NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Enviar monedas a una dirección HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -277,8 +277,8 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -305,12 +305,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones NavCoin para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones HTS para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones NavCoin especificas</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones HTS especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -614,7 +614,7 @@
     <name>getAddressToReceive</name>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:</translation>
@@ -640,8 +640,8 @@
         <translation>Correr en segundo plano como daemon y aceptar comandos</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

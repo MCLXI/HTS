@@ -243,7 +243,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Üzenet aláírása...</translation>
@@ -325,8 +325,8 @@
         <translation>Lemezen lévő blokkok újraindexelése...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>NavCoin küldése megadott címre</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>HTS küldése megadott címre</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -349,8 +349,8 @@
         <translation>Üzenet &amp;valódiságának ellenőrzése</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -377,12 +377,12 @@
         <translation>A tárcádhoz tartozó privát kulcsok titkosítása</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Üzenetek aláírása a NavCoin-címmeiddel, amivel bizonyítod, hogy a cím a sajátod</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Üzenetek aláírása a HTS-címmeiddel, amivel bizonyítod, hogy a cím a sajátod</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Üzenetek ellenőrzése, hogy valóban a megjelölt NavCoin-címekkel vannak-e aláírva</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Üzenetek ellenőrzése, hogy valóban a megjelölt HTS-címekkel vannak-e aláírva</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -397,8 +397,8 @@
         <translation>&amp;Súgó</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Fizetési kérelem (QR-kódot és "navcoin:" URI azonosítót hoz létre)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Fizetési kérelem (QR-kódot és "HTS:" URI azonosítót hoz létre)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -409,16 +409,16 @@
         <translation>A használt fogadó címek és címkék megtekintése</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>"navcoin:" URI azonosító vagy fizetési kérelem megnyitása</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>"HTS:" URI azonosító vagy fizetési kérelem megnyitása</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Paran&amp;cssor kapcsolók</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n aktív kapcsolat a NavCoin hálózathoz</numerusform><numerusform>%n aktív kapcsolat a NavCoin hálózathoz</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n aktív kapcsolat a HTS hálózathoz</numerusform><numerusform>%n aktív kapcsolat a HTS hálózathoz</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -612,16 +612,16 @@
         <translation>Szakértő</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>A NavCoin-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a routered támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>A HTS-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a routered támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>&amp;UPnP port-feltérképezés</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Csatlakozás a NavCoin hálózatához SOCKS5 proxyn keresztül</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Csatlakozás a HTS hálózatához SOCKS5 proxyn keresztül</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -744,8 +744,8 @@
         <translation>Összeg</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Ad meg egy NavCoin címet (pl: %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Ad meg egy HTS címet (pl: %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1246,7 +1246,7 @@
         <translation>A jelenleg kiválasztott aláírás másolása a rendszer-vágólapra</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
+        <source>Sign the message to prove you own this HTS address</source>
         <translation>Üzenet </translation>
     </message>
     <message>
@@ -1352,7 +1352,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciók
@@ -1386,8 +1386,8 @@
         <translation>Kívülről érkező kapcsolatok elfogadása (alapértelmezett: 1, ha nem használt a -proxy vagy a -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
@@ -1549,7 +1549,7 @@
     </message>
     <message>
         <source>Insufficient funds</source>
-        <translation>Nincs elég navcoinod.</translation>
+        <translation>Nincs elég HTSod.</translation>
     </message>
     <message>
         <source>Loading block index...</source>

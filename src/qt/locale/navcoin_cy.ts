@@ -111,7 +111,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Cysoni â'r rhwydwaith...</translation>
@@ -173,8 +173,8 @@
         <translation>Newid y cyfrinymadrodd a ddefnyddiwyd ar gyfer amgryptio'r waled</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -510,14 +510,14 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Opsiynau:</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>Craidd NavCoin</translation>
+        <source>HTS Core</source>
+        <translation>Craidd HTS</translation>
     </message>
     <message>
         <source>Information</source>

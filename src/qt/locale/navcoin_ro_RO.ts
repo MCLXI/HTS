@@ -259,7 +259,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Semnează &amp;mesaj...</translation>
@@ -341,8 +341,8 @@
         <translation>Se reindexează blocurile pe disc...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Trimite monede către o adresă NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Trimite monede către o adresă HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -365,8 +365,8 @@
         <translation>&amp;Verifică mesaj...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -393,12 +393,12 @@
         <translation>Criptează cheile private ale portofelului dvs.</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Semnaţi mesaje cu adresa dvs. NavCoin pentru a dovedi că vă aparţin</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Semnaţi mesaje cu adresa dvs. HTS pentru a dovedi că vă aparţin</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa NavCoin specificată</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa HTS specificată</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -413,8 +413,8 @@
         <translation>A&amp;jutor</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Cereţi plăţi (generează coduri QR şi navcoin-uri: URls)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Cereţi plăţi (generează coduri QR şi HTS-uri: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -425,16 +425,16 @@
         <translation>Arată lista de adrese pentru primire şi etichetele</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Deschidere navcoin: o adresa URI sau o cerere de plată</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Deschidere HTS: o adresa URI sau o cerere de plată</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opţiuni linie de &amp;comandă</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n conexiune activă către reţeaua NavCoin</numerusform><numerusform>%n conexiuni active către reţeaua NavCoin</numerusform><numerusform>%n de conexiuni active către reţeaua NavCoin</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n conexiune activă către reţeaua HTS</numerusform><numerusform>%n conexiuni active către reţeaua HTS</numerusform><numerusform>%n de conexiuni active către reţeaua HTS</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -660,16 +660,16 @@
         <translation>Cheltuire rest neconfirmat</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat în router portul aferent clientului NavCoin. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat în router portul aferent clientului HTS. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapare port folosind &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Conectare la reţeaua NavCoin printr-un proxy SOCKS.</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Conectare la reţeaua HTS printr-un proxy SOCKS.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -729,7 +729,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de navcoin.</translation>
+        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de HTS.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -769,7 +769,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa navcoin pe care aţi specificat-o nu este validă.</translation>
+        <translation>Adresa HTS pe care aţi specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
@@ -812,8 +812,8 @@
         <translation>Cantitate</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Introduceţi o adresă NavCoin (de exemplu %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Introduceţi o adresă HTS (de exemplu %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1109,8 +1109,8 @@
         <translation>R&amp;efoloseşte o adresă de primire (nu este recomandat)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NavCoin network.</source>
-        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua NavCoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the HTS network.</source>
+        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua HTS.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1305,8 +1305,8 @@
         <translation>Aceasta este o tranzacţie normală.</translation>
     </message>
     <message>
-        <source>The NavCoin address to send the payment to</source>
-        <translation>Adresa navcoin către care se face plata</translation>
+        <source>The HTS address to send the payment to</source>
+        <translation>Adresa HTS către care se face plata</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1325,8 +1325,8 @@
         <translation>Introduceţi eticheta pentru ca această adresa să fie introdusă în lista de adrese folosite</translation>
     </message>
     <message>
-        <source>A message that was attached to the navcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NavCoin network.</source>
-        <translation>un mesaj a fost ataşat la navcoin: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua navcoin.</translation>
+        <source>A message that was attached to the HTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the HTS network.</source>
+        <translation>un mesaj a fost ataşat la HTS: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua HTS.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1366,7 +1366,7 @@
         <translation>&amp;Semnează mesaj</translation>
     </message>
     <message>
-        <source>The NavCoin address to sign the message with</source>
+        <source>The HTS address to sign the message with</source>
         <translation>Adresa cu care semnaţi mesajul</translation>
     </message>
     <message>
@@ -1398,8 +1398,8 @@
         <translation>Copiază semnatura curentă în clipboard-ul sistemului</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă NavCoin</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă HTS</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1418,12 +1418,12 @@
         <translation>&amp;Verifică mesaj</translation>
     </message>
     <message>
-        <source>The NavCoin address the message was signed with</source>
-        <translation>Introduceţi o adresă NavCoin</translation>
+        <source>The HTS address the message was signed with</source>
+        <translation>Introduceţi o adresă HTS</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa NavCoin specificată</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa HTS specificată</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1524,7 +1524,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Opţiuni:</translation>
@@ -1554,8 +1554,8 @@
         <translation>Acceptă conexiuni din afară (implicit: 1 dacă nu se foloseşte -proxy sau -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>Nucleul NavCoin</translation>
+        <source>HTS Core</source>
+        <translation>Nucleul HTS</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

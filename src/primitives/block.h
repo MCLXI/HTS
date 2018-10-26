@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_PRIMITIVES_BLOCK_H
-#define NAVCOIN_PRIMITIVES_BLOCK_H
+#ifndef HTS_PRIMITIVES_BLOCK_H
+#define HTS_PRIMITIVES_BLOCK_H
 
 #include "primitives/transaction.h"
 #include "serialize.h"
@@ -217,4 +217,4 @@ struct CBlockLocator
 /** Compute the consensus-critical block weight (see BIP 141). */
 int64_t GetBlockWeight(const CBlock& tx);
 
-#endif // NAVCOIN_PRIMITIVES_BLOCK_H
+#endif // HTS_PRIMITIVES_BLOCK_H

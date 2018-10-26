@@ -191,7 +191,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Asinar mensaxe...</translation>
@@ -257,8 +257,8 @@
         <translation>Reindexando bloques no disco...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Enviar moedas a unha dirección NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Enviar moedas a unha dirección HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -281,8 +281,8 @@
         <translation>&amp;Verificar mensaxe...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -309,12 +309,12 @@
         <translation>Encriptar as claves privadas que pertencen ao teu moedeiro</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Asina mensaxes coas túas direccións NavCoin para probar que te pertencen</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Asina mensaxes coas túas direccións HTS para probar que te pertencen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Verificar mensaxes para asegurar que foron asinados con direccións NavCoin dadas.</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Verificar mensaxes para asegurar que foron asinados con direccións HTS dadas.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -329,8 +329,8 @@
         <translation>A&amp;xuda</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Solicitar pagos (xenera códigos QR e navcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Solicitar pagos (xenera códigos QR e HTS: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -341,8 +341,8 @@
         <translation>Amosar a listaxe de etiquetas e direccións para recibir empregadas</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Abrir un navcoin: URI ou solicitude de pago</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Abrir un HTS: URI ou solicitude de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -450,8 +450,8 @@
         <translation>Moedeiro</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente o porto do cliente NavCoin no router. Esto so funciona se o teu router soporta UPnP e está habilitado.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente o porto do cliente HTS no router. Esto so funciona se o teu router soporta UPnP e está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -864,8 +864,8 @@
         <translation>Copiar a sinatura actual ao portapapeis do sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Asina a mensaxe para probar que posees esta dirección NavCoin</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Asina a mensaxe para probar que posees esta dirección HTS</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -884,8 +884,8 @@
         <translation>&amp;Verificar Mensaxe</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Verificar a mensaxe para asegurar que foi asinada coa dirección NavCoin especificada</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Verificar a mensaxe para asegurar que foi asinada coa dirección HTS especificada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -982,7 +982,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcións:</translation>
@@ -1012,8 +1012,8 @@
         <translation>Aceptar conexións de fóra (por defecto: 1 se non -proxy ou -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>Core de NavCoin</translation>
+        <source>HTS Core</source>
+        <translation>Core de HTS</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

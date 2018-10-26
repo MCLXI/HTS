@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The NavCoin Core developers
+// Copyright (c) 2018 The HTS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -234,10 +234,10 @@ bool CFund::IsValidPaymentRequest(CTransaction tx)
         sRandom = find_value(metadata, "r").get_str();
 
     std::string Secret = sRandom + "I kindly ask to withdraw " +
-            std::to_string(nAmount) + "NAV from the proposal " +
+            std::to_string(nAmount) + "HTS from the proposal " +
             proposal.hash.ToString() + ". Payment request id: " + strDZeel;
 
-    CNavCoinAddress addr(proposal.Address);
+    CHTSAddress addr(proposal.Address);
     if (!addr.IsValid())
         return error("%s: Address %s is not valid for payment request %s", __func__, proposal.Address, Hash.c_str(), tx.GetHash().ToString());
 
@@ -322,7 +322,7 @@ bool CFund::IsValidProposal(CTransaction tx)
     CAmount nContribution = 0;
     int nVersion = find_value(metadata, "v").isNum() ? find_value(metadata, "v").get_int() : 1;
 
-    CNavCoinAddress address(Address);
+    CHTSAddress address(Address);
     if (!address.IsValid())
         return error("%s: Wrong address %s for proposal %s", __func__, Address.c_str(), tx.GetHash().ToString());
 

@@ -1,2 +1,2 @@
-contrib/navcoind.bash-completion	navcoind
-contrib/navcoin-cli.bash-completion	navcoin-cli
+contrib/HTSd.bash-completion	HTSd
+contrib/HTS-cli.bash-completion	HTS-cli

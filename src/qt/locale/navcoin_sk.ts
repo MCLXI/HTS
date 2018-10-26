@@ -267,7 +267,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Podpísať &amp;správu...</translation>
@@ -361,8 +361,8 @@
         <translation>Preindexúvam bloky na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Poslať navcoins na adresu</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Poslať HTSs na adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -385,8 +385,8 @@
         <translation>O&amp;veriť správu...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -413,12 +413,12 @@
         <translation>Zašifruj súkromné kľúče ktoré patria do vašej peňaženky</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Podpísať správu s vašou adresou NavCoin aby ste preukázali že ju vlastníte</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Podpísať správu s vašou adresou HTS aby ste preukázali že ju vlastníte</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Overiť či správa bola podpísaná uvedenou NavCoin adresou</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Overiť či správa bola podpísaná uvedenou HTS adresou</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -433,8 +433,8 @@
         <translation>&amp;Pomoc</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Vyžiadať platby (vygeneruje QR kódy a navcoin: URI)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Vyžiadať platby (vygeneruje QR kódy a HTS: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -445,16 +445,16 @@
         <translation>Zobraziť zoznam použitých prijímacích adries a ich popisov</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Otvoriť navcoin URI alebo výzvu k platbe</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Otvoriť HTS URI alebo výzvu k platbe</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Možnosti príkazového riadku</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n aktívne pripojenie do siete NavCoin</numerusform><numerusform>%n aktívne pripojenia do siete NavCoin</numerusform><numerusform>%n aktívnych pripojení do siete NavCoin</numerusform><numerusform>%n aktívnych pripojení do siete NavCoin</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n aktívne pripojenie do siete HTS</numerusform><numerusform>%n aktívne pripojenia do siete HTS</numerusform><numerusform>%n aktívnych pripojení do siete HTS</numerusform><numerusform>%n aktívnych pripojení do siete HTS</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -529,8 +529,8 @@
         <translation>Aktualizovaný</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible NavCoin command-line options</source>
-        <translation>Ukáž %1 zoznam možných nastavení NavCoinu pomocou príkazového riadku</translation>
+        <source>Show the %1 help message to get a list with possible HTS command-line options</source>
+        <translation>Ukáž %1 zoznam možných nastavení HTSu pomocou príkazového riadku</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -704,16 +704,16 @@
         <translation>Minúť nepotvrdený výdavok</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automaticky otvorit port pre NavCoin na routeri. Toto funguje len ak router podporuje UPnP a je táto podpora aktivovaná.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automaticky otvorit port pre HTS na routeri. Toto funguje len ak router podporuje UPnP a je táto podpora aktivovaná.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapovať port pomocou &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Pripojiť do siete NavCoin cez proxy server SOCKS5.</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Pripojiť do siete HTS cez proxy server SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -752,8 +752,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Pripojiť k NavCoinovej sieti cez separované SOCKS5 proxy pre skrytú službu Tor.</translation>
+        <source>Connect to the HTS network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Pripojiť k HTSovej sieti cez separované SOCKS5 proxy pre skrytú službu Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -801,7 +801,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Zvoľte ako deliť navcoin pri zobrazovaní pri platbách a užívateľskom rozhraní.</translation>
+        <translation>Zvoľte ako deliť HTS pri zobrazovaní pri platbách a užívateľskom rozhraní.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -884,8 +884,8 @@
         <translation>Suma</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Zadajte navcoin adresu (napr. %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Zadajte HTS adresu (napr. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1226,8 +1226,8 @@
         <translation>Znovu použiť jestvujúcu prijímaciu adresu (neodporúča sa)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NavCoin network.</source>
-        <translation>Pridať voliteľnú správu k výzve na zaplatenie, ktorá sa zobrazí keď bude výzva otvorená. Poznámka: Správa nebude poslaná s platbou cez sieť NavCoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the HTS network.</source>
+        <translation>Pridať voliteľnú správu k výzve na zaplatenie, ktorá sa zobrazí keď bude výzva otvorená. Poznámka: Správa nebude poslaná s platbou cez sieť HTS.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1308,7 +1308,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Poslať NavCoins</translation>
+        <translation>Poslať HTSs</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -1371,7 +1371,7 @@
         <translation>spolu aspoň</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for navcoin transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for HTS transactions than the network can process.</source>
         <translation>Zaplatenie len minimálneho poplatku je v poriadku, pokiaľ existuje menej transakcií ako miesta v blokoch. Uvedomte si však, že ak bude vyšší dopyt po transakciách ako dokáže sieť spracovať, môže byť vaša transakcia odsúvaná a nepotvrdená donekonečna.</translation>
     </message>
     <message>
@@ -1438,7 +1438,7 @@
         <translation>Toto je normálna platba.</translation>
     </message>
     <message>
-        <source>The NavCoin address to send the payment to</source>
+        <source>The HTS address to send the payment to</source>
         <translation>Zvoľte adresu kam poslať platbu</translation>
     </message>
     <message>
@@ -1450,8 +1450,8 @@
         <translation>Odstrániť túto položku</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less navcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Poplatok sa odpočíta od čiastky, ktorú odosielate. Príjemca dostane menej navcoinov ako zadáte. Ak je vybraných viacero príjemcov, poplatok je rozdelený rovným dielom.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less HTSs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Poplatok sa odpočíta od čiastky, ktorú odosielate. Príjemca dostane menej HTSov ako zadáte. Ak je vybraných viacero príjemcov, poplatok je rozdelený rovným dielom.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1474,8 +1474,8 @@
         <translation>Vložte popis pre túto adresu aby sa uložila do zoznamu použitých adries</translation>
     </message>
     <message>
-        <source>A message that was attached to the navcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NavCoin network.</source>
-        <translation>Správa ktorá bola pripojená k navcoin: URI a ktorá bude uložená s transakcou pre Vaše potreby. Poznámka: Táto správa nebude poslaná cez sieť NavCoin.</translation>
+        <source>A message that was attached to the HTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the HTS network.</source>
+        <translation>Správa ktorá bola pripojená k HTS: URI a ktorá bude uložená s transakcou pre Vaše potreby. Poznámka: Táto správa nebude poslaná cez sieť HTS.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1515,8 +1515,8 @@
         <translation>&amp;Podpísať Správu</translation>
     </message>
     <message>
-        <source>The NavCoin address to sign the message with</source>
-        <translation>NavCoin adresa pre podpísanie správy s</translation>
+        <source>The HTS address to sign the message with</source>
+        <translation>HTS adresa pre podpísanie správy s</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1547,7 +1547,7 @@
         <translation>Kopírovať práve zvolenú adresu do systémového klipbordu</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
+        <source>Sign the message to prove you own this HTS address</source>
         <translation>Podpíšte správu aby ste dokázali že vlastníte túto adresu</translation>
     </message>
     <message>
@@ -1567,12 +1567,12 @@
         <translation>O&amp;veriť správu...</translation>
     </message>
     <message>
-        <source>The NavCoin address the message was signed with</source>
-        <translation>Adresa NavCoin, ktorou bola podpísaná správa</translation>
+        <source>The HTS address the message was signed with</source>
+        <translation>Adresa HTS, ktorou bola podpísaná správa</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Overím správy sa uistiť že bola podpísaná označenou NavCoin adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Overím správy sa uistiť že bola podpísaná označenou HTS adresou</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1647,7 +1647,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Poslať NavCoins</translation>
+        <translation>Poslať HTSs</translation>
     </message>
 </context>
 <context>
@@ -1673,7 +1673,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Možnosti:</translation>
@@ -1727,8 +1727,8 @@
         <translation>Prijať spojenia zvonku (predvolené: 1 ak žiadne -proxy alebo -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>Jadro NavCoin</translation>
+        <source>HTS Core</source>
+        <translation>Jadro HTS</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
@@ -1768,7 +1768,7 @@
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation>Toto je pred-testovacia verzia - použitie je na vlastné riziko - nepoužívajte na tvorbu navcoin ani obchodovanie.</translation>
+        <translation>Toto je pred-testovacia verzia - použitie je na vlastné riziko - nepoužívajte na tvorbu HTS ani obchodovanie.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>

@@ -1,15 +1,15 @@
-# bash programmable completion for navcoind(1) and navcoin-qt(1)
+# bash programmable completion for HTSd(1) and HTS-qt(1)
 # Copyright (c) 2012-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-_navcoind() {
+_HTSd() {
     local cur prev words=() cword
-    local navcoind
+    local HTSd
 
-    # save and use original argument to invoke navcoind for -help
+    # save and use original argument to invoke HTSd for -help
     # it might not be in $PATH
-    navcoind="$1"
+    HTSd="$1"
 
     COMPREPLY=()
     _get_comp_words_by_ref -n = cur prev words cword
@@ -33,7 +33,7 @@ _navcoind() {
             # only parse -help if senseful
             if [[ -z "$cur" || "$cur" =~ ^- ]]; then
                 local helpopts
-                helpopts=$($navcoind -help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
+                helpopts=$($HTSd -help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
                 COMPREPLY=( $( compgen -W "$helpopts" -- "$cur" ) )
             fi
 
@@ -45,7 +45,7 @@ _navcoind() {
             ;;
     esac
 } &&
-complete -F _navcoind navcoind navcoin-qt
+complete -F _HTSd HTSd HTS-qt
 
 # Local variables:
 # mode: shell-script

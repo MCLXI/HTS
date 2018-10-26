@@ -8,11 +8,11 @@
 # the blockchain is re-organized.
 #
 
-from test_framework.test_framework import NavCoinTestFramework
+from test_framework.test_framework import HTSTestFramework
 from test_framework.util import *
 
 # Create one-input, one-output, no-fee transaction:
-class MempoolCoinbaseTest(NavCoinTestFramework):
+class MempoolCoinbaseTest(HTSTestFramework):
 
     def __init__(self):
         super().__init__()

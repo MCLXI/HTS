@@ -1,12 +1,12 @@
-![NavCoin](./img/logo-extended.png)
+![HTS](./img/logo-extended.png)
 
-This is the working repository for NAV Coin 4.4.0, our fork of bitcoin-core 0.13.
+This is the working repository for HTS Coin 4.4.0, our fork of bitcoin-core 0.13.
 
 For more information please visit the website:
 
 https://navhub.org/roadmap/
 
-[![Build Status](https://travis-ci.org/NAVCoin/navcoin-core.svg?branch=master)](https://travis-ci.org/NAVCoin/navcoin-core)
+[![Build Status](https://travis-ci.org/HTS/HTS-core.svg?branch=master)](https://travis-ci.org/HTS/HTS-core)
 
 ## Coin Specifications
 
@@ -31,13 +31,13 @@ https://navhub.org/roadmap/
 
 | Site | link |
 |:-----------|:-----------|
-| Freenode IRC | #navcoin-dev |
+| Freenode IRC | #HTS-dev |
 | Medium | https://medium.com/nav-coin |
-| Twitter | https://twitter.com/NavCoin |
+| Twitter | https://twitter.com/HTS |
 | Discord | https://discord.gg/y4Vu9jw |
-| Telegram | https://t.me/navcoin |
-| Reddit | http://www.reddit.com/r/navcoin |
-| Facebook | https://www.facebook.com/NAVCoin |
+| Telegram | https://t.me/HTS |
+| Reddit | http://www.reddit.com/r/HTS |
+| Facebook | https://www.facebook.com/HTS |
 | Instagram | https://www.instagram.com/navcore/ |
 | Bitcointalk | https://bitcointalk.org/index.php?topic=679791 |
 

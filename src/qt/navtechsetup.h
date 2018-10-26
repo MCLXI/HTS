@@ -1,5 +1,5 @@
-#ifndef NAVTECHSETUP_H
-#define NAVTECHSETUP_H
+#ifndef HTSTECHSETUP_H
+#define HTSTECHSETUP_H
 
 #include "wallet/navtech.h"
 
@@ -31,4 +31,4 @@ public Q_SLOTS:
 
 };
 
-#endif // NAVTECHSETUP_H
+#endif // HTSTECHSETUP_H

@@ -1,5 +1,5 @@
-Building NavCoin
+Building HTS
 
-See doc/build-*.md for instructions on building navcoind,
+See doc/build-*.md for instructions on building HTSd,
 the intended-for-services, no-graphical-interface, reference
-implementation of NavCoin.
+implementation of HTS.

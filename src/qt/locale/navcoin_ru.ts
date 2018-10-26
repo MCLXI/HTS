@@ -267,7 +267,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Подписать сообщение...</translation>
@@ -361,8 +361,8 @@
         <translation>Идёт переиндексация блоков на диске...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Отправить монеты на указанный адрес NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Отправить монеты на указанный адрес HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -385,8 +385,8 @@
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -413,12 +413,12 @@
         <translation>Зашифровать приватные ключи, принадлежащие вашему бумажнику</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Подписать сообщения вашим адресом NavCoin, чтобы доказать, что вы им владеете</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Подписать сообщения вашим адресом HTS, чтобы доказать, что вы им владеете</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Проверить сообщения, чтобы удостовериться, что они были подписаны определённым адресом NavCoin</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Проверить сообщения, чтобы удостовериться, что они были подписаны определённым адресом HTS</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -433,8 +433,8 @@
         <translation>&amp;Помощь</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Запросить платежи (создаёт QR-коды и navcoin: ссылки)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Запросить платежи (создаёт QR-коды и HTS: ссылки)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -445,16 +445,16 @@
         <translation>Показать список использованных адресов и меток получения</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Открыть navcoin: URI или запрос платежа</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Открыть HTS: URI или запрос платежа</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Параметры командной строки</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n активных соединений с сетью NavCoin</numerusform><numerusform>%n активных соединений с сетью NavCoin</numerusform><numerusform>%n активных соединений с сетью NavCoin</numerusform><numerusform>%n активных соединений с сетью NavCoin</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n активных соединений с сетью HTS</numerusform><numerusform>%n активных соединений с сетью HTS</numerusform><numerusform>%n активных соединений с сетью HTS</numerusform><numerusform>%n активных соединений с сетью HTS</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -700,20 +700,20 @@
         <translation>&amp;Тратить неподтверждённую сдачу</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт для NavCoin-клиента на роутере. Работает только если Ваш роутер поддерживает UPnP, и данная функция включена.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматически открыть порт для HTS-клиента на роутере. Работает только если Ваш роутер поддерживает UPnP, и данная функция включена.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Пробросить порт через &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Подключаться к сети NavCoin через прокси SOCKS5</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Подключаться к сети HTS через прокси SOCKS5</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;Подключаться к сети NavCoin через прокси SOCKS5 (прокси по умолчанию):</translation>
+        <translation>&amp;Подключаться к сети HTS через прокси SOCKS5 (прокси по умолчанию):</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -748,8 +748,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Подключаться к сети NavCoin через прокси SOCKS5 для скрытых сервисов Tor.</translation>
+        <source>Connect to the HTS network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Подключаться к сети HTS через прокси SOCKS5 для скрытых сервисов Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -880,8 +880,8 @@
         <translation>Сумма</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Введите адрес NavCoin (например, %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Введите адрес HTS (например, %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1233,8 +1233,8 @@
         <translation>&amp;Повторно использовать существующий адрес получения (не рекомендуется)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NavCoin network.</source>
-        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть NavCoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the HTS network.</source>
+        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть HTS.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1378,7 +1378,7 @@
         <translation>Итого как минимум</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for navcoin transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for HTS transactions than the network can process.</source>
         <translation>Уплата минимальной комиссии — не проблема, пока объём транзакций меньше, чем свободное место в блоках. Учтите, однако, что такая транзакция может никогда не подтвердиться, если спрос на транзакции превышает возможности сети по их обработке.</translation>
     </message>
     <message>
@@ -1445,8 +1445,8 @@
         <translation>Это нормальный платёж.</translation>
     </message>
     <message>
-        <source>The NavCoin address to send the payment to</source>
-        <translation>Адрес NavCoin, на который отправить платёж</translation>
+        <source>The HTS address to send the payment to</source>
+        <translation>Адрес HTS, на который отправить платёж</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1457,7 +1457,7 @@
         <translation>Удалить эту запись</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less navcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less HTSs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>С отправляемой суммы будет удержана комиссия. Получателю придёт меньше биткоинов, чем вы вводите в поле количества. Если выбрано несколько получателей, комиссия распределяется поровну.</translation>
     </message>
     <message>
@@ -1481,8 +1481,8 @@
         <translation>Введите метку для этого адреса, чтобы добавить его в список использованных</translation>
     </message>
     <message>
-        <source>A message that was attached to the navcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NavCoin network.</source>
-        <translation>К navcoin: URI было прикреплено сообщение, которое будет сохранено вместе с транзакцией для вашего сведения. Заметьте: сообщение не будет отправлено через сеть NavCoin.</translation>
+        <source>A message that was attached to the HTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the HTS network.</source>
+        <translation>К HTS: URI было прикреплено сообщение, которое будет сохранено вместе с транзакцией для вашего сведения. Заметьте: сообщение не будет отправлено через сеть HTS.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1522,12 +1522,12 @@
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive navcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive HTSs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Вы можете подписывать сообщения/соглашения своими адресами, чтобы доказать свою возможность получать биткоины на них. Будьте осторожны, не подписывайте что-то неопределённое или случайное, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
     </message>
     <message>
-        <source>The NavCoin address to sign the message with</source>
-        <translation>Адрес NavCoin, которым подписать сообщение</translation>
+        <source>The HTS address to sign the message with</source>
+        <translation>Адрес HTS, которым подписать сообщение</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1558,8 +1558,8 @@
         <translation>Скопировать текущую подпись в системный буфер обмена</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом NavCoin</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Подписать сообщение, чтобы доказать владение адресом HTS</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1582,12 +1582,12 @@
         <translation>Введите ниже адрес получателя, сообщение (убедитесь, что переводы строк, пробелы, табы и т.п. в точности скопированы) и подпись, чтобы проверить сообщение. Убедитесь, что не скопировали лишнего в подпись, по сравнению с самим подписываемым сообщением, чтобы не стать жертвой атаки "man-in-the-middle". Заметьте, что эта операция удостоверяет лишь авторство подписавшего, но не может удостоверить отправителя транзакции.</translation>
     </message>
     <message>
-        <source>The NavCoin address the message was signed with</source>
-        <translation>Адрес NavCoin, которым было подписано сообщение</translation>
+        <source>The HTS address the message was signed with</source>
+        <translation>Адрес HTS, которым было подписано сообщение</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом NavCoin</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом HTS</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1688,7 +1688,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Параметры:</translation>
@@ -1754,8 +1754,8 @@
         <translation>Принимать подключения извне (по умолчанию: 1, если не используется -proxy или -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

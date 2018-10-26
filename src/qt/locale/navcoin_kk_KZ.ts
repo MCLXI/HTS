@@ -127,7 +127,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>&amp;Transactions</source>
         <translation>&amp;Транзакциялар</translation>
@@ -149,7 +149,7 @@
         <translation>Құпия сөзді өзгерту</translation>
     </message>
     <message>
-        <source>NavCoin</source>
+        <source>HTS</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -370,7 +370,7 @@
     <name>getAddressToReceive</name>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Information</source>
         <translation>Информация</translation>

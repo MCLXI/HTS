@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_ZMQ_ZMQCONFIG_H
-#define NAVCOIN_ZMQ_ZMQCONFIG_H
+#ifndef HTS_ZMQ_ZMQCONFIG_H
+#define HTS_ZMQ_ZMQCONFIG_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/navcoin-config.h"
+#include "config/HTS-config.h"
 #endif
 
 #include <stdarg.h>
@@ -21,4 +21,4 @@
 
 void zmqError(const char *str);
 
-#endif // NAVCOIN_ZMQ_ZMQCONFIG_H
+#endif // HTS_ZMQ_ZMQCONFIG_H

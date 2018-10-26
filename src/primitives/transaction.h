@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_PRIMITIVES_TRANSACTION_H
-#define NAVCOIN_PRIMITIVES_TRANSACTION_H
+#ifndef HTS_PRIMITIVES_TRANSACTION_H
+#define HTS_PRIMITIVES_TRANSACTION_H
 
 #include "amount.h"
 #include "consensus/cfund.h"
@@ -527,4 +527,4 @@ struct CMutableTransaction
 /** Compute the weight of a transaction, as defined by BIP 141 */
 int64_t GetTransactionWeight(const CTransaction &tx);
 
-#endif // NAVCOIN_PRIMITIVES_TRANSACTION_H
+#endif // HTS_PRIMITIVES_TRANSACTION_H

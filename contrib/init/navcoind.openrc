@@ -2,41 +2,41 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/navcoin/.navcoin" ]; then
-	NAVCOIND_DEFAULT_DATADIR="/var/lib/navcoin/.navcoin"
+if [ -d "/var/lib/HTS/.HTS" ]; then
+	HTSD_DEFAULT_DATADIR="/var/lib/HTS/.HTS"
 else
-	NAVCOIND_DEFAULT_DATADIR="/var/lib/navcoind"
+	HTSD_DEFAULT_DATADIR="/var/lib/HTSd"
 fi
 
-NAVCOIND_CONFIGFILE=${NAVCOIND_CONFIGFILE:-/etc/navcoin/navcoin.conf}
-NAVCOIND_PIDDIR=${NAVCOIND_PIDDIR:-/var/run/navcoind}
-NAVCOIND_PIDFILE=${NAVCOIND_PIDFILE:-${NAVCOIND_PIDDIR}/navcoind.pid}
-NAVCOIND_DATADIR=${NAVCOIND_DATADIR:-${NAVCOIND_DEFAULT_DATADIR}}
-NAVCOIND_USER=${NAVCOIND_USER:-${NAVCOIN_USER:-navcoin}}
-NAVCOIND_GROUP=${NAVCOIND_GROUP:-navcoin}
-NAVCOIND_BIN=${NAVCOIND_BIN:-/usr/bin/navcoind}
-NAVCOIND_NICE=${NAVCOIND_NICE:-${NICELEVEL:-0}}
-NAVCOIND_OPTS="${NAVCOIND_OPTS:-${NAVCOIN_OPTS}}"
+HTSD_CONFIGFILE=${HTSD_CONFIGFILE:-/etc/HTS/HTS.conf}
+HTSD_PIDDIR=${HTSD_PIDDIR:-/var/run/HTSd}
+HTSD_PIDFILE=${HTSD_PIDFILE:-${HTSD_PIDDIR}/HTSd.pid}
+HTSD_DATADIR=${HTSD_DATADIR:-${HTSD_DEFAULT_DATADIR}}
+HTSD_USER=${HTSD_USER:-${HTS_USER:-HTS}}
+HTSD_GROUP=${HTSD_GROUP:-HTS}
+HTSD_BIN=${HTSD_BIN:-/usr/bin/HTSd}
+HTSD_NICE=${HTSD_NICE:-${NICELEVEL:-0}}
+HTSD_OPTS="${HTSD_OPTS:-${HTS_OPTS}}"
 
-name="NavCoin Core Daemon"
-description="NavCoin cryptocurrency P2P network daemon"
+name="HTS Core Daemon"
+description="HTS cryptocurrency P2P network daemon"
 
-command="/usr/bin/navcoind"
-command_args="-pid=\"${NAVCOIND_PIDFILE}\" \
-		-conf=\"${NAVCOIND_CONFIGFILE}\" \
-		-datadir=\"${NAVCOIND_DATADIR}\" \
+command="/usr/bin/HTSd"
+command_args="-pid=\"${HTSD_PIDFILE}\" \
+		-conf=\"${HTSD_CONFIGFILE}\" \
+		-datadir=\"${HTSD_DATADIR}\" \
 		-daemon \
-		${NAVCOIND_OPTS}"
+		${HTSD_OPTS}"
 
-required_files="${NAVCOIND_CONFIGFILE}"
-start_stop_daemon_args="-u ${NAVCOIND_USER} \
-			-N ${NAVCOIND_NICE} -w 2000"
-pidfile="${NAVCOIND_PIDFILE}"
+required_files="${HTSD_CONFIGFILE}"
+start_stop_daemon_args="-u ${HTSD_USER} \
+			-N ${HTSD_NICE} -w 2000"
+pidfile="${HTSD_PIDFILE}"
 
 # The retry schedule to use when stopping the daemon. Could be either
 # a timeout in seconds or multiple signal/timeout pairs (like
 # "SIGKILL/180 SIGTERM/300")
-retry="${NAVCOIND_SIGTERM_TIMEOUT}"
+retry="${HTSD_SIGTERM_TIMEOUT}"
 
 depend() {
 	need localmount net
@@ -50,29 +50,29 @@ start_pre() {
 	checkpath \
 	-d \
 	--mode 0750 \
-	--owner "${NAVCOIND_USER}:${NAVCOIND_GROUP}" \
-	"${NAVCOIND_DATADIR}"
+	--owner "${HTSD_USER}:${HTSD_GROUP}" \
+	"${HTSD_DATADIR}"
 
 	checkpath \
 	-d \
 	--mode 0755 \
-	--owner "${NAVCOIND_USER}:${NAVCOIND_GROUP}" \
-	"${NAVCOIND_PIDDIR}"
+	--owner "${HTSD_USER}:${HTSD_GROUP}" \
+	"${HTSD_PIDDIR}"
 
 	checkpath -f \
-	-o ${NAVCOIND_USER}:${NAVCOIND_GROUP} \
+	-o ${HTSD_USER}:${HTSD_GROUP} \
 	-m 0660 \
-	${NAVCOIND_CONFIGFILE}
+	${HTSD_CONFIGFILE}
 
 	checkconfig || return 1
 }
 
 checkconfig()
 {
-	if ! grep -qs '^rpcpassword=' "${NAVCOIND_CONFIGFILE}" ; then
+	if ! grep -qs '^rpcpassword=' "${HTSD_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run navcoind."
-		eerror "The setting must appear in ${NAVCOIND_CONFIGFILE}"
+		eerror "ERROR: You must set a secure rpcpassword to run HTSd."
+		eerror "The setting must appear in ${HTSD_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
 		eerror "and must not be the same as the rpcuser setting."
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is also recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"NavCoin Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"HTS Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

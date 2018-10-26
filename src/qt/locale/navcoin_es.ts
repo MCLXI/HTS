@@ -66,12 +66,12 @@
         <translation>Direcciones de recepción...</translation>
     </message>
     <message>
-        <source>These are your NavCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones NavCoin para enviar pagos. Siempre chequea el monto y la dirección de recibo antes de enviar las monedas.</translation>
+        <source>These are your HTS addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones HTS para enviar pagos. Siempre chequea el monto y la dirección de recibo antes de enviar las monedas.</translation>
     </message>
     <message>
-        <source>These are your NavCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son tus direcciones NavCoin para recibir pagos. Es recomendado usar una nueva dirección para cada transacción.</translation>
+        <source>These are your HTS addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son tus direcciones HTS para recibir pagos. Es recomendado usar una nueva dirección para cada transacción.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -188,8 +188,8 @@
         <translation>Confirme el encriptado del monedero</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR NAVCOINS&lt;/b&gt;!</source>
-        <translation>Advertencia: Si usted encripta su monedero y pierde su contraseña, usted &lt;b&gt; PERDERÁ TODAS SUS NAVCOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HTSS&lt;/b&gt;!</source>
+        <translation>Advertencia: Si usted encripta su monedero y pierde su contraseña, usted &lt;b&gt; PERDERÁ TODAS SUS HTSS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -200,8 +200,8 @@
         <translation>Monedero encriptado</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your navcoins from being stolen by malware infecting your computer.</source>
-        <translation>%1 cerrara ahora para culminar el proceso de encriptación. Recuerde que la encriptación de su monedero no protege totalmente sus navcoin de ser robados por la infección de un malware en su computador.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HTSs from being stolen by malware infecting your computer.</source>
+        <translation>%1 cerrara ahora para culminar el proceso de encriptación. Recuerde que la encriptación de su monedero no protege totalmente sus HTS de ser robados por la infección de un malware en su computador.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -535,8 +535,8 @@
         <translation>Editar dirección de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid NavCoin address.</source>
-        <translation>La dirección ingresada "%1 no es una dirección NavCoin valida.</translation>
+        <source>The entered address "%1" is not a valid HTS address.</source>
+        <translation>La dirección ingresada "%1 no es una dirección HTS valida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -554,8 +554,8 @@
 <context>
     <name>FreespaceChecker</name>
     <message>
-        <source>NavCoin will try to import an old wallet.dat file.</source>
-        <translation>NavCoin intentara importar un archivo wallet.dat anterior.</translation>
+        <source>HTS will try to import an old wallet.dat file.</source>
+        <translation>HTS intentara importar un archivo wallet.dat anterior.</translation>
     </message>
     <message>
         <source>You must choose a wallet.dat file.</source>
@@ -651,8 +651,8 @@
         <translation>Como este es la primera vez %1 que es iniciado, todavía hay algunos pasos que necesitan ser completados.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the NavCoin block chain. At least %2GB of data will be stored in your computer, and it will grow over time. A wallet is needed to store your coins.</source>
-        <translation>%1 descargara y se almacenara una copia de la cadena de bloques de NavCoin. Por lo menos %2 GB de información sera almacenada en su computador, y esta crecera con el tiempo.  Un monedero es requerido para almacenar sus monedas.</translation>
+        <source>%1 will download and store a copy of the HTS block chain. At least %2GB of data will be stored in your computer, and it will grow over time. A wallet is needed to store your coins.</source>
+        <translation>%1 descargara y se almacenara una copia de la cadena de bloques de HTS. Por lo menos %2 GB de información sera almacenada en su computador, y esta crecera con el tiempo.  Un monedero es requerido para almacenar sus monedas.</translation>
     </message>
     <message>
         <source>Create a new wallet.</source>
@@ -683,7 +683,7 @@
     </message>
 </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -846,7 +846,7 @@
     </message>
     <message numerus="yes">
         <source>%n active connections.</source>
-        <translation><numerusform>%n conexión activa.</numerusform><numerusform>%n conexiones activas hacia la red NavCoin</numerusform></translation>
+        <translation><numerusform>%n conexión activa.</numerusform><numerusform>%n conexiones activas hacia la red HTS</numerusform></translation>
     </message>
     <message>
         <source>Reindexing blocks on disk...</source>
@@ -917,8 +917,8 @@
         <translation>No en staking, por favor espere.</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Enviar navcoins a una dirección NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Enviar HTSs a una dirección HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -941,8 +941,8 @@
         <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -969,12 +969,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones NavCoin para demostrar la propiedad</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones HTS para demostrar la propiedad</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones NavCoin concretas</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones HTS concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -989,8 +989,8 @@
         <translation>&amp;Ayuda</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Solicitar pagos (generando códigos QR e identificadores URI "navcoin:")</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Solicitar pagos (generando códigos QR e identificadores URI "HTS:")</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -1001,16 +1001,16 @@
         <translation>Muestra la lista de direcciones de recepción y etiquetas</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Abrir un identificador URI "navcoin:" o una petición de pago</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Abrir un identificador URI "HTS:" o una petición de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Opciones de consola de comandos</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n conexión activa hacia la red NavCoin</numerusform><numerusform>%n conexiones activas hacia la red NavCoin</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n conexión activa hacia la red HTS</numerusform><numerusform>%n conexiones activas hacia la red HTS</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -1033,12 +1033,12 @@
         <translation><numerusform>Último bloque: %n</numerusform><numerusform>Último bloque: %n</numerusform></translation>
     </message>
     <message>
-        <source>Connected to NavCoin network.</source>
-        <translation>Conectado a la red NavCoin.</translation>
+        <source>Connected to HTS network.</source>
+        <translation>Conectado a la red HTS.</translation>
     </message>
     <message>
-        <source>Connecting to NavCoin network...</source>
-        <translation>Conectando a la red NavCoin...</translation>
+        <source>Connecting to HTS network...</source>
+        <translation>Conectando a la red HTS...</translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
@@ -1077,8 +1077,8 @@
         <translation>Aviso importante de red.</translation>
     </message>
     <message>
-        <source>The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. &lt;br&gt;&lt;br&gt;For more information on the proposal, please visit &lt;a href="https://navcoin.org/community-fund"&gt;this link&lt;/a&gt;&lt;br&gt;&lt;br&gt;Would you like the Nav Coin Network to update the staking rewards to setup a decentralised community fund that will help grow the network?</source>
-        <translation>La red NavCoin esta votando para introducir cambios en el protocolo de consenso. Como participante de nuestra red, nosotros valoramos su participación y la decisión es enteramente suya. Por favor emita su voto. &lt;br&gt;&lt;br&gt;Para mas información en la propuesta, por favor visite&lt;a href="https://navcoin.org/community-fund"&gt;esta dirección &lt;/a&gt;&lt;br&gt;&lt;br&gt; Quisiera que la red NavCoin actualice las recompensas de staking para preparar un fondo descentralizado comunitario que ayudara a crecer la red?</translation>
+        <source>The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. &lt;br&gt;&lt;br&gt;For more information on the proposal, please visit &lt;a href="https://HTS.org/community-fund"&gt;this link&lt;/a&gt;&lt;br&gt;&lt;br&gt;Would you like the Nav Coin Network to update the staking rewards to setup a decentralised community fund that will help grow the network?</source>
+        <translation>La red HTS esta votando para introducir cambios en el protocolo de consenso. Como participante de nuestra red, nosotros valoramos su participación y la decisión es enteramente suya. Por favor emita su voto. &lt;br&gt;&lt;br&gt;Para mas información en la propuesta, por favor visite&lt;a href="https://HTS.org/community-fund"&gt;esta dirección &lt;/a&gt;&lt;br&gt;&lt;br&gt; Quisiera que la red HTS actualice las recompensas de staking para preparar un fondo descentralizado comunitario que ayudara a crecer la red?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -1105,8 +1105,8 @@
         <translation>Actualizado</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible NavCoin command-line options</source>
-        <translation>Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de linea de comandos de NavCoin</translation>
+        <source>Show the %1 help message to get a list with possible HTS command-line options</source>
+        <translation>Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de linea de comandos de HTS</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -1174,12 +1174,12 @@
         <translation>Preparador NavTech</translation>
     </message>
     <message>
-        <source>NavCoin uses an unique parallel cluster of nodes called NavTech to protect the privacy of your transactions.</source>
-        <translation>NavCoin usa un clúster paralelo único de nodos llamado NavTech para proteger la privacidad de sus transacciones.</translation>
+        <source>HTS uses an unique parallel cluster of nodes called NavTech to protect the privacy of your transactions.</source>
+        <translation>HTS usa un clúster paralelo único de nodos llamado NavTech para proteger la privacidad de sus transacciones.</translation>
     </message>
     <message>
-        <source>You will find below the list of the NavCoin Foundation Servers. Feel free to modify this list to include your prefered servers:</source>
-        <translation>A continuación, encontrará la lista de los servidores de la Fundación NavCoin. Siéntase libre de modificar esta lista para incluir sus servidores preferidos:</translation>
+        <source>You will find below the list of the HTS Foundation Servers. Feel free to modify this list to include your prefered servers:</source>
+        <translation>A continuación, encontrará la lista de los servidores de la Fundación HTS. Siéntase libre de modificar esta lista para incluir sus servidores preferidos:</translation>
     </message>
     <message>
         <source>95.183.52.55:3000
@@ -1324,16 +1324,16 @@
         <translation>&amp;Gastar cambio no confirmado</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente NavCoin en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente HTS en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapear el puerto mediante &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Conectarse a la red NavCoin a través de un proxy SOCKS5.</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Conectarse a la red HTS a través de un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1372,8 +1372,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectar a la red NavCoin mediante un proxy SOCKS5 por separado para los servicios ocultos de Tor.</translation>
+        <source>Connect to the HTS network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectar a la red HTS mediante un proxy SOCKS5 por separado para los servicios ocultos de Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1421,7 +1421,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían navcoins.</translation>
+        <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían HTSs.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1507,24 +1507,24 @@
         <translation>24H:</translation>
     </message>
     <message>
-        <source>87 312.312 123 NAV</source>
-        <translation>87 312.312 123 NAV</translation>
+        <source>87 312.312 123 HTS</source>
+        <translation>87 312.312 123 HTS</translation>
     </message>
     <message>
         <source>7D</source>
         <translation>7D</translation>
     </message>
     <message>
-        <source>1 312.312 NAV</source>
-        <translation>1 312.312 NAV</translation>
+        <source>1 312.312 HTS</source>
+        <translation>1 312.312 HTS</translation>
     </message>
     <message>
         <source>30D</source>
         <translation>30D</translation>
     </message>
     <message>
-        <source>132 431.41 NAV</source>
-        <translation>132 431.41 NAV</translation>
+        <source>132 431.41 HTS</source>
+        <translation>132 431.41 HTS</translation>
     </message>
     <message>
         <source>Cold Staking</source>
@@ -1535,8 +1535,8 @@
         <translation>Transacciones</translation>
     </message>
     <message>
-        <source>Connecting to NavCoin network...</source>
-        <translation>Conectando a la red NavCoin...</translation>
+        <source>Connecting to HTS network...</source>
+        <translation>Conectando a la red HTS...</translation>
     </message>
     <message>
         <source>32 active connections.</source>
@@ -1606,7 +1606,7 @@
         <translation>Dirección de pago invalida %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid NavCoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid HTS address or malformed URI parameters.</source>
         <translation>¡URI no puede ser analizado! Esto puede ser causado por una dirección NAvTech invalida o un parámetro URI mal formado.</translation>
     </message>
     <message>
@@ -1708,8 +1708,8 @@
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Introducir una dirección NavCoin (p. ej. %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Introducir una dirección HTS (p. ej. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2073,8 +2073,8 @@
         <translation>R&amp;eutilizar una dirección existente para recibir (no recomendado)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NavCoin network.</source>
-        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, que se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red NavCoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the HTS network.</source>
+        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, que se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red HTS.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2223,7 +2223,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Enviar navcoins</translation>
+        <translation>Enviar HTSs</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -2286,8 +2286,8 @@
         <translation>total por lo menos</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for navcoin transactions than the network can process.</source>
-        <translation>Pagando solamente la cuota mínima es correcto, siempre y cuando haya menos volumen de transacciones que el espacio en los bloques. Pero tenga en cuenta que esto puede terminar en una transacción nunca confirmada, una vez que haya más demanda para transacciones NavCoin que la red pueda procesar.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for HTS transactions than the network can process.</source>
+        <translation>Pagando solamente la cuota mínima es correcto, siempre y cuando haya menos volumen de transacciones que el espacio en los bloques. Pero tenga en cuenta que esto puede terminar en una transacción nunca confirmada, una vez que haya más demanda para transacciones HTS que la red pueda procesar.</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -2306,16 +2306,16 @@
         <translation>(Tarifa inteligente no inicializado aún. Esto generalmente lleva a pocos bloques...)</translation>
     </message>
     <message>
-        <source>You don't have any NAVTech server added. </source>
-        <translation>No tiene ningún servidor NAVTech agregado.</translation>
+        <source>You don't have any HTSTech server added. </source>
+        <translation>No tiene ningún servidor HTSTech agregado.</translation>
     </message>
     <message>
         <source>Private payment</source>
         <translation>Pago privado</translation>
     </message>
     <message>
-        <source>Manage NAVTech servers</source>
-        <translation>Administre servidores NAVTech</translation>
+        <source>Manage HTSTech servers</source>
+        <translation>Administre servidores HTSTech</translation>
     </message>
     <message>
         <source>Use full amount</source>
@@ -2382,8 +2382,8 @@
         <translation>Copiar cambio</translation>
     </message>
     <message>
-        <source>NAVTech server returned a different number of addresses.</source>
-        <translation>Servidor NAVtech devolvió un numero diferente de direcciones.</translation>
+        <source>HTSTech server returned a different number of addresses.</source>
+        <translation>Servidor HTStech devolvió un numero diferente de direcciones.</translation>
     </message>
     <message>
         <source>Something went wrong:</source>
@@ -2494,8 +2494,8 @@
         <translation><numerusform>Se estima que se confirme después de %n bloque.</numerusform><numerusform>Se estima que se confirme después de %n bloques.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid NavCoin address</source>
-        <translation>Advertencia: dirección NavCoin invalida</translation>
+        <source>Warning: Invalid HTS address</source>
+        <translation>Advertencia: dirección HTS invalida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2525,8 +2525,8 @@
         <translation>Esto es un pago ordinario.</translation>
     </message>
     <message>
-        <source>The NavCoin address to send the payment to</source>
-        <translation>Dirección NavCoin a la que enviar el pago</translation>
+        <source>The HTS address to send the payment to</source>
+        <translation>Dirección HTS a la que enviar el pago</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2537,8 +2537,8 @@
         <translation>Eliminar esta transacción</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less navcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>La cuota será deducida de la cantidad que sea mandada. El destinatario recibirá menos navcoins de los que entres en el  </translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less HTSs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>La cuota será deducida de la cantidad que sea mandada. El destinatario recibirá menos HTSs de los que entres en el  </translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2561,16 +2561,16 @@
         <translation>Introduce una etiqueta para esta dirección para añadirla a la lista de direcciones utilizadas</translation>
     </message>
     <message>
-        <source>A message that was attached to the navcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NavCoin network.</source>
-        <translation>Un mensaje que se adjuntó a la navcoin: URL que será almacenada con la transacción para su referencia. Nota: Este mensaje no se envía a través de la red NavCoin.</translation>
+        <source>A message that was attached to the HTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the HTS network.</source>
+        <translation>Un mensaje que se adjuntó a la HTS: URL que será almacenada con la transacción para su referencia. Nota: Este mensaje no se envía a través de la red HTS.</translation>
     </message>
     <message>
         <source>Save in Address Book</source>
         <translation>Guarde en Libro de Direcciones</translation>
     </message>
     <message>
-        <source>A&amp;mount (NAV):</source>
-        <translation>C&amp;antidad (NAV):</translation>
+        <source>A&amp;mount (HTS):</source>
+        <translation>C&amp;antidad (HTS):</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2614,12 +2614,12 @@
         <translation>&amp;Firmar mensaje</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive navcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive HTSs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Puede firmar los mensajes con sus direcciones para demostrar que las posee. Tenga cuidado de no firmar cualquier cosa de manera vaga o aleatoria, pues los ataques de phishing pueden tratar de engañarle firmando su identidad a través de ellos. Sólo firme declaraciones totalmente detalladas con las que usted esté de acuerdo.</translation>
     </message>
     <message>
-        <source>The NavCoin address to sign the message with</source>
-        <translation>Dirección NavCoin con la que firmar el mensaje</translation>
+        <source>The HTS address to sign the message with</source>
+        <translation>Dirección HTS con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2650,8 +2650,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Firmar el mensaje para demostrar que se posee esta dirección NavCoin</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Firmar el mensaje para demostrar que se posee esta dirección HTS</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2674,12 +2674,12 @@
         <translation>Introduzca la dirección para la firma, el mensaje (asegurándose de copiar tal cual los saltos de línea, espacios, tabulaciones, etc.) y la firma a continuación para verificar el mensaje. Tenga cuidado de no asumir más información de lo que dice el propio mensaje firmado para evitar fraudes basados en ataques de tipo man-in-the-middle. </translation>
     </message>
     <message>
-        <source>The NavCoin address the message was signed with</source>
-        <translation>La dirección NavCoin con la que se firmó el mensaje</translation>
+        <source>The HTS address the message was signed with</source>
+        <translation>La dirección HTS con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección NavCoin indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección HTS indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3242,7 +3242,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Enviar navcoins</translation>
+        <translation>Enviar HTSs</translation>
     </message>
 </context>
 <context>
@@ -3320,8 +3320,8 @@
         <translation>Error agregando llave al monedero.</translation>
     </message>
     <message>
-        <source>NavCoin needs to scan the chain... Please, wait.</source>
-        <translation>NavCoin necesita escanear la cadena... Por favor, espere.</translation>
+        <source>HTS needs to scan the chain... Please, wait.</source>
+        <translation>HTS necesita escanear la cadena... Por favor, espere.</translation>
     </message>
     <message>
         <source>Private key correctly added!</source>
@@ -3335,8 +3335,8 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>Use the following address to receive NavCoins:</source>
-        <translation>Use la siguiente dirección para recibir NavCoins:</translation>
+        <source>Use the following address to receive HTSs:</source>
+        <translation>Use la siguiente dirección para recibir HTSs:</translation>
     </message>
     <message>
         <source>QR Code</source>
@@ -3376,7 +3376,7 @@
     </message>
 </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:
@@ -3445,8 +3445,8 @@
         <translation>Aceptar conexiones desde el exterior (predeterminado: 1 si no -proxy o -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

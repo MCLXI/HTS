@@ -189,7 +189,7 @@ public:
     void retranslateUi(QWidget *getAddressToReceive)
     {
         getAddressToReceive->setWindowTitle(QApplication::translate("getAddressToReceive", "Form", Q_NULLPTR));
-        label->setText(QApplication::translate("getAddressToReceive", "Use the following address to receive NavCoins:", Q_NULLPTR));
+        label->setText(QApplication::translate("getAddressToReceive", "Use the following address to receive HTSs:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         lblQRCode->setToolTip(QApplication::translate("getAddressToReceive", "QR Code", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP

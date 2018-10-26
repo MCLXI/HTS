@@ -286,7 +286,7 @@ UniValue getaddednodeinfo(const UniValue& params, bool fHelp)
             "    \"connected\" : true|false,          (boolean) If connected\n"
             "    \"addresses\" : [                    (list of objects) Only when connected = true\n"
             "       {\n"
-            "         \"address\" : \"192.168.0.201:5556\",  (string) The navcoin server IP and port we're connected to\n"
+            "         \"address\" : \"192.168.0.201:5556\",  (string) The HTS server IP and port we're connected to\n"
             "         \"connected\" : \"outbound\"           (string) connection, inbound or outbound\n"
             "       }\n"
             "     ]\n"
@@ -344,7 +344,7 @@ UniValue addanonserver(const UniValue& params, bool fHelp)
         (strCommand != "add" && strCommand != "remove"))
         throw runtime_error(
             "addanonserver \"node\" \"add|remove\"\n"
-            "\nAttempts add or remove a node from the NAVTech server list.\n"
+            "\nAttempts add or remove a node from the HTSTech server list.\n"
             "\nArguments:\n"
             "1. \"node\"     (string, required) The node (see getpeerinfo for nodes)\n"
             "2. \"command\"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list\n"
@@ -372,7 +372,7 @@ UniValue addanonserver(const UniValue& params, bool fHelp)
           vAddedAnonServers.push_back(strNode);
       } else {
         if (it != vAddedAnonServers.end())
-          throw JSONRPCError(RPC_CLIENT_NODE_ALREADY_ADDED, "Error: NAVTech server already added");
+          throw JSONRPCError(RPC_CLIENT_NODE_ALREADY_ADDED, "Error: HTSTech server already added");
         vAddedAnonServers.push_back(strNode);
       }
     }
@@ -384,7 +384,7 @@ UniValue addanonserver(const UniValue& params, bool fHelp)
           vAddedAnonServers.erase(it);
       } else {
         if (it == vAddedAnonServers.end())
-          throw JSONRPCError(RPC_CLIENT_NODE_NOT_ADDED, "Error: NAVTech server has not been added.");
+          throw JSONRPCError(RPC_CLIENT_NODE_NOT_ADDED, "Error: HTSTech server has not been added.");
         vAddedAnonServers.erase(it);
       }
     }
@@ -690,7 +690,7 @@ UniValue getstakesubsidy(const UniValue& params, bool fHelp)
         ssData >> tx;
     }
     catch (std::exception &e) {
-        throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "NAV decode failed");
+        throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "HTS decode failed");
     }
 
     uint64_t nCoinAge;

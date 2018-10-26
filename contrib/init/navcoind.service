@@ -1,15 +1,15 @@
 [Unit]
-Description=NavCoin's distributed currency daemon
+Description=HTS's distributed currency daemon
 After=network.target
 
 [Service]
-User=navcoin
-Group=navcoin
+User=HTS
+Group=HTS
 
 Type=forking
-PIDFile=/var/lib/navcoind/navcoind.pid
-ExecStart=/usr/bin/navcoind -daemon -pid=/var/lib/navcoind/navcoind.pid \
--conf=/etc/navcoin/navcoin.conf -datadir=/var/lib/navcoind -disablewallet
+PIDFile=/var/lib/HTSd/HTSd.pid
+ExecStart=/usr/bin/HTSd -daemon -pid=/var/lib/HTSd/HTSd.pid \
+-conf=/etc/HTS/HTS.conf -datadir=/var/lib/HTSd -disablewallet
 
 Restart=always
 PrivateTmp=true

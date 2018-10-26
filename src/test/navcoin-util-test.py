@@ -9,5 +9,5 @@ import buildenv
 
 if __name__ == '__main__':
 	bctest.bctester(os.environ["srcdir"] + "/test/data",
-			"navcoin-util-test.json",buildenv)
+			"HTS-util-test.json",buildenv)
 

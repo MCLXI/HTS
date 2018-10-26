@@ -99,7 +99,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Se sincronizează cu rețeaua</translation>
@@ -202,7 +202,7 @@
     <name>getAddressToReceive</name>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     </context>
 <context>
     <name>navtechitem</name>

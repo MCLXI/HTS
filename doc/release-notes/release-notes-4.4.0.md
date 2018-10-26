@@ -1,4 +1,4 @@
-# NavCoin v4.4.0 Release Notes
+# HTS v4.4.0 Release Notes
 
 ## Community Fund:
 
@@ -13,7 +13,7 @@ It introduces the changes neccesary in the protocol to activate the claims mecha
 - % of Negative votes to reject a Proposal: 67.5%
 - % of Positive votes to accept a Payment Request: 50%
 - % of Negative votes to reject a Payment Request: 50%
-- Fee to create a Proposal: 50 NAV
+- Fee to create a Proposal: 50 HTS
 - Maximum number of full elapsed Voting Cycles for a Proposal: 6 Voting Cycles (1 month and a half)
 - Maximum number of full elapsed Voting Cycles for a Payment Request: 8 Voting Cycles (2 months)
 
@@ -24,13 +24,13 @@ The Version Bit 14 will signal for the soft fork to activate NPIP0003.
 
 This is largely a technical improvement which consolidates mined Community Fund contributions to every 500th block instead of every block to reduce blockchain bloat.
 
-You can read more about [NPIP0003 on the NPIP GitHub](https://github.com/NAVCoin/npips/blob/master/npip-0003.mediawiki).
+You can read more about [NPIP0003 on the NPIP GitHub](https://github.com/HTS/npips/blob/master/npip-0003.mediawiki).
 
 ## Community Fund Contribution Increase
 
-The Version Bit 16 will signal for the soft fork to increase the Community Fund contribution from 0.25 NAV to 0.50 NAV per block. 
+The Version Bit 16 will signal for the soft fork to increase the Community Fund contribution from 0.25 HTS to 0.50 HTS per block. 
 
-You can read more about [NPIP0004 on the NPIP GitHub](https://github.com/NAVCoin/npips/blob/master/npip-0004.mediawiki).
+You can read more about [NPIP0004 on the NPIP GitHub](https://github.com/HTS/npips/blob/master/npip-0004.mediawiki).
 
 ## Reject specific version bits 
 
@@ -56,11 +56,11 @@ With the release of the community fund additional RPC commands are included
 ### Create a community fund proposal
 
 ```
-createproposal navcoinaddress amount duration "desc" fee
+createproposal HTSaddress amount duration "desc" fee
 
 Arguments:
-1. "navcoinaddress" (string, required) The navcoin address where coins would be sent if the proposal is approved.
-2. "amount" The amount in NAV to request. eg 100
+1. "HTSaddress" (string, required) The HTS address where coins would be sent if the proposal is approved.
+2. "amount" The amount in HTS to request. eg 100
 3. duration: Number of seconds the proposal will exist after being accepted.
 4. "desc": Short description of the proposal.
 5. fee (optional): Contribution to the fund used as a fee.
@@ -93,7 +93,7 @@ createpaymentrequest proposal_hash amount id
 
 Arguments:
 1. "hash" (string, required) The hash of the proposal from which you want to withdraw funds. It must be approved.
-2. "amount" (numeric or string, required) The amount in NAV to withdraw. eg 10
+2. "amount" (numeric or string, required) The amount in HTS to withdraw. eg 10
 3. "id" (string, required) Unique id to identify the payment request
 
 Result:
@@ -132,10 +132,10 @@ List the propsals and all the releaing datat including payment requests and stat
 ```
 donatefund amount
 
-Donate NAV from your wallet to the commnuity fund
+Donate HTS from your wallet to the commnuity fund
 
 Arguments:
-1. "amount" (string, required) The amount of NAV to donate
+1. "amount" (string, required) The amount of HTS to donate
 ```
 
 ###  Community fund stats
@@ -146,6 +146,6 @@ cfundstats
 Returns the current status of the Community Fund
 ```
 
-### Other modifications in the NavCoin client:
+### Other modifications in the HTS client:
 
 - RPC Tests fix.

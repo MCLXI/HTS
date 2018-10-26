@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/navcoin-config.h"
+#include "config/HTS-config.h"
 #endif
 
 #include "main.h"
-#include "navcoingui.h"
-#include "navcoinunits.h"
+#include "HTSgui.h"
+#include "HTSunits.h"
 #include "clientversion.h"
 #include "clientmodel.h"
 #include "guiconstants.h"
@@ -87,7 +87,7 @@
 #include <QUrlQuery>
 #endif
 
-const std::string NavCoinGUI::DEFAULT_UIPLATFORM =
+const std::string HTSGUI::DEFAULT_UIPLATFORM =
 #if defined(Q_OS_MAC)
         "macosx"
 #elif defined(Q_OS_WIN)
@@ -97,9 +97,9 @@ const std::string NavCoinGUI::DEFAULT_UIPLATFORM =
 #endif
         ;
 
-const QString NavCoinGUI::DEFAULT_WALLET = "~Default";
+const QString HTSGUI::DEFAULT_WALLET = "~Default";
 
-NavCoinGUI::NavCoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
+HTSGUI::HTSGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
     QMainWindow(parent),
     clientModel(0),
     walletFrame(0),
@@ -323,7 +323,7 @@ NavCoinGUI::NavCoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
 }
 
-NavCoinGUI::~NavCoinGUI()
+HTSGUI::~HTSGUI()
 {
     // Unsubscribe from notifications from core
     unsubscribeFromCoreSignals();
@@ -339,11 +339,11 @@ NavCoinGUI::~NavCoinGUI()
     delete rpcConsole;
 }
 
-void NavCoinGUI::createActions()
+void HTSGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
 
-    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/navcoin"), tr("&Overview"), this);
+    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/HTS"), tr("&Overview"), this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
@@ -351,7 +351,7 @@ void NavCoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a NavCoin address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a HTS address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
@@ -362,7 +362,7 @@ void NavCoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and navcoin: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and HTS: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
@@ -434,9 +434,9 @@ void NavCoinGUI::createActions()
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
 
     signMessageAction = new QAction(platformStyle->TextColorIcon(":/icons/edit"), tr("Sign &message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your NavCoin addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your HTS addresses to prove you own them"));
     verifyMessageAction = new QAction(platformStyle->TextColorIcon(":/icons/verify"), tr("&Verify message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified NavCoin addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified HTS addresses"));
 
     openRPCConsoleAction = new QAction(platformStyle->TextColorIcon(":/icons/debugwindow"), tr("&Debug window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open debugging and diagnostic console"));
@@ -460,11 +460,11 @@ void NavCoinGUI::createActions()
     exportMasterPrivateKeyAction->setToolTip(tr("Show master private key"));
 
     openAction = new QAction(platformStyle->TextColorIcon(":/icons/open"), tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a navcoin: URI or payment request"));
+    openAction->setStatusTip(tr("Open a HTS: URI or payment request"));
 
     showHelpMessageAction = new QAction(platformStyle->TextColorIcon(":/icons/info"), tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible NavCoin command-line options").arg(tr(PACKAGE_NAME)));
+    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible HTS command-line options").arg(tr(PACKAGE_NAME)));
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
@@ -499,13 +499,13 @@ void NavCoinGUI::createActions()
     new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_D), this, SLOT(showDebugWindow()));
 }
 
-void NavCoinGUI::bootstrapBlockchain()
+void HTSGUI::bootstrapBlockchain()
 {
     bool ok = false;
-    QString defaultUrl = "https://nav.nyc3.digitaloceanspaces.com/bootstrap/mainnet/bootstrap-navcoin_" +
+    QString defaultUrl = "https://nav.nyc3.digitaloceanspaces.com/bootstrap/mainnet/bootstrap-HTS_" +
             QString::fromStdString(Params().NetworkIDString()) + "net.tar";
     QString url = QInputDialog::getText(this, tr("Bootstrap blockchain"),
-                                            tr("You can use an external trusted source to download the blockchain from.<BR>The following URL points to a bootstrap copy provided by the NavCoin Core Team.<BR>Where would you like to download it from?"), QLineEdit::Normal,
+                                            tr("You can use an external trusted source to download the blockchain from.<BR>The following URL points to a bootstrap copy provided by the HTS Core Team.<BR>Where would you like to download it from?"), QLineEdit::Normal,
                                             defaultUrl, &ok);
     if (ok && !url.isEmpty())
     {
@@ -524,7 +524,7 @@ void NavCoinGUI::bootstrapBlockchain()
 
 }
 
-void NavCoinGUI::createMenuBar()
+void HTSGUI::createMenuBar()
 {
 #ifdef Q_OS_MAC
     // Create a decoupled menu bar on Mac which stays even if the window is closed
@@ -564,9 +564,9 @@ void NavCoinGUI::createMenuBar()
         settings->addAction(toggleStakingAction);
         settings->addSeparator();
         QMenu* currency = settings->addMenu( tr("Currency") );
-        Q_FOREACH(NavCoinUnits::Unit u, NavCoinUnits::availableUnits())
+        Q_FOREACH(HTSUnits::Unit u, HTSUnits::availableUnits())
         {
-            QAction *menuAction = new QAction(QString(NavCoinUnits::name(u)), this);
+            QAction *menuAction = new QAction(QString(HTSUnits::name(u)), this);
             menuAction->setData(QVariant(u));
             currency->addAction(menuAction);
         }
@@ -586,7 +586,7 @@ void NavCoinGUI::createMenuBar()
     help->addAction(aboutQtAction);
 }
 
-void NavCoinGUI::onCurrencySelection(QAction* action)
+void HTSGUI::onCurrencySelection(QAction* action)
 {
     if (action)
     {
@@ -594,7 +594,7 @@ void NavCoinGUI::onCurrencySelection(QAction* action)
     }
 }
 
-void NavCoinGUI::createToolBars()
+void HTSGUI::createToolBars()
 {
     if(walletFrame)
     {
@@ -669,7 +669,7 @@ void NavCoinGUI::createToolBars()
     }
 }
 
-void NavCoinGUI::setClientModel(ClientModel *clientModel)
+void HTSGUI::setClientModel(ClientModel *clientModel)
 {
     this->clientModel = clientModel;
     if(clientModel)
@@ -721,7 +721,7 @@ void NavCoinGUI::setClientModel(ClientModel *clientModel)
 }
 
 #ifdef ENABLE_WALLET
-bool NavCoinGUI::addWallet(const QString& name, WalletModel *walletModel)
+bool HTSGUI::addWallet(const QString& name, WalletModel *walletModel)
 {
     if(!walletFrame)
         return false;
@@ -729,7 +729,7 @@ bool NavCoinGUI::addWallet(const QString& name, WalletModel *walletModel)
     return walletFrame->addWallet(name, walletModel);
 }
 
-void NavCoinGUI::startVotingCounter()
+void HTSGUI::startVotingCounter()
 {
     if (GetStaking())
     {
@@ -740,14 +740,14 @@ void NavCoinGUI::startVotingCounter()
     }
 }
 
-bool NavCoinGUI::setCurrentWallet(const QString& name)
+bool HTSGUI::setCurrentWallet(const QString& name)
 {
     if(!walletFrame)
         return false;
     return walletFrame->setCurrentWallet(name);
 }
 
-void NavCoinGUI::removeAllWallets()
+void HTSGUI::removeAllWallets()
 {
     if(!walletFrame)
         return;
@@ -755,7 +755,7 @@ void NavCoinGUI::removeAllWallets()
     walletFrame->removeAllWallets();
 }
 
-void NavCoinGUI::repairWallet()
+void HTSGUI::repairWallet()
 {
     QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Repair wallet"),
         tr("Client restart required to repair the wallet.") + "<br><br>" + tr("Client will be shut down. Do you want to proceed?"),
@@ -772,7 +772,7 @@ void NavCoinGUI::repairWallet()
 
 #endif // ENABLE_WALLET
 
-void NavCoinGUI::setWalletActionsEnabled(bool enabled)
+void HTSGUI::setWalletActionsEnabled(bool enabled)
 {
     overviewAction->setEnabled(enabled);
     sendCoinsAction->setEnabled(enabled);
@@ -792,7 +792,7 @@ void NavCoinGUI::setWalletActionsEnabled(bool enabled)
     openAction->setEnabled(enabled);
 }
 
-void NavCoinGUI::createTrayIcon(const NetworkStyle *networkStyle)
+void HTSGUI::createTrayIcon(const NetworkStyle *networkStyle)
 {
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
@@ -805,7 +805,7 @@ void NavCoinGUI::createTrayIcon(const NetworkStyle *networkStyle)
     notificator = new Notificator(QApplication::applicationName(), trayIcon, this);
 }
 
-void NavCoinGUI::createTrayIconMenu()
+void HTSGUI::createTrayIconMenu()
 {
 #ifndef Q_OS_MAC
     // return if trayIcon is unset (only on non-Mac OSes)
@@ -842,7 +842,7 @@ void NavCoinGUI::createTrayIconMenu()
 }
 
 #ifndef Q_OS_MAC
-void NavCoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+void HTSGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
@@ -852,7 +852,7 @@ void NavCoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 }
 #endif
 
-void NavCoinGUI::optionsClicked()
+void HTSGUI::optionsClicked()
 {
     if(!clientModel || !clientModel->getOptionsModel())
         return;
@@ -862,7 +862,7 @@ void NavCoinGUI::optionsClicked()
     dlg.exec();
 }
 
-void NavCoinGUI::aboutClicked()
+void HTSGUI::aboutClicked()
 {
     if(!clientModel)
         return;
@@ -871,7 +871,7 @@ void NavCoinGUI::aboutClicked()
     dlg.exec();
 }
 
-void NavCoinGUI::showDebugWindow()
+void HTSGUI::showDebugWindow()
 {
     rpcConsole->showNormal();
     rpcConsole->show();
@@ -879,19 +879,19 @@ void NavCoinGUI::showDebugWindow()
     rpcConsole->activateWindow();
 }
 
-void NavCoinGUI::showDebugWindowActivateConsole()
+void HTSGUI::showDebugWindowActivateConsole()
 {
     rpcConsole->setTabFocus(RPCConsole::TAB_CONSOLE);
     showDebugWindow();
 }
 
-void NavCoinGUI::showHelpMessageClicked()
+void HTSGUI::showHelpMessageClicked()
 {
     helpMessageDialog->show();
 }
 
 #ifdef ENABLE_WALLET
-void NavCoinGUI::openClicked()
+void HTSGUI::openClicked()
 {
     OpenURIDialog dlg(this);
     if(dlg.exec())
@@ -900,7 +900,7 @@ void NavCoinGUI::openClicked()
     }
 }
 
-void NavCoinGUI::gotoOverviewPage()
+void HTSGUI::gotoOverviewPage()
 {
     overviewAction->setChecked(true);
     topMenu1->setStyleSheet(
@@ -917,7 +917,7 @@ void NavCoinGUI::gotoOverviewPage()
     if (walletFrame) walletFrame->gotoOverviewPage();
 }
 
-void NavCoinGUI::gotoHistoryPage()
+void HTSGUI::gotoHistoryPage()
 {
     topMenu1->setStyleSheet(
        "#topMenu1 { border-image: url(:/icons/menu_home_ns)  0 0 0 0 stretch stretch; border: 0px; }"
@@ -934,7 +934,7 @@ void NavCoinGUI::gotoHistoryPage()
     if (walletFrame) walletFrame->gotoHistoryPage();
 }
 
-void NavCoinGUI::gotoReceiveCoinsPage()
+void HTSGUI::gotoReceiveCoinsPage()
 {
     topMenu1->setStyleSheet(
        "#topMenu1 { border-image: url(:/icons/menu_home_ns)  0 0 0 0 stretch stretch; border: 0px; }"
@@ -951,7 +951,7 @@ void NavCoinGUI::gotoReceiveCoinsPage()
     if (walletFrame) walletFrame->gotoReceiveCoinsPage();
 }
 
-void NavCoinGUI::gotoRequestPaymentPage()
+void HTSGUI::gotoRequestPaymentPage()
 {
     topMenu1->setStyleSheet(
        "#topMenu1 { border-image: url(:/icons/menu_home_ns)  0 0 0 0 stretch stretch; border: 0px; }"
@@ -968,7 +968,7 @@ void NavCoinGUI::gotoRequestPaymentPage()
     if (walletFrame) walletFrame->gotoRequestPaymentPage();
 }
 
-void NavCoinGUI::gotoSendCoinsPage(QString addr)
+void HTSGUI::gotoSendCoinsPage(QString addr)
 {
     topMenu1->setStyleSheet(
        "#topMenu1 { border-image: url(:/icons/menu_home_ns)  0 0 0 0 stretch stretch; border: 0px; }"
@@ -985,18 +985,18 @@ void NavCoinGUI::gotoSendCoinsPage(QString addr)
     if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
 }
 
-void NavCoinGUI::gotoSignMessageTab(QString addr)
+void HTSGUI::gotoSignMessageTab(QString addr)
 {
     if (walletFrame) walletFrame->gotoSignMessageTab(addr);
 }
 
-void NavCoinGUI::gotoVerifyMessageTab(QString addr)
+void HTSGUI::gotoVerifyMessageTab(QString addr)
 {
     if (walletFrame) walletFrame->gotoVerifyMessageTab(addr);
 }
 #endif // ENABLE_WALLET
 
-void NavCoinGUI::setNumConnections(int count)
+void HTSGUI::setNumConnections(int count)
 {
     QString icon;
     switch(count)
@@ -1008,7 +1008,7 @@ void NavCoinGUI::setNumConnections(int count)
     default: icon = ":/icons/connect_4"; break;
     }
     labelConnectionsIcon->setPixmap(platformStyle->SingleColorIcon(icon).pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to NavCoin network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to HTS network", "", count));
     if(walletFrame){
         walletFrame->setStatusTitleConnections(tr("%n active connections.","",count));
         if(count > 0)
@@ -1020,7 +1020,7 @@ void NavCoinGUI::setNumConnections(int count)
 
 bool showingVotingDialog = false;
 
-void NavCoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVerificationProgress, bool header)
+void HTSGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVerificationProgress, bool header)
 {
     if(!clientModel)
         return;
@@ -1090,7 +1090,7 @@ void NavCoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVer
         progressBarLabel->setVisible(false);
         progressBar->setVisible(false);
         if(walletFrame)
-            walletFrame->setStatusTitle(tr("Connected to NavCoin network."));
+            walletFrame->setStatusTitle(tr("Connected to HTS network."));
     }
     else
     {
@@ -1102,7 +1102,7 @@ void NavCoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVer
         const int YEAR_IN_SECONDS = 31556952; // Average length of year in Gregorian calendar
 
         if(walletFrame)
-            walletFrame->setStatusTitle(tr("Connecting to NavCoin network..."));
+            walletFrame->setStatusTitle(tr("Connecting to HTS network..."));
 
         if(secs < 2*DAY_IN_SECONDS)
         {
@@ -1158,7 +1158,7 @@ void NavCoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVer
     progressBar->setToolTip(tooltip);
 }
 
-void NavCoinGUI::showVotingDialog()
+void HTSGUI::showVotingDialog()
 {
 
   if(showingVotingDialog)
@@ -1178,7 +1178,7 @@ void NavCoinGUI::showVotingDialog()
 
     QMessageBox msgBox;
     msgBox.setText(tr("Important network notice."));
-    msgBox.setInformativeText(tr("The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. <br><br>For more information on the proposal, please visit <a href=\"https://navcoin.org/community-fund\">this link</a><br><br>Would you like the Nav Coin Network to update the staking rewards to setup a decentralised community fund that will help grow the network?"));
+    msgBox.setInformativeText(tr("The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. <br><br>For more information on the proposal, please visit <a href=\"https://HTS.org/community-fund\">this link</a><br><br>Would you like the Nav Coin Network to update the staking rewards to setup a decentralised community fund that will help grow the network?"));
     QAbstractButton *myYesButton = msgBox.addButton(tr("Yes"), QMessageBox::YesRole);
     msgBox.addButton(trUtf8("No"), QMessageBox::NoRole);
     msgBox.setIcon(QMessageBox::Question);
@@ -1200,9 +1200,9 @@ void NavCoinGUI::showVotingDialog()
 
 }
 
-void NavCoinGUI::message(const QString &title, const QString &message, unsigned int style, bool *ret)
+void HTSGUI::message(const QString &title, const QString &message, unsigned int style, bool *ret)
 {
-    QString strTitle = tr("NavCoin"); // default title
+    QString strTitle = tr("HTS"); // default title
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;
@@ -1228,7 +1228,7 @@ void NavCoinGUI::message(const QString &title, const QString &message, unsigned 
             break;
         }
     }
-    // Append title to "NavCoin - "
+    // Append title to "HTS - "
     if (!msgType.isEmpty())
         strTitle += " - " + msgType;
 
@@ -1259,7 +1259,7 @@ void NavCoinGUI::message(const QString &title, const QString &message, unsigned 
         notificator->notify((Notificator::Class)nNotifyIcon, strTitle, message);
 }
 
-void NavCoinGUI::changeEvent(QEvent *e)
+void HTSGUI::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
 #ifndef Q_OS_MAC // Ignored on Mac
@@ -1278,7 +1278,7 @@ void NavCoinGUI::changeEvent(QEvent *e)
 #endif
 }
 
-void NavCoinGUI::closeEvent(QCloseEvent *event)
+void HTSGUI::closeEvent(QCloseEvent *event)
 {
 #ifndef Q_OS_MAC // Ignored on Mac
     if(clientModel && clientModel->getOptionsModel())
@@ -1296,7 +1296,7 @@ void NavCoinGUI::closeEvent(QCloseEvent *event)
     QMainWindow::closeEvent(event);
 }
 
-void NavCoinGUI::showEvent(QShowEvent *event)
+void HTSGUI::showEvent(QShowEvent *event)
 {
     // enable the debug window when the main window shows up
     openRPCConsoleAction->setEnabled(true);
@@ -1305,11 +1305,11 @@ void NavCoinGUI::showEvent(QShowEvent *event)
 }
 
 #ifdef ENABLE_WALLET
-void NavCoinGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label)
+void HTSGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label)
 {
     // On new transaction, make an info balloon
     QString msg = tr("Date: %1\n").arg(date) +
-                  tr("Amount: %1\n").arg(NavCoinUnits::formatWithUnit(unit, amount, true)) +
+                  tr("Amount: %1\n").arg(HTSUnits::formatWithUnit(unit, amount, true)) +
                   tr("Type: %1\n").arg(type);
     if (!label.isEmpty())
         msg += tr("Label: %1\n").arg(label);
@@ -1320,14 +1320,14 @@ void NavCoinGUI::incomingTransaction(const QString& date, int unit, const CAmoun
 }
 #endif // ENABLE_WALLET
 
-void NavCoinGUI::dragEnterEvent(QDragEnterEvent *event)
+void HTSGUI::dragEnterEvent(QDragEnterEvent *event)
 {
     // Accept only URIs
     if(event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void NavCoinGUI::dropEvent(QDropEvent *event)
+void HTSGUI::dropEvent(QDropEvent *event)
 {
     if(event->mimeData()->hasUrls())
     {
@@ -1339,7 +1339,7 @@ void NavCoinGUI::dropEvent(QDropEvent *event)
     event->acceptProposedAction();
 }
 
-bool NavCoinGUI::eventFilter(QObject *object, QEvent *event)
+bool HTSGUI::eventFilter(QObject *object, QEvent *event)
 {
     // Catch status tip events
     if (event->type() == QEvent::StatusTip)
@@ -1352,7 +1352,7 @@ bool NavCoinGUI::eventFilter(QObject *object, QEvent *event)
 }
 
 #ifdef ENABLE_WALLET
-bool NavCoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
+bool HTSGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
 {
     // URI has to be valid
     if (walletFrame && walletFrame->handlePaymentRequest(recipient))
@@ -1364,7 +1364,7 @@ bool NavCoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
     return false;
 }
 
-void NavCoinGUI::setEncryptionStatus(int status)
+void HTSGUI::setEncryptionStatus(int status)
 {
     if(fWalletUnlockStakingOnly)
     {
@@ -1417,7 +1417,7 @@ void NavCoinGUI::setEncryptionStatus(int status)
 }
 #endif // ENABLE_WALLET
 
-void NavCoinGUI::showNormalIfMinimized(bool fToggleHidden)
+void HTSGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     if(!clientModel)
         return;
@@ -1442,12 +1442,12 @@ void NavCoinGUI::showNormalIfMinimized(bool fToggleHidden)
         hide();
 }
 
-void NavCoinGUI::toggleHidden()
+void HTSGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
 
-void NavCoinGUI::detectShutdown()
+void HTSGUI::detectShutdown()
 {
     if (ShutdownRequested())
     {
@@ -1457,7 +1457,7 @@ void NavCoinGUI::detectShutdown()
     }
 }
 
-void NavCoinGUI::showProgress(const QString &title, int nProgress)
+void HTSGUI::showProgress(const QString &title, int nProgress)
 {
     if (nProgress == 0)
     {
@@ -1480,7 +1480,7 @@ void NavCoinGUI::showProgress(const QString &title, int nProgress)
         progressDialog->setValue(nProgress);
 }
 
-void NavCoinGUI::setTrayIconVisible(bool fHideTrayIcon)
+void HTSGUI::setTrayIconVisible(bool fHideTrayIcon)
 {
     if (trayIcon)
     {
@@ -1488,7 +1488,7 @@ void NavCoinGUI::setTrayIconVisible(bool fHideTrayIcon)
     }
 }
 
-static bool ThreadSafeMessageBox(NavCoinGUI *gui, const std::string& message, const std::string& caption, unsigned int style)
+static bool ThreadSafeMessageBox(HTSGUI *gui, const std::string& message, const std::string& caption, unsigned int style)
 {
     bool modal = (style & CClientUIInterface::MODAL);
     // The SECURE flag has no effect in the Qt GUI.
@@ -1505,14 +1505,14 @@ static bool ThreadSafeMessageBox(NavCoinGUI *gui, const std::string& message, co
     return ret;
 }
 
-void NavCoinGUI::subscribeToCoreSignals()
+void HTSGUI::subscribeToCoreSignals()
 {
     // Connect signals to client
     uiInterface.ThreadSafeMessageBox.connect(boost::bind(ThreadSafeMessageBox, this, _1, _2, _3));
     uiInterface.ThreadSafeQuestion.connect(boost::bind(ThreadSafeMessageBox, this, _1, _3, _4));
 }
 
-void NavCoinGUI::unsubscribeFromCoreSignals()
+void HTSGUI::unsubscribeFromCoreSignals()
 {
     // Disconnect signals from client
     uiInterface.ThreadSafeMessageBox.disconnect(boost::bind(ThreadSafeMessageBox, this, _1, _2, _3));
@@ -1525,12 +1525,12 @@ UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *pl
 {
     createContextMenu();
     setToolTip(tr("Unit to show amounts in. Click to select another unit."));
-    QList<NavCoinUnits::Unit> units = NavCoinUnits::availableUnits();
+    QList<HTSUnits::Unit> units = HTSUnits::availableUnits();
     int max_width = 0;
     const QFontMetrics fm(font());
-    Q_FOREACH (const NavCoinUnits::Unit unit, units)
+    Q_FOREACH (const HTSUnits::Unit unit, units)
     {
-        max_width = qMax(max_width, fm.width(NavCoinUnits::name(unit)));
+        max_width = qMax(max_width, fm.width(HTSUnits::name(unit)));
     }
     setMinimumSize(max_width, 0);
     setAlignment(Qt::AlignRight | Qt::AlignVCenter);
@@ -1547,9 +1547,9 @@ void UnitDisplayStatusBarControl::mousePressEvent(QMouseEvent *event)
 void UnitDisplayStatusBarControl::createContextMenu()
 {
     menu = new QMenu(this);
-    Q_FOREACH(NavCoinUnits::Unit u, NavCoinUnits::availableUnits())
+    Q_FOREACH(HTSUnits::Unit u, HTSUnits::availableUnits())
     {
-        QAction *menuAction = new QAction(QString(NavCoinUnits::name(u)), this);
+        QAction *menuAction = new QAction(QString(HTSUnits::name(u)), this);
         menuAction->setData(QVariant(u));
         menu->addAction(menuAction);
     }
@@ -1574,7 +1574,7 @@ void UnitDisplayStatusBarControl::setOptionsModel(OptionsModel *optionsModel)
 /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
 void UnitDisplayStatusBarControl::updateDisplayUnit(int newUnits)
 {
-    setText(NavCoinUnits::name(newUnits));
+    setText(HTSUnits::name(newUnits));
 }
 
 /** Shows context menu with Display Unit options by the mouse coordinates */
@@ -1593,7 +1593,7 @@ void UnitDisplayStatusBarControl::onMenuSelection(QAction* action)
     }
 }
 
-void NavCoinGUI::toggleStaking()
+void HTSGUI::toggleStaking()
 {
     SetStaking(!GetStaking());
 
@@ -1604,7 +1604,7 @@ void NavCoinGUI::toggleStaking()
 #ifdef ENABLE_WALLET
 
 
-void NavCoinGUI::updateWeight()
+void HTSGUI::updateWeight()
 {
     if (!pwalletMain)
         return;
@@ -1621,7 +1621,7 @@ void NavCoinGUI::updateWeight()
 }
 
 
-void NavCoinGUI::updatePrice()
+void HTSGUI::updatePrice()
 {
   QNetworkAccessManager *manager = new QNetworkAccessManager();
   QNetworkRequest request;
@@ -1637,7 +1637,7 @@ void NavCoinGUI::updatePrice()
                    SLOT(replyFinished(QNetworkReply*)));
 }
 
-void NavCoinGUI::replyFinished(QNetworkReply *reply)
+void HTSGUI::replyFinished(QNetworkReply *reply)
 {
 
   QString strReply = reply->readAll();
@@ -1661,7 +1661,7 @@ void NavCoinGUI::replyFinished(QNetworkReply *reply)
 
 }
 
-void NavCoinGUI::replyVotingFinished(QNetworkReply *reply)
+void HTSGUI::replyVotingFinished(QNetworkReply *reply)
 {
 
   QString strReply = reply->readAll();
@@ -1681,7 +1681,7 @@ void NavCoinGUI::replyVotingFinished(QNetworkReply *reply)
   LOCK(cs_main);
 
 
-  CNavCoinAddress addr("NMYuCvBiRgvkzjdEBGJHj7rpAnRmfUD6gw");
+  CHTSAddress addr("NMYuCvBiRgvkzjdEBGJHj7rpAnRmfUD6gw");
   CKeyID keyID;
   addr.GetKeyID(keyID);
 
@@ -1730,7 +1730,7 @@ void NavCoinGUI::replyVotingFinished(QNetworkReply *reply)
 
 }
 
-void NavCoinGUI::getVotingInfo()
+void HTSGUI::getVotingInfo()
 {
     QNetworkAccessManager *manager = new QNetworkAccessManager();
     QNetworkRequest request;
@@ -1739,14 +1739,14 @@ void NavCoinGUI::getVotingInfo()
     QSslConfiguration config = QSslConfiguration::defaultConfiguration();
     config.setProtocol(QSsl::TlsV1_2);
     request.setSslConfiguration(config);
-    request.setUrl(QUrl(QString("https://www.navcoin.org/voting.") + QString::fromStdString(Params().NetworkIDString()) + QString("net.json")));
+    request.setUrl(QUrl(QString("https://www.HTS.org/voting.") + QString::fromStdString(Params().NetworkIDString()) + QString("net.json")));
     request.setHeader(QNetworkRequest::ServerHeader, "application/json");
     reply = manager->get(request);
     connect(manager, SIGNAL(finished(QNetworkReply*)), this,
                      SLOT(replyVotingFinished(QNetworkReply*)));
 }
 
-void NavCoinGUI::updateStakingStatus()
+void HTSGUI::updateStakingStatus()
 {
     updateWeight();
 

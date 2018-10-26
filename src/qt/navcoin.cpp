@@ -3,10 +3,10 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/navcoin-config.h"
+#include "config/HTS-config.h"
 #endif
 
-#include "navcoingui.h"
+#include "HTSgui.h"
 
 #include "chainparams.h"
 #include "clientmodel.h"
@@ -93,7 +93,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("navcoin-core", psz).toStdString();
+    return QCoreApplication::translate("HTS-core", psz).toStdString();
 }
 
 static QString GetLangTerritory()
@@ -140,11 +140,11 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. navcoin_de.qm (shortcut "de" needs to be defined in navcoin.qrc)
+    // Load e.g. HTS_de.qm (shortcut "de" needs to be defined in HTS.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. navcoin_de_DE.qm (shortcut "de_DE" needs to be defined in navcoin.qrc)
+    // Load e.g. HTS_de_DE.qm (shortcut "de_DE" needs to be defined in HTS.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -165,14 +165,14 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-/** Class encapsulating NavCoin Core startup and shutdown.
+/** Class encapsulating HTS Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
-class NavCoinCore: public QObject
+class HTSCore: public QObject
 {
     Q_OBJECT
 public:
-    explicit NavCoinCore();
+    explicit HTSCore();
 
 public Q_SLOTS:
     void initialize();
@@ -191,13 +191,13 @@ private:
     void handleRunawayException(const std::exception *e);
 };
 
-/** Main NavCoin application object */
-class NavCoinApplication: public QApplication
+/** Main HTS application object */
+class HTSApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit NavCoinApplication(int &argc, char **argv);
-    ~NavCoinApplication();
+    explicit HTSApplication(int &argc, char **argv);
+    ~HTSApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -220,7 +220,7 @@ public:
     /// Get process return value
     int getReturnValue() { return returnValue; }
 
-    /// Get window identifier of QMainWindow (NavCoinGUI)
+    /// Get window identifier of QMainWindow (HTSGUI)
     WId getMainWinId() const;
 
 public Q_SLOTS:
@@ -239,7 +239,7 @@ private:
     QThread *coreThread;
     OptionsModel *optionsModel;
     ClientModel *clientModel;
-    NavCoinGUI *window;
+    HTSGUI *window;
     QTimer *pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
@@ -252,20 +252,20 @@ private:
     void startThread();
 };
 
-#include "navcoin.moc"
+#include "HTS.moc"
 
-NavCoinCore::NavCoinCore():
+HTSCore::HTSCore():
     QObject()
 {
 }
 
-void NavCoinCore::handleRunawayException(const std::exception *e)
+void HTSCore::handleRunawayException(const std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     Q_EMIT runawayException(QString::fromStdString(strMiscWarning));
 }
 
-void NavCoinCore::initialize()
+void HTSCore::initialize()
 {
     try
     {
@@ -279,7 +279,7 @@ void NavCoinCore::initialize()
     }
 }
 
-void NavCoinCore::shutdown()
+void HTSCore::shutdown()
 {
     try
     {
@@ -296,7 +296,7 @@ void NavCoinCore::shutdown()
     }
 }
 
-NavCoinApplication::NavCoinApplication(int &argc, char **argv):
+HTSApplication::HTSApplication(int &argc, char **argv):
     QApplication(argc, argv),
     coreThread(0),
     optionsModel(0),
@@ -312,17 +312,17 @@ NavCoinApplication::NavCoinApplication(int &argc, char **argv):
     setQuitOnLastWindowClosed(false);
 
     // UI per-platform customization
-    // This must be done inside the NavCoinApplication constructor, or after it, because
+    // This must be done inside the HTSApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = GetArg("-uiplatform", NavCoinGUI::DEFAULT_UIPLATFORM);
+    platformName = GetArg("-uiplatform", HTSGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-NavCoinApplication::~NavCoinApplication()
+HTSApplication::~HTSApplication()
 {
     if(coreThread)
     {
@@ -345,27 +345,27 @@ NavCoinApplication::~NavCoinApplication()
 }
 
 #ifdef ENABLE_WALLET
-void NavCoinApplication::createPaymentServer()
+void HTSApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void NavCoinApplication::createOptionsModel(bool resetSettings)
+void HTSApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(NULL, resetSettings);
 }
 
-void NavCoinApplication::createWindow(const NetworkStyle *networkStyle)
+void HTSApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new NavCoinGUI(platformStyle, networkStyle, 0);
+    window = new HTSGUI(platformStyle, networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));
     pollShutdownTimer->start(200);
 }
 
-void NavCoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void HTSApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     SplashScreen *splash = new SplashScreen(0, networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, so use
@@ -375,12 +375,12 @@ void NavCoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
     connect(this, SIGNAL(requestedShutdown()), splash, SLOT(close()));
 }
 
-void NavCoinApplication::startThread()
+void HTSApplication::startThread()
 {
     if(coreThread)
         return;
     coreThread = new QThread(this);
-    NavCoinCore *executor = new NavCoinCore();
+    HTSCore *executor = new HTSCore();
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
@@ -396,20 +396,20 @@ void NavCoinApplication::startThread()
     coreThread->start();
 }
 
-void NavCoinApplication::parameterSetup()
+void HTSApplication::parameterSetup()
 {
     InitLogging();
     InitParameterInteraction();
 }
 
-void NavCoinApplication::requestInitialize()
+void HTSApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void NavCoinApplication::requestShutdown()
+void HTSApplication::requestShutdown()
 {
     qDebug() << __func__ << ": Requesting shutdown";
     startThread();
@@ -432,7 +432,7 @@ void NavCoinApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void NavCoinApplication::initializeResult(int retval)
+void HTSApplication::initializeResult(int retval)
 {
     qDebug() << __func__ << ": Initialization result: " << retval;
     // Set exit result: 0 if successful, 1 if failure
@@ -454,8 +454,8 @@ void NavCoinApplication::initializeResult(int retval)
         {
             walletModel = new WalletModel(platformStyle, pwalletMain, optionsModel);
 
-            window->addWallet(NavCoinGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(NavCoinGUI::DEFAULT_WALLET);
+            window->addWallet(HTSGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(HTSGUI::DEFAULT_WALLET);
             paymentServer->setWalletModel(walletModel);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*,SendCoinsRecipient,QByteArray)),
@@ -483,7 +483,7 @@ void NavCoinApplication::initializeResult(int retval)
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // navcoin: URIs or payment requests:
+        // HTS: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                          window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
@@ -498,19 +498,19 @@ void NavCoinApplication::initializeResult(int retval)
     }
 }
 
-void NavCoinApplication::shutdownResult(int retval)
+void HTSApplication::shutdownResult(int retval)
 {
     qDebug() << __func__ << ": Shutdown result: " << retval;
     quit(); // Exit main loop after shutdown finished
 }
 
-void NavCoinApplication::handleRunawayException(const QString &message)
+void HTSApplication::handleRunawayException(const QString &message)
 {
-    QMessageBox::critical(0, "Runaway exception", NavCoinGUI::tr("A fatal error occurred. NavCoin can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", HTSGUI::tr("A fatal error occurred. HTS can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(1);
 }
 
-WId NavCoinApplication::getMainWinId() const
+WId HTSApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -518,7 +518,7 @@ WId NavCoinApplication::getMainWinId() const
     return window->winId();
 }
 
-#ifndef NAVCOIN_QT_TEST
+#ifndef HTS_QT_TEST
 int main(int argc, char *argv[])
 {
     // Address 4K screen resolution: http://doc.qt.io/qt-5/highdpi.html
@@ -540,10 +540,10 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(navcoin);
-    Q_INIT_RESOURCE(navcoin_locale);
+    Q_INIT_RESOURCE(HTS);
+    Q_INIT_RESOURCE(HTS_locale);
 
-    NavCoinApplication app(argc, argv);
+    HTSApplication app(argc, argv);
 #if QT_VERSION > 0x050100
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -595,7 +595,7 @@ int main(int argc, char *argv[])
     // User language is set up: pick a data directory
     Intro::pickDataDirectory();
 
-    /// 6. Determine availability of data directory and parse navcoin.conf
+    /// 6. Determine availability of data directory and parse HTS.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!boost::filesystem::is_directory(GetDataDir(false)))
     {
@@ -653,7 +653,7 @@ int main(int argc, char *argv[])
         exit(0);
 
     // Start up the payment server early, too, so impatient users that click on
-    // navcoin: links repeatedly have their payment requests routed to this process:
+    // HTS: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 
@@ -701,4 +701,4 @@ int main(int argc, char *argv[])
     }
     return app.getReturnValue();
 }
-#endif // NAVCOIN_QT_TEST
+#endif // HTS_QT_TEST

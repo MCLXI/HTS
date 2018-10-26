@@ -1,6 +1,6 @@
 // Automatically generated file. Do not modify.
-#ifndef NAVCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
-#define NAVCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
+#ifndef HTS_UNIVALUE_UNIVALUE_ESCAPES_H
+#define HTS_UNIVALUE_UNIVALUE_ESCAPES_H
 static const char *escapes[256] = {
 	"\\u0000",
 	"\\u0001",
@@ -259,4 +259,4 @@ static const char *escapes[256] = {
 	NULL,
 	NULL,
 };
-#endif // NAVCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
+#endif // HTS_UNIVALUE_UNIVALUE_ESCAPES_H

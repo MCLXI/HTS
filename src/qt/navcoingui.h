@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_QT_NAVCOINGUI_H
-#define NAVCOIN_QT_NAVCOINGUI_H
+#ifndef HTS_QT_HTSGUI_H
+#define HTS_QT_HTSGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/navcoin-config.h"
+#include "config/HTS-config.h"
 #endif
 
 #include "amount.h"
@@ -46,10 +46,10 @@ class QAbstractButton;
 QT_END_NAMESPACE
 
 /**
-  NavCoin GUI main class. This class represents the main window of the NavCoin UI. It communicates with both the client and
+  HTS GUI main class. This class represents the main window of the HTS UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class NavCoinGUI : public QMainWindow
+class HTSGUI : public QMainWindow
 {
     Q_OBJECT
 
@@ -57,8 +57,8 @@ public:
     static const QString DEFAULT_WALLET;
     static const std::string DEFAULT_UIPLATFORM;
 
-    explicit NavCoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
-    ~NavCoinGUI();
+    explicit HTSGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
+    ~HTSGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -68,7 +68,7 @@ public:
 
 #ifdef ENABLE_WALLET
     /** Set the wallet model.
-        The wallet model represents a navcoin wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a HTS wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     bool addWallet(const QString& name, WalletModel *walletModel);
@@ -302,4 +302,4 @@ private Q_SLOTS:
     void onMenuSelection(QAction* action);
 };
 
-#endif // NAVCOIN_QT_NAVCOINGUI_H
+#endif // HTS_QT_HTSGUI_H

@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "navcoinaddressvalidator.h"
+#include "HTSaddressvalidator.h"
 
 #include "base58.h"
 #include "utils/dns_utils.h"
@@ -17,12 +17,12 @@
   - All lower-case letters except for 'l'
 */
 
-NavCoinAddressEntryValidator::NavCoinAddressEntryValidator(QObject *parent) :
+HTSAddressEntryValidator::HTSAddressEntryValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State NavCoinAddressEntryValidator::validate(QString &input, int &pos) const
+QValidator::State HTSAddressEntryValidator::validate(QString &input, int &pos) const
 {
     Q_UNUSED(pos);
 
@@ -82,17 +82,17 @@ QValidator::State NavCoinAddressEntryValidator::validate(QString &input, int &po
     return state;
 }
 
-NavCoinAddressCheckValidator::NavCoinAddressCheckValidator(QObject *parent) :
+HTSAddressCheckValidator::HTSAddressCheckValidator(QObject *parent) :
     QValidator(parent)
 {
 }
 
-QValidator::State NavCoinAddressCheckValidator::validate(QString &input, int &pos) const
+QValidator::State HTSAddressCheckValidator::validate(QString &input, int &pos) const
 {
   Q_UNUSED(pos);
   utils::DNSResolver* DNS = nullptr;
 
-  // Validate the passed NavCoin address
+  // Validate the passed HTS address
   if(DNS->check_address_syntax(input.toStdString().c_str()))
   {
 
@@ -108,7 +108,7 @@ QValidator::State NavCoinAddressCheckValidator::validate(QString &input, int &po
   else
   {
 
-    CNavCoinAddress addr(input.toStdString());
+    CHTSAddress addr(input.toStdString());
     if (addr.IsValid())
       return QValidator::Acceptable;
 

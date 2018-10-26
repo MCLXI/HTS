@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_QT_NAVCOINUNITS_H
-#define NAVCOIN_QT_NAVCOINUNITS_H
+#ifndef HTS_QT_HTSUNITS_H
+#define HTS_QT_HTSUNITS_H
 
 #include "amount.h"
 
@@ -41,24 +41,24 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** NavCoin unit definitions. Encapsulates parsing and formatting
+/** HTS unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class NavCoinUnits: public QAbstractListModel
+class HTSUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit NavCoinUnits(QObject *parent);
+    explicit HTSUnits(QObject *parent);
 
-    /** NavCoin units.
-      @note Source: https://en.navcoin.it/wiki/Units . Please add only sensible ones
+    /** HTS units.
+      @note Source: https://en.HTS.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {
-        NAV,
-        mNAV,
-        uNAV,
+        HTS,
+        mHTS,
+        uHTS,
         BTC,
         EUR,
         USD
@@ -124,8 +124,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<NavCoinUnits::Unit> unitlist;
+    QList<HTSUnits::Unit> unitlist;
 };
-typedef NavCoinUnits::Unit NavCoinUnit;
+typedef HTSUnits::Unit HTSUnit;
 
-#endif // NAVCOIN_QT_NAVCOINUNITS_H
+#endif // HTS_QT_HTSUNITS_H

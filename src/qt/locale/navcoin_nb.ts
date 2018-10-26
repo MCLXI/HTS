@@ -271,7 +271,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signer &amp;melding...</translation>
@@ -357,8 +357,8 @@
         <translation>Reindekserer blokker på harddisk...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Send til en NavCoin-adresse</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Send til en HTS-adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -381,8 +381,8 @@
         <translation>&amp;Verifiser melding...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -409,12 +409,12 @@
         <translation>Krypter de private nøklene som tilhører lommeboken din</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Signer en melding med NavCoin-adressene dine for å bevise at du eier dem</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Signer en melding med HTS-adressene dine for å bevise at du eier dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Bekreft meldinger for å være sikker på at de ble signert av en angitt NavCoin-adresse</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Bekreft meldinger for å være sikker på at de ble signert av en angitt HTS-adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -429,8 +429,8 @@
         <translation>&amp;Hjelp</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Forespør betalinger (genererer QR-koder og navcoin: URIer)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Forespør betalinger (genererer QR-koder og HTS: URIer)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -441,16 +441,16 @@
         <translation>Vis listen over bruke mottaksadresser og merkelapper</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Åpne en NavCoin: URI eller betalingsetterspørring</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Åpne en HTS: URI eller betalingsetterspørring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandolinjevalg</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n aktiv forbindelse til NavCoin-nettverket</numerusform><numerusform>%n aktive forbindelser til NavCoin-nettverket</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n aktiv forbindelse til HTS-nettverket</numerusform><numerusform>%n aktive forbindelser til HTS-nettverket</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -680,16 +680,16 @@
         <translation>&amp;Bruk ubekreftet veksel</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åpne automatisk NavCoin klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åpne automatisk HTS klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Sett opp port ved hjelp av &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Koble til NavCoin-nettverket gjennom en SOCKS5 proxy.</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Koble til HTS-nettverket gjennom en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -728,8 +728,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Koble til NavCoin-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
+        <source>Connect to the HTS network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Koble til HTS-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -765,7 +765,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Velg standard delt enhet for visning i grensesnittet og for sending av navcoins.</translation>
+        <translation>Velg standard delt enhet for visning i grensesnittet og for sending av HTSs.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -848,8 +848,8 @@
         <translation>Beløp</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Oppgi en NavCoin-adresse (f.eks. %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Oppgi en HTS-adresse (f.eks. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1181,8 +1181,8 @@
         <translation>Gj&amp;enbruk en eksisterende mottaksadresse (ikke anbefalt)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NavCoin network.</source>
-        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over NavCoin-nettverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the HTS network.</source>
+        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over HTS-nettverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1263,7 +1263,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send NavCoins</translation>
+        <translation>Send HTSs</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -1326,8 +1326,8 @@
         <translation>minstebeløp</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for navcoin transactions than the network can process.</source>
-        <translation>Betaling av bare minimumsavgiften går helt fint så lenge det er mindre transaksjonsvolum enn plass i blokkene. Men vær klar over at dette kan ende opp i en transaksjon som aldri blir bekreftet når det er mer etterspørsel etter NavCoin-transaksjoner enn nettverket kan behandle.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for HTS transactions than the network can process.</source>
+        <translation>Betaling av bare minimumsavgiften går helt fint så lenge det er mindre transaksjonsvolum enn plass i blokkene. Men vær klar over at dette kan ende opp i en transaksjon som aldri blir bekreftet når det er mer etterspørsel etter HTS-transaksjoner enn nettverket kan behandle.</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -1393,8 +1393,8 @@
         <translation>Dette er en normal betaling.</translation>
     </message>
     <message>
-        <source>The NavCoin address to send the payment to</source>
-        <translation>NavCoin-adressen betalingen skal sendes til</translation>
+        <source>The HTS address to send the payment to</source>
+        <translation>HTS-adressen betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1405,8 +1405,8 @@
         <translation>Fjern denne oppføringen</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less navcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Gebyret vil bli trukket fra beløpet som blir sendt. Mottakeren vil motta mindre navcoins enn det du skriver inn i beløpsfeltet. Hvis det er valgt flere mottakere, deles gebyret likt.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less HTSs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Gebyret vil bli trukket fra beløpet som blir sendt. Mottakeren vil motta mindre HTSs enn det du skriver inn i beløpsfeltet. Hvis det er valgt flere mottakere, deles gebyret likt.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1429,8 +1429,8 @@
         <translation>Skriv inn en merkelapp for denne adressen for å legge den til listen av brukte adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the navcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NavCoin network.</source>
-        <translation>En melding som var tilknyttet navcoinen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over NavCoin-nettverket.</translation>
+        <source>A message that was attached to the HTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the HTS network.</source>
+        <translation>En melding som var tilknyttet HTSen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over HTS-nettverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1466,12 +1466,12 @@
         <translation>&amp;Signer Melding</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive navcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta navcoins sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive HTSs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta HTSs sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
     </message>
     <message>
-        <source>The NavCoin address to sign the message with</source>
-        <translation>NavCoin-adressen meldingen skal signeres med</translation>
+        <source>The HTS address to sign the message with</source>
+        <translation>HTS-adressen meldingen skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1502,8 +1502,8 @@
         <translation>Kopier valgt signatur til utklippstavle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Signer meldingen for å bevise at du eier denne NavCoin-adressen</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Signer meldingen for å bevise at du eier denne HTS-adressen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1526,12 +1526,12 @@
         <translation>Skriv inn mottakerens adresse, melding (forsikre deg om at du kopier linjeskift, mellomrom, faner osv. nøyaktig) og underskrift nedenfor for å bekrefte meldingen. Vær forsiktig så du ikke leser mer ut av signaturen enn hva som er i den signerte meldingen i seg selv, for å unngå å bli lurt av et man-in-the-middle-angrep. Merk at dette bare beviser at den som signerer kan motta med adressen, dette beviser ikke hvem som har sendt transaksjoner!</translation>
     </message>
     <message>
-        <source>The NavCoin address the message was signed with</source>
-        <translation>NavCoin-adressen meldingen ble signert med</translation>
+        <source>The HTS address the message was signed with</source>
+        <translation>HTS-adressen meldingen ble signert med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte NavCoin-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte HTS-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1606,7 +1606,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send NavCoins</translation>
+        <translation>Send HTSs</translation>
     </message>
 </context>
 <context>
@@ -1632,7 +1632,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Innstillinger:</translation>
@@ -1698,8 +1698,8 @@
         <translation>Ta imot tilkoblinger fra utsiden (standardverdi: 1 hvis uten -proxy eller -connect)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

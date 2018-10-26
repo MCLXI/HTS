@@ -1,6 +1,6 @@
 [Protocol]
-exec=navcoin-qt '%u'
-protocol=navcoin
+exec=HTS-qt '%u'
+protocol=HTS
 input=none
 output=none
 helper=true

@@ -79,7 +79,7 @@ void navtechsetup::reloadNavtechServers()
 
 void navtechsetup::showNavtechIntro()
 {
-    setWindowIcon(QIcon(":icons/navcoin"));
+    setWindowIcon(QIcon(":icons/HTS"));
     setStyleSheet(Skinize());
 
     ui->saveButton->setVisible(true);

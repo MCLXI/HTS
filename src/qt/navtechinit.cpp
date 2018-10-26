@@ -25,7 +25,7 @@ NavTechInit::~NavTechInit()
 void NavTechInit::ShowNavtechIntro(bool exitAfter)
 {
     NavTechInit navtechinit;
-    navtechinit.setWindowIcon(QIcon(":icons/navcoin"));
+    navtechinit.setWindowIcon(QIcon(":icons/HTS"));
     navtechinit.setStyleSheet(Skinize());
 
     if(!navtechinit.exec())

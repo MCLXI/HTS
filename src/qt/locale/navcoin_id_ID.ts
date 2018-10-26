@@ -255,7 +255,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Pesan &amp;penanda...</translation>
@@ -337,8 +337,8 @@
         <translation>Mengindex ulang blok di dalam disk...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Kirim koin ke alamat NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Kirim koin ke alamat HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -361,8 +361,8 @@
         <translation>&amp;Verifikasi pesan...</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -389,12 +389,12 @@
         <translation>Enkripsi private key yang dimiliki dompet Anda</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Tanda tangani sebuah pesan menggunakan alamat NavCoin Anda untuk membuktikan bahwa Anda adalah pemilik alamat tersebut</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Tanda tangani sebuah pesan menggunakan alamat HTS Anda untuk membuktikan bahwa Anda adalah pemilik alamat tersebut</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Verifikasi pesan untuk memastikan bahwa pesan tersebut ditanda tangani oleh suatu alamat NavCoin tertentu</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Verifikasi pesan untuk memastikan bahwa pesan tersebut ditanda tangani oleh suatu alamat HTS tertentu</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -409,8 +409,8 @@
         <translation>&amp;Bantuan</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Permintaan pembayaran (membuat kode QR dan navcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Permintaan pembayaran (membuat kode QR dan HTS: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -421,16 +421,16 @@
         <translation>Tampilkan daftar alamat dan label yang diterima</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Buka URI navcoin: atau permintaan pembayaran</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Buka URI HTS: atau permintaan pembayaran</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;pilihan Command-line</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n koneksi aktif ke jaringan NavCoin</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n koneksi aktif ke jaringan HTS</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -656,16 +656,16 @@
         <translation>&amp;Perubahan saldo untuk transaksi yang belum dikonfirmasi</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Otomatis membuka port client NavCoin di router. Hanya berjalan apabila router anda mendukung UPnP dan di-enable.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Otomatis membuka port client HTS di router. Hanya berjalan apabila router anda mendukung UPnP dan di-enable.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Petakan port dengan &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
-        <translation>Hubungkan ke jaringan NavCoin melalui SOCKS5 proxy.</translation>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
+        <translation>Hubungkan ke jaringan HTS melalui SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -796,8 +796,8 @@
         <translation>Nilai</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Masukkan alamat NavCoin (contoh %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Masukkan alamat HTS (contoh %1)</translation>
     </message>
     <message>
         <source>%1 h</source>
@@ -1252,8 +1252,8 @@
         <translation>Salin tanda tangan terpilih ke sistem klipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Tandai pesan untuk menyetujui kamu pemiliki alamat NavCoin ini</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Tandai pesan untuk menyetujui kamu pemiliki alamat HTS ini</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1366,7 +1366,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Pilihan:</translation>
@@ -1396,8 +1396,8 @@
         <translation>Terima hubungan dari luar (standar: 1 kalau -proxy atau -connect tidak dipilih)</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>

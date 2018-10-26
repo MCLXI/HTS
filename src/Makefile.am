@@ -14,29 +14,29 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-NAVCOIN_CONFIG_INCLUDES=-I$(builddir)/config
-NAVCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+HTS_CONFIG_INCLUDES=-I$(builddir)/config
+HTS_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-NAVCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
-NAVCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
+HTS_INCLUDES += -I$(srcdir)/secp256k1/include
+HTS_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBNAVCOIN_SERVER=libnavcoin_server.a
-LIBNAVCOIN_COMMON=libnavcoin_common.a
-LIBNAVCOIN_CONSENSUS=libnavcoin_consensus.a
-LIBNAVCOIN_CLI=libnavcoin_cli.a
-LIBNAVCOIN_UTIL=libnavcoin_util.a
-LIBNAVCOIN_CRYPTO=crypto/libnavcoin_crypto.a
-LIBNAVCOINQT=qt/libnavcoinqt.a
+LIBHTS_SERVER=libHTS_server.a
+LIBHTS_COMMON=libHTS_common.a
+LIBHTS_CONSENSUS=libHTS_consensus.a
+LIBHTS_CLI=libHTS_cli.a
+LIBHTS_UTIL=libHTS_util.a
+LIBHTS_CRYPTO=crypto/libHTS_crypto.a
+LIBHTSQT=qt/libHTSqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBNAVCOIN_ZMQ=libnavcoin_zmq.a
+LIBHTS_ZMQ=libHTS_zmq.a
 endif
-if BUILD_NAVCOIN_LIBS
-LIBNAVCOINCONSENSUS=libnavcoinconsensus.la
+if BUILD_HTS_LIBS
+LIBHTSCONSENSUS=libHTSconsensus.la
 endif
 if ENABLE_WALLET
-LIBNAVCOIN_WALLET=libnavcoin_wallet.a
+LIBHTS_WALLET=libHTS_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -45,32 +45,32 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBNAVCOIN_CRYPTO) \
-  $(LIBNAVCOIN_UTIL) \
-  $(LIBNAVCOIN_COMMON) \
-  $(LIBNAVCOIN_CONSENSUS) \
-  $(LIBNAVCOIN_SERVER) \
-  $(LIBNAVCOIN_CLI) \
-  $(LIBNAVCOIN_WALLET) \
-  $(LIBNAVCOIN_ZMQ)
+  $(LIBHTS_CRYPTO) \
+  $(LIBHTS_UTIL) \
+  $(LIBHTS_COMMON) \
+  $(LIBHTS_CONSENSUS) \
+  $(LIBHTS_SERVER) \
+  $(LIBHTS_CLI) \
+  $(LIBHTS_WALLET) \
+  $(LIBHTS_ZMQ)
 
-lib_LTLIBRARIES = $(LIBNAVCOINCONSENSUS)
+lib_LTLIBRARIES = $(LIBHTSCONSENSUS)
 
 bin_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_NAVCOIND
-  bin_PROGRAMS += navcoind
+if BUILD_HTSD
+  bin_PROGRAMS += HTSd
 endif
 
-if BUILD_NAVCOIN_UTILS
-  bin_PROGRAMS += navcoin-cli navcoin-tx
+if BUILD_HTS_UTILS
+  bin_PROGRAMS += HTS-cli HTS-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# navcoin core #
-NAVCOIN_CORE_H = \
+# HTS core #
+HTS_CORE_H = \
   addressindex.h \
   spentindex.h \
   timestampindex.h \
@@ -166,12 +166,12 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh $(abs_top_builddir)/src/obj/build.h \
 	  $(abs_top_srcdir)
-libnavcoin_util_a-clientversion.$(OBJEXT): obj/build.h
+libHTS_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between navcoind and navcoin-qt
-libnavcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libnavcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_server_a_SOURCES = \
+# server: shared between HTSd and HTS-qt
+libHTS_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libHTS_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_server_a_SOURCES = \
   addrman.cpp \
   bloom.cpp \
   blockencodings.cpp \
@@ -211,23 +211,23 @@ libnavcoin_server_a_SOURCES = \
   utils/dns_utils.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(NAVCOIN_CORE_H)
+  $(HTS_CORE_H)
 
 if ENABLE_ZMQ
-libnavcoin_zmq_a_CPPFLAGS = $(NAVCOIN_INCLUDES) $(ZMQ_CFLAGS)
-libnavcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_zmq_a_SOURCES = \
+libHTS_zmq_a_CPPFLAGS = $(HTS_INCLUDES) $(ZMQ_CFLAGS)
+libHTS_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp
 endif
 
 
-# wallet: shared between navcoind and navcoin-qt, but only linked
+# wallet: shared between HTSd and HTS-qt, but only linked
 # when wallet enabled
-libnavcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-libnavcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_wallet_a_SOURCES = \
+libHTS_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+libHTS_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_wallet_a_SOURCES = \
   consensus/cfund.cpp \
   wallet/crypter.cpp \
   wallet/db.cpp \
@@ -237,12 +237,12 @@ libnavcoin_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
   policy/rbf.cpp \
-  $(NAVCOIN_CORE_H)
+  $(HTS_CORE_H)
 
 # crypto primitives library
-crypto_libnavcoin_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_CONFIG_INCLUDES)
-crypto_libnavcoin_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libnavcoin_crypto_a_SOURCES = \
+crypto_libHTS_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_CONFIG_INCLUDES)
+crypto_libHTS_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libHTS_crypto_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/common.h \
@@ -260,9 +260,9 @@ crypto_libnavcoin_crypto_a_SOURCES = \
   crypto/sha512.h
 
 # consensus: shared between all executables that validate any consensus rules.
-libnavcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-libnavcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_consensus_a_SOURCES = \
+libHTS_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+libHTS_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -309,7 +309,7 @@ libnavcoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/navcoinconsensus.cpp \
+  script/HTSconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -324,10 +324,10 @@ libnavcoin_consensus_a_SOURCES = \
   utilstrencodings.h \
   version.h
 
-# common: shared between navcoind, and navcoin-qt and non-server tools
-libnavcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-libnavcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_common_a_SOURCES = \
+# common: shared between HTSd, and HTS-qt and non-server tools
+libHTS_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+libHTS_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_common_a_SOURCES = \
   amount.cpp \
   base58.cpp \
   chainparams.cpp \
@@ -342,14 +342,14 @@ libnavcoin_common_a_SOURCES = \
   scheduler.cpp \
   script/sign.cpp \
   script/standard.cpp \
-  $(NAVCOIN_CORE_H)
+  $(HTS_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libnavcoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-libnavcoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_util_a_SOURCES = \
+libHTS_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+libHTS_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_util_a_SOURCES = \
   support/pagelocker.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -364,100 +364,100 @@ libnavcoin_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(NAVCOIN_CORE_H)
+  $(HTS_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libnavcoin_util_a_SOURCES += compat/glibc_compat.cpp
+libHTS_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between navcoin-cli and navcoin-qt
-libnavcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-libnavcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libnavcoin_cli_a_SOURCES = \
+# cli: shared between HTS-cli and HTS-qt
+libHTS_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+libHTS_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTS_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(NAVCOIN_CORE_H)
+  $(HTS_CORE_H)
 
-nodist_libnavcoin_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libHTS_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# navcoind binary #
-navcoind_SOURCES = navcoind.cpp
-navcoind_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-navcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-navcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# HTSd binary #
+HTSd_SOURCES = HTSd.cpp
+HTSd_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+HTSd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+HTSd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-navcoind_SOURCES += navcoind-res.rc
+HTSd_SOURCES += HTSd-res.rc
 endif
 
-navcoind_LDADD = \
-  $(LIBNAVCOIN_SERVER) \
-  $(LIBNAVCOIN_COMMON) \
+HTSd_LDADD = \
+  $(LIBHTS_SERVER) \
+  $(LIBHTS_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBNAVCOIN_UTIL) \
-  $(LIBNAVCOIN_WALLET) \
-  $(LIBNAVCOIN_ZMQ) \
-  $(LIBNAVCOIN_CONSENSUS) \
-  $(LIBNAVCOIN_CRYPTO) \
+  $(LIBHTS_UTIL) \
+  $(LIBHTS_WALLET) \
+  $(LIBHTS_ZMQ) \
+  $(LIBHTS_CONSENSUS) \
+  $(LIBHTS_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-navcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(UNBOUND_LIBS) $(CURL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+HTSd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(UNBOUND_LIBS) $(CURL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# navcoin-cli binary #
-navcoin_cli_SOURCES = navcoin-cli.cpp
-navcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES) $(EVENT_CFLAGS)
-navcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-navcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# HTS-cli binary #
+HTS_cli_SOURCES = HTS-cli.cpp
+HTS_cli_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES) $(EVENT_CFLAGS)
+HTS_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+HTS_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-navcoin_cli_SOURCES += navcoin-cli-res.rc
+HTS_cli_SOURCES += HTS-cli-res.rc
 endif
 
-navcoin_cli_LDADD = \
-  $(LIBNAVCOIN_CLI) \
+HTS_cli_LDADD = \
+  $(LIBHTS_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBNAVCOIN_UTIL) \
-  $(LIBNAVCOIN_CRYPTO)
+  $(LIBHTS_UTIL) \
+  $(LIBHTS_CRYPTO)
 
-navcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(UNBOUND_LIBS) $(CURL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+HTS_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(UNBOUND_LIBS) $(CURL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# navcoin-tx binary #
-navcoin_tx_SOURCES = navcoin-tx.cpp
-navcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(NAVCOIN_INCLUDES)
-navcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-navcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# HTS-tx binary #
+HTS_tx_SOURCES = HTS-tx.cpp
+HTS_tx_CPPFLAGS = $(AM_CPPFLAGS) $(HTS_INCLUDES)
+HTS_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+HTS_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-navcoin_tx_SOURCES += navcoin-tx-res.rc
+HTS_tx_SOURCES += HTS-tx-res.rc
 endif
 
-navcoin_tx_LDADD = \
+HTS_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBNAVCOIN_COMMON) \
-  $(LIBNAVCOIN_UTIL) \
-  $(LIBNAVCOIN_CONSENSUS) \
-  $(LIBNAVCOIN_CRYPTO) \
+  $(LIBHTS_COMMON) \
+  $(LIBHTS_UTIL) \
+  $(LIBHTS_CONSENSUS) \
+  $(LIBHTS_CRYPTO) \
   $(LIBSECP256K1)
 
-navcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+HTS_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# navcoinconsensus library #
-if BUILD_NAVCOIN_LIBS
-include_HEADERS = script/navcoinconsensus.h
-libnavcoinconsensus_la_SOURCES = $(crypto_libnavcoin_crypto_a_SOURCES) $(libnavcoin_consensus_a_SOURCES)
+# HTSconsensus library #
+if BUILD_HTS_LIBS
+include_HEADERS = script/HTSconsensus.h
+libHTSconsensus_la_SOURCES = $(crypto_libHTS_crypto_a_SOURCES) $(libHTS_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libnavcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libHTSconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libnavcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libnavcoinconsensus_la_LIBADD = $(LIBSECP256K1)
-libnavcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_NAVCOIN_INTERNAL
-libnavcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libHTSconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libHTSconsensus_la_LIBADD = $(LIBSECP256K1)
+libHTSconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_HTS_INTERNAL
+libHTSconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

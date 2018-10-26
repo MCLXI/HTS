@@ -6,8 +6,8 @@
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_NAVTECHINIT_H
-#define UI_NAVTECHINIT_H
+#ifndef UI_HTSTECHINIT_H
+#define UI_HTSTECHINIT_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -109,8 +109,8 @@ public:
     void retranslateUi(QDialog *NavTechInit)
     {
         NavTechInit->setWindowTitle(QApplication::translate("NavTechInit", "NavTech Setup", Q_NULLPTR));
-        label->setText(QApplication::translate("NavTechInit", "NavCoin uses an unique parallel cluster of nodes called NavTech to protect the privacy of your transactions.", Q_NULLPTR));
-        label_2->setText(QApplication::translate("NavTechInit", "You will find below the list of the NavCoin Foundation Servers. Feel free to modify this list to include your prefered servers:", Q_NULLPTR));
+        label->setText(QApplication::translate("NavTechInit", "HTS uses an unique parallel cluster of nodes called NavTech to protect the privacy of your transactions.", Q_NULLPTR));
+        label_2->setText(QApplication::translate("NavTechInit", "You will find below the list of the HTS Foundation Servers. Feel free to modify this list to include your prefered servers:", Q_NULLPTR));
         plainTextEdit->setPlainText(QApplication::translate("NavTechInit", "95.183.52.55:3000\n"
 "95.183.52.28:3000\n"
 "95.183.52.29:3000\n"
@@ -126,4 +126,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_NAVTECHINIT_H
+#endif // UI_HTSTECHINIT_H

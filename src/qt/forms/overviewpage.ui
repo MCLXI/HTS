@@ -664,7 +664,7 @@
               <string notr="true">color: #727272</string>
              </property>
              <property name="text">
-              <string>87 312.312 123 NAV</string>
+              <string>87 312.312 123 HTS</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -726,7 +726,7 @@
               <string notr="true">color: #727272</string>
              </property>
              <property name="text">
-              <string>1 312.312 NAV</string>
+              <string>1 312.312 HTS</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -748,7 +748,7 @@
               <string notr="true">color: #727272</string>
              </property>
              <property name="text">
-              <string>132 431.41 NAV</string>
+              <string>132 431.41 HTS</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -850,7 +850,7 @@
               <string notr="true">color: #727272</string>
              </property>
              <property name="text">
-              <string>132 431.41 NAV</string>
+              <string>132 431.41 HTS</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -912,7 +912,7 @@
               <string notr="true">color: #727272</string>
              </property>
              <property name="text">
-              <string>132 431.41 NAV</string>
+              <string>132 431.41 HTS</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1175,7 +1175,7 @@
         <string notr="true">color: #452f6a</string>
        </property>
        <property name="text">
-        <string>Connecting to NavCoin network...</string>
+        <string>Connecting to HTS network...</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

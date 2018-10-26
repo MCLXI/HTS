@@ -1,11 +1,11 @@
 
-# NavCoin v4.2.0 Release Notes
+# HTS v4.2.0 Release Notes
 
 ## Introduces two new Soft Forks:
 
 ### Community Fund - Accumulation of coins, signaled by version bit 7:
   - Reduction of the staking rewards to 4%.
-  - Inclusion of an additional output in the Coinstake transaction contributing 0.25NAV to the Community Fund
+  - Inclusion of an additional output in the Coinstake transaction contributing 0.25HTS to the Community Fund
   - Consensus validation of the previous rule.
   - Uses a separate DB on disk to store data about the Community Fund, increasing performance.
 
@@ -31,7 +31,7 @@
 - Fixes wrong pixel density on HiDPI screens.
 - Menu option to export private key of an address and master private key.
 - Accepts URI to sign messages.
-    - URIs of the format navcoin:http://domain/something/?a=navcoin_address&m=some_message will make the wallet to sign “some_message” and return the produced signature as a POST request to the URL specified in the URI.
+    - URIs of the format HTS:http://domain/something/?a=HTS_address&m=some_message will make the wallet to sign “some_message” and return the produced signature as a POST request to the URL specified in the URI.
 - Shows and categorizes correctly contributions to the Community Fund and payments received from it.
 - Does not show Orphan Stakes on the Transaction List.
 - Removes Community Fund voting popup.
@@ -44,6 +44,6 @@
 - Bundles some dependency libraries with the binaries.
 - Updates the seed nodes.
 - Fixes some of the test units.
-- navcoin-tx tool has been updated to use navcoin’s own transaction structure
+- HTS-tx tool has been updated to use HTS’s own transaction structure
 
 

@@ -80,7 +80,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>&amp;Options...</source>
         <translation>Pilihan</translation>
@@ -188,7 +188,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     <name>getAddressToReceive</name>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     </context>
 <context>
     <name>navtechitem</name>

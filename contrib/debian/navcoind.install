@@ -1,2 +1,2 @@
-usr/local/bin/navcoind usr/bin
-usr/local/bin/navcoin-cli usr/bin
+usr/local/bin/HTSd usr/bin
+usr/local/bin/HTS-cli usr/bin

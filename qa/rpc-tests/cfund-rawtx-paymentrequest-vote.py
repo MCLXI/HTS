@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018 The Navcoin Core developers
+# Copyright (c) 2018 The HTS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import NavCoinTestFramework
+from test_framework.test_framework import HTSTestFramework
 from test_framework.util import *
 
 
-class CommunityFundVotePaymentrequestRawTX(NavCoinTestFramework):
+class CommunityFundVotePaymentrequestRawTX(HTSTestFramework):
     """Tests the state transition of payment requests of the Community fund."""
 
     def __init__(self):

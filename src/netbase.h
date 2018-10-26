@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_NETBASE_H
-#define NAVCOIN_NETBASE_H
+#ifndef HTS_NETBASE_H
+#define HTS_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/navcoin-config.h"
+#include "config/HTS-config.h"
 #endif
 
 #include "compat.h"
@@ -223,4 +223,4 @@ bool SetSocketNonBlocking(SOCKET& hSocket, bool fNonBlocking);
  */
 struct timeval MillisToTimeval(int64_t nTimeout);
 
-#endif // NAVCOIN_NETBASE_H
+#endif // HTS_NETBASE_H

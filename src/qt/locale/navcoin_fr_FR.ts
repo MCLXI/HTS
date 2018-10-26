@@ -239,7 +239,7 @@
     <name>IntroPage</name>
     </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signer &amp;message...</translation>
@@ -329,8 +329,8 @@
         <translation>Réindexer les blocs sur le disque...</translation>
     </message>
     <message>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Envoyer des pièces à une adresse NavCoin</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Envoyer des pièces à une adresse HTS</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -353,8 +353,8 @@
         <translation>&amp;Vérification du message</translation>
     </message>
     <message>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -381,8 +381,8 @@
         <translation>Crypter les clé privées qui appartiennent votre portefeuille</translation>
     </message>
     <message>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Signer vos messages avec vos adresses NavCoin pour prouver que vous les détenez</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Signer vos messages avec vos adresses HTS pour prouver que vous les détenez</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -397,24 +397,24 @@
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
-        <translation>Demander des paiements (générer QR codes et navcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
+        <translation>Demander des paiements (générer QR codes et HTS: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Montrer la liste des adresses d'envois utilisées et les étiquettes</translation>
     </message>
     <message>
-        <source>Open a navcoin: URI or payment request</source>
-        <translation>Ouvrir un navcoin: URI ou demande de paiement</translation>
+        <source>Open a HTS: URI or payment request</source>
+        <translation>Ouvrir un HTS: URI ou demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Options de ligne de commande</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to NavCoin network</source>
-        <translation><numerusform>%n connexion active au réseau NavCoin</numerusform><numerusform>%n connexions actives au réseau NavCoin</numerusform></translation>
+        <source>%n active connection(s) to HTS network</source>
+        <translation><numerusform>%n connexion active au réseau HTS</numerusform><numerusform>%n connexions actives au réseau HTS</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -604,8 +604,8 @@
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ouvrir le port du client NavCoin automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l'UPnP et si la fonctionnalité est activée.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ouvrir le port du client HTS automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l'UPnP et si la fonctionnalité est activée.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -740,8 +740,8 @@
         <translation>Montant</translation>
     </message>
     <message>
-        <source>Enter a NavCoin address (e.g. %1)</source>
-        <translation>Entrer une adresse NavCoin (e.g. %1)</translation>
+        <source>Enter a HTS address (e.g. %1)</source>
+        <translation>Entrer une adresse HTS (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1336,7 +1336,7 @@
     </message>
     </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
         <source>Options:</source>
         <translation>Options :</translation>
@@ -1362,8 +1362,8 @@
         <translation>Impossible de démarrer le serveur HTTP. Voir le journal de débogage pour plus de détails.</translation>
     </message>
     <message>
-        <source>NavCoin Core</source>
-        <translation>NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation>HTS Core</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

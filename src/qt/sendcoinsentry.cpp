@@ -38,9 +38,9 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
 #endif
 
-    // normal navcoin address field
+    // normal HTS address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
-    // just a label for displaying navcoin address(es)
+    // just a label for displaying HTS address(es)
     ui->payTo_is->setFont(GUIUtil::fixedPitchFont());
 
     // Connect signals
@@ -123,7 +123,7 @@ void SendCoinsEntry::clear()
     ui->memoTextLabel_s->clear();
     ui->payAmount_s->clear();
 
-    // update the display unit, to not use the default ("NAV")
+    // update the display unit, to not use the default ("HTS")
     updateDisplayUnit();
 }
 

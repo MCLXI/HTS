@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2018 The NavCoin developers
+// Copyright (c) 2018 The HTS developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -267,7 +267,7 @@ CBlockTemplate* BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn, bo
                         pindexPrev->nHeight - pblockindex->nHeight > Params().GetConsensus().nCommunityFundMinAge) {
                     CFund::CProposal proposal;
                     if(CFund::FindProposal(prequest.proposalhash, proposal)) {
-                        CNavCoinAddress addr(proposal.Address);
+                        CHTSAddress addr(proposal.Address);
                         if (!addr.IsValid())
                             continue;
                         coinbaseTx.vout.resize(coinbaseTx.vout.size()+1);
@@ -735,11 +735,11 @@ void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned
 
 extern unsigned int nMinerSleep;
 
-void NavCoinStaker(const CChainParams& chainparams)
+void HTSStaker(const CChainParams& chainparams)
 {
-    LogPrintf("NavCoinStaker started\n");
+    LogPrintf("HTSStaker started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("navcoin-staker");
+    RenameThread("HTS-staker");
 
     boost::shared_ptr<CReserveScript> coinbaseScript;
     GetMainSignals().ScriptForMining(coinbaseScript);
@@ -810,12 +810,12 @@ void NavCoinStaker(const CChainParams& chainparams)
             std::unique_ptr<CBlockTemplate> pblocktemplate(BlockAssembler(Params()).CreateNewBlock(coinbaseScript->reserveScript, true, &nFees));
             if (!pblocktemplate.get())
             {
-                LogPrintf("Error in NavCoinStaker: Keypool ran out, please call keypoolrefill before restarting the staking thread\n");
+                LogPrintf("Error in HTSStaker: Keypool ran out, please call keypoolrefill before restarting the staking thread\n");
                 return;
             }
             CBlock *pblock = &pblocktemplate->block;
 
-            //LogPrint("coinstake","Running NavCoinStaker with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+            //LogPrint("coinstake","Running HTSStaker with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             //     ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
             //Trying to sign a block
@@ -834,12 +834,12 @@ void NavCoinStaker(const CChainParams& chainparams)
     }
     catch (const boost::thread_interrupted&)
     {
-        LogPrintf("NavCoinStaker terminated\n");
+        LogPrintf("HTSStaker terminated\n");
         throw;
     }
     catch (const std::runtime_error &e)
     {
-        LogPrintf("NavCoinStaker runtime error: %s\n", e.what());
+        LogPrintf("HTSStaker runtime error: %s\n", e.what());
         return;
     }
 }
@@ -997,7 +997,7 @@ bool CheckStake(CBlock* pblock, CWallet& wallet, const CChainParams& chainparams
         CValidationState state;
         if (!ProcessNewBlock(state, chainparams, NULL, pblock, true, NULL))
         {
-            return error("NavCoinStaker: ProcessNewBlock, block not accepted");
+            return error("HTSStaker: ProcessNewBlock, block not accepted");
         }
         else
         {

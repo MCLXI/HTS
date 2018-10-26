@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_QT_NAVCOINAMOUNTFIELD_H
-#define NAVCOIN_QT_NAVCOINAMOUNTFIELD_H
+#ifndef HTS_QT_HTSAMOUNTFIELD_H
+#define HTS_QT_HTSAMOUNTFIELD_H
 
 #include "amount.h"
 
@@ -16,18 +16,18 @@ QT_BEGIN_NAMESPACE
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering navcoin amounts.
+/** Widget for entering HTS amounts.
   */
-class NavCoinAmountField: public QWidget
+class HTSAmountField: public QWidget
 {
     Q_OBJECT
 
     // ugly hack: for some unknown reason CAmount (instead of qint64) does not work here as expected
-    // discussion: https://github.com/navcoin/navcoin/pull/5117
+    // discussion: https://github.com/HTS/HTS/pull/5117
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
 public:
-    explicit NavCoinAmountField(QWidget *parent = 0);
+    explicit HTSAmountField(QWidget *parent = 0);
 
     CAmount value(bool *value=0) const;
     void setValue(const CAmount& value);
@@ -74,4 +74,4 @@ private Q_SLOTS:
 
 };
 
-#endif // NAVCOIN_QT_NAVCOINAMOUNTFIELD_H
+#endif // HTS_QT_HTSAMOUNTFIELD_H

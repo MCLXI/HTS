@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package navcoind/navcoin-qt
-for Debian-based Linux systems. If you compile navcoind/navcoin-qt yourself, there are some useful files here.
+This directory contains files used to package HTSd/HTS-qt
+for Debian-based Linux systems. If you compile HTSd/HTS-qt yourself, there are some useful files here.
 
-## navcoin: URI support ##
+## HTS: URI support ##
 
 
-navcoin-qt.desktop  (Gnome / Open Desktop)
+HTS-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install navcoin-qt.desktop
+	sudo desktop-file-install HTS-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your navcoin-qt binary to `/usr/bin`
-and the `../../share/pixmaps/navcoin128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your HTS-qt binary to `/usr/bin`
+and the `../../share/pixmaps/HTS128.png` to `/usr/share/pixmaps`
 
-navcoin-qt.protocol (KDE)
+HTS-qt.protocol (KDE)
 

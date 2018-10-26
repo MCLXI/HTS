@@ -9,17 +9,17 @@ define(_CLIENT_BUILD_IS_TEST_RELEASE, false)
 define(_CLIENT_BUILD_IS_RELEASE_CANDIDATE, false)
 define(_COPYRIGHT_YEAR, 2018)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[NavCoin Core]])
-AC_INIT([NavCoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/navcoin/navcoin-core/issues],[navcoin],[https://navcoin.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[HTS Core]])
+AC_INIT([HTS Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/HTS/HTS-core/issues],[HTS],[https://HTS.org/])
 AC_CONFIG_SRCDIR([src/main.cpp])
-AC_CONFIG_HEADERS([src/config/navcoin-config.h])
+AC_CONFIG_HEADERS([src/config/HTS-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-NAVCOIN_DAEMON_NAME=navcoind
-NAVCOIN_GUI_NAME=navcoin-qt
-NAVCOIN_CLI_NAME=navcoin-cli
-NAVCOIN_TX_NAME=navcoin-tx
+HTS_DAEMON_NAME=HTSd
+HTS_GUI_NAME=HTS-qt
+HTS_CLI_NAME=HTS-cli
+HTS_TX_NAME=HTS-tx
 
 AC_CANONICAL_HOST
 
@@ -37,9 +37,9 @@ AC_MSG_NOTICE([------------------------------------])
 sleep 1
 
 
-AH_TOP([#ifndef NAVCOIN_CONFIG_H])
-AH_TOP([#define NAVCOIN_CONFIG_H])
-AH_BOTTOM([#endif //NAVCOIN_CONFIG_H])
+AH_TOP([#ifndef HTS_CONFIG_H])
+AH_TOP([#define HTS_CONFIG_H])
+AH_BOTTOM([#endif //HTS_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -233,21 +233,21 @@ CPPFLAGS="$CPPFLAGS -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build navcoin-cli navcoin-tx (default=yes)])],
-  [build_navcoin_utils=$withval],
-  [build_navcoin_utils=yes])
+  [build HTS-cli HTS-tx (default=yes)])],
+  [build_HTS_utils=$withval],
+  [build_HTS_utils=yes])
 
 AC_ARG_WITH([libs],
   [AS_HELP_STRING([--with-libs],
   [build libraries (default=yes)])],
-  [build_navcoin_libs=$withval],
-  [build_navcoin_libs=yes])
+  [build_HTS_libs=$withval],
+  [build_HTS_libs=yes])
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build navcoind daemon (default=yes)])],
-  [build_navcoind=$withval],
-  [build_navcoind=yes])
+  [build HTSd daemon (default=yes)])],
+  [build_HTSd=$withval],
+  [build_HTSd=yes])
 
 use_pkgconfig=yes
 case $host in
@@ -451,7 +451,7 @@ AC_C_BIGENDIAN
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-# The following macro will add the necessary defines to navcoin-config.h, but
+# The following macro will add the necessary defines to HTS-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -607,7 +607,7 @@ AC_SUBST(LIBMEMENV)
 
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
-    NAVCOIN_FIND_BDB48
+    HTS_FIND_BDB48
 fi
 
 dnl Check for libminiupnpc (optional)
@@ -619,12 +619,12 @@ if test x$use_upnp != xno; then
   )
 fi
 
-NAVCOIN_QT_INIT
+HTS_QT_INIT
 
-dnl sets $navcoin_enable_qt, $navcoin_enable_qt_test, $navcoin_enable_qt_dbus
-NAVCOIN_QT_CONFIGURE([$use_pkgconfig], [qt5])
+dnl sets $HTS_enable_qt, $HTS_enable_qt_test, $HTS_enable_qt_dbus
+HTS_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
-if test x$build_navcoin_utils$build_navcoind$navcoin_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_HTS_utils$build_HTSd$HTS_enable_qt$use_tests$use_bench = xnonononono; then
     use_boost=no
 else
     use_boost=yes
@@ -801,11 +801,11 @@ if test x$use_pkgconfig = xyes; then
       PKG_CHECK_MODULES([UNBOUND], [libunbound], [have_unbound=yes], [AC_MSG_ERROR(libunbound not found)])
       PKG_CHECK_MODULES([CURL], [libcurl],, [AC_MSG_ERROR(libcurl  not found.)])
       PKG_CHECK_MODULES([CRYPTO], [libcrypto],,[AC_MSG_ERROR(libcrypto  not found.)])
-      NAVCOIN_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [NAVCOIN_QT_FAIL(libprotobuf not found)])])
+      HTS_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [HTS_QT_FAIL(libprotobuf not found)])])
       if test x$use_qr != xno; then
-        NAVCOIN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+        HTS_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
-      if test x$build_navcoin_utils$build_navcoind$navcoin_enable_qt$use_tests != xnononono; then
+      if test x$build_HTS_utils$build_HTSd$HTS_enable_qt$use_tests != xnononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
         if test x$TARGET_OS != xwindows; then
           PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads],, [AC_MSG_ERROR(libevent_pthreads not found.)])
@@ -833,7 +833,7 @@ else
 	have_unbound=yes], [AC_MSG_ERROR(libunbound missing)])
   AC_CHECK_LIB([curl],        [main],CURL_LIBS=-lcurl, AC_MSG_ERROR(libcurl missing))
 
-  if test x$build_navcoin_utils$build_navcoind$navcoin_enable_qt$use_tests != xnononono; then
+  if test x$build_HTS_utils$build_HTSd$HTS_enable_qt$use_tests != xnononono; then
     AC_CHECK_HEADER([event2/event.h],, AC_MSG_ERROR(libevent headers missing),)
     AC_CHECK_LIB([event],[main],EVENT_LIBS=-levent,AC_MSG_ERROR(libevent missing))
     if test x$TARGET_OS != xwindows; then
@@ -864,10 +864,10 @@ else
     esac
   fi
 
-  NAVCOIN_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], NAVCOIN_QT_FAIL(libprotobuf not found)))
+  HTS_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], HTS_QT_FAIL(libprotobuf not found)))
   if test x$use_qr != xno; then
-    NAVCOIN_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
-    NAVCOIN_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
+    HTS_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
+    HTS_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
   fi
 fi
 
@@ -925,23 +925,23 @@ AC_CHECK_HEADER([openssl/ec.h],, AC_MSG_ERROR(OpenSSL ec header missing),)
 CXXFLAGS="$CXXFLAGS_TEMP"
 LIBS="$LIBS_TEMP"
 
-NAVCOIN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
+HTS_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
-AC_MSG_CHECKING([whether to build navcoind])
-AM_CONDITIONAL([BUILD_NAVCOIND], [test x$build_navcoind = xyes])
-AC_MSG_RESULT($build_navcoind)
+AC_MSG_CHECKING([whether to build HTSd])
+AM_CONDITIONAL([BUILD_HTSD], [test x$build_HTSd = xyes])
+AC_MSG_RESULT($build_HTSd)
 
-AC_MSG_CHECKING([whether to build utils (navcoin-cli navcoin-tx)])
-AM_CONDITIONAL([BUILD_NAVCOIN_UTILS], [test x$build_navcoin_utils = xyes])
-AC_MSG_RESULT($build_navcoin_utils)
+AC_MSG_CHECKING([whether to build utils (HTS-cli HTS-tx)])
+AM_CONDITIONAL([BUILD_HTS_UTILS], [test x$build_HTS_utils = xyes])
+AC_MSG_RESULT($build_HTS_utils)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_NAVCOIN_LIBS], [test x$build_navcoin_libs = xyes])
-if test x$build_navcoin_libs = xyes; then
+AM_CONDITIONAL([BUILD_HTS_LIBS], [test x$build_HTS_libs = xyes])
+if test x$build_HTS_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
-  AC_CONFIG_FILES([libnavcoinconsensus.pc:libnavcoinconsensus.pc.in])
+  AC_CONFIG_FILES([libHTSconsensus.pc:libHTSconsensus.pc.in])
 fi
-AC_MSG_RESULT($build_navcoin_libs)
+AC_MSG_RESULT($build_HTS_libs)
 
 AC_LANG_POP
 
@@ -1003,13 +1003,13 @@ fi
 
 dnl these are only used when qt is enabled
 BUILD_TEST_QT=""
-if test x$navcoin_enable_qt != xno; then
+if test x$HTS_enable_qt != xno; then
   dnl enable dbus support
   AC_MSG_CHECKING([whether to build GUI with support for D-Bus])
-  if test x$navcoin_enable_qt_dbus != xno; then
+  if test x$HTS_enable_qt_dbus != xno; then
     AC_DEFINE([USE_DBUS],[1],[Define if dbus support should be compiled in])
   fi
-  AC_MSG_RESULT($navcoin_enable_qt_dbus)
+  AC_MSG_RESULT($HTS_enable_qt_dbus)
 
   dnl enable qr support
   AC_MSG_CHECKING([whether to build GUI with support for QR codes])
@@ -1032,8 +1032,8 @@ if test x$navcoin_enable_qt != xno; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
-  AC_MSG_CHECKING([whether to build test_navcoin-qt])
-  if test x$use_gui_tests$navcoin_enable_qt_test = xyesyes; then
+  AC_MSG_CHECKING([whether to build test_HTS-qt])
+  if test x$use_gui_tests$HTS_enable_qt_test = xyesyes; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"
   else
@@ -1043,7 +1043,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "x$use_zmq" = "xyes"])
 
-AC_MSG_CHECKING([whether to build test_navcoin])
+AC_MSG_CHECKING([whether to build test_HTS])
 if test x$use_tests = xyes; then
   AC_MSG_RESULT([yes])
   BUILD_TEST="yes"
@@ -1059,7 +1059,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_navcoin_utils$build_navcoin_libs$build_navcoind$navcoin_enable_qt$use_tests = xnonononono; then
+if test x$build_HTS_utils$build_HTS_libs$build_HTSd$HTS_enable_qt$use_tests = xnonononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui or --enable-tests])
 fi
 
@@ -1068,7 +1068,7 @@ AM_CONDITIONAL([BUILD_DARWIN], [test x$BUILD_OS = xdarwin])
 AM_CONDITIONAL([TARGET_WINDOWS], [test x$TARGET_OS = xwindows])
 AM_CONDITIONAL([ENABLE_WALLET],[test x$enable_wallet = xyes])
 AM_CONDITIONAL([ENABLE_TESTS],[test x$BUILD_TEST = xyes])
-AM_CONDITIONAL([ENABLE_QT],[test x$navcoin_enable_qt = xyes])
+AM_CONDITIONAL([ENABLE_QT],[test x$HTS_enable_qt = xyes])
 AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$BUILD_TEST_QT = xyes])
 AM_CONDITIONAL([ENABLE_BENCH],[test x$use_bench = xyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
@@ -1102,10 +1102,10 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(NAVCOIN_DAEMON_NAME)
-AC_SUBST(NAVCOIN_GUI_NAME)
-AC_SUBST(NAVCOIN_CLI_NAME)
-AC_SUBST(NAVCOIN_TX_NAME)
+AC_SUBST(HTS_DAEMON_NAME)
+AC_SUBST(HTS_GUI_NAME)
+AC_SUBST(HTS_CLI_NAME)
+AC_SUBST(HTS_TX_NAME)
 
 AC_SUBST(RELDFLAGS)
 AC_SUBST(HARDENED_CXXFLAGS)
@@ -1131,7 +1131,7 @@ AC_SUBST(ZMQ_LIBS)
 AC_SUBST(PROTOBUF_LIBS)
 AC_SUBST(QR_LIBS)
 AC_CONFIG_FILES([Makefile src/Makefile share/setup.nsi share/qt/Info.plist src/test/buildenv.py])
-AC_CONFIG_FILES([qa/pull-tester/run-navcoind-for-test.sh],[chmod +x qa/pull-tester/run-navcoind-for-test.sh])
+AC_CONFIG_FILES([qa/pull-tester/run-HTSd-for-test.sh],[chmod +x qa/pull-tester/run-HTSd-for-test.sh])
 AC_CONFIG_FILES([qa/pull-tester/tests_config.py],[chmod +x qa/pull-tester/tests_config.py])
 AC_CONFIG_FILES([contrib/devtools/split-debug.sh],[chmod +x contrib/devtools/split-debug.sh])
 AC_CONFIG_LINKS([qa/pull-tester/rpc-tests.py:qa/pull-tester/rpc-tests.py])

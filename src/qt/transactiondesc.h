@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_QT_TRANSACTIONDESC_H
-#define NAVCOIN_QT_TRANSACTIONDESC_H
+#ifndef HTS_QT_TRANSACTIONDESC_H
+#define HTS_QT_TRANSACTIONDESC_H
 
 #include <QObject>
 #include <QString>
@@ -28,4 +28,4 @@ private:
     static QString FormatTxStatus(const CWalletTx& wtx);
 };
 
-#endif // NAVCOIN_QT_TRANSACTIONDESC_H
+#endif // HTS_QT_TRANSACTIONDESC_H

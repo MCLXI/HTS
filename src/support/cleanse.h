@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NAVCOIN_SUPPORT_CLEANSE_H
-#define NAVCOIN_SUPPORT_CLEANSE_H
+#ifndef HTS_SUPPORT_CLEANSE_H
+#define HTS_SUPPORT_CLEANSE_H
 
 #include <stdlib.h>
 
 void memory_cleanse(void *ptr, size_t len);
 
-#endif // NAVCOIN_SUPPORT_CLEANSE_H
+#endif // HTS_SUPPORT_CLEANSE_H

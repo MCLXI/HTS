@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>org.navcoin.navcoind</string>
+	<string>org.HTS.HTSd</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/navcoind</string>
+		<string>/usr/local/bin/HTSd</string>
 		<string>-daemon</string>
 	</array>
 	<key>RunAtLoad</key>

@@ -86,12 +86,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your NavCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your HTS addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your NavCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your HTS addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -238,7 +238,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR NAVCOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HTSS&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -254,7 +254,7 @@
     </message>
     <message>
         <location line="-58"/>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your navcoins from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HTSs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -653,7 +653,7 @@
     </message>
     <message>
         <location line="+71"/>
-        <source>The entered address &quot;%1&quot; is not a valid NavCoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid HTS address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -676,7 +676,7 @@
     <name>FreespaceChecker</name>
     <message>
         <location filename="../intro.cpp" line="+102"/>
-        <source>NavCoin will try to import an old wallet.dat file.</source>
+        <source>HTS will try to import an old wallet.dat file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -778,7 +778,7 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>%1 will download and store a copy of the NavCoin block chain. At least %2GB of data will be stored in your computer, and it will grow over time. A wallet is needed to store your coins.</source>
+        <source>%1 will download and store a copy of the HTS block chain. At least %2GB of data will be stored in your computer, and it will grow over time. A wallet is needed to store your coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -803,9 +803,9 @@
     </message>
 </context>
 <context>
-    <name>NavCoinGUI</name>
+    <name>HTSGUI</name>
     <message>
-        <location filename="../navcoingui.cpp" line="+436"/>
+        <location filename="../HTSgui.cpp" line="+436"/>
         <source>Sign &amp;message...</source>
         <translation>Sign &amp;message...</translation>
     </message>
@@ -1075,8 +1075,8 @@
     </message>
     <message>
         <location line="-1451"/>
-        <source>Send coins to a NavCoin address</source>
-        <translation>Send coins to a NavCoin address</translation>
+        <source>Send coins to a HTS address</source>
+        <translation>Send coins to a HTS address</translation>
     </message>
     <message>
         <location line="+78"/>
@@ -1105,8 +1105,8 @@
     </message>
     <message>
         <location line="+767"/>
-        <source>NavCoin</source>
-        <translation>NavCoin</translation>
+        <source>HTS</source>
+        <translation>HTS</translation>
     </message>
     <message>
         <location line="-1039"/>
@@ -1140,13 +1140,13 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>Sign messages with your NavCoin addresses to prove you own them</source>
-        <translation>Sign messages with your NavCoin addresses to prove you own them</translation>
+        <source>Sign messages with your HTS addresses to prove you own them</source>
+        <translation>Sign messages with your HTS addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified NavCoin addresses</source>
-        <translation>Verify messages to ensure they were signed with specified NavCoin addresses</translation>
+        <source>Verify messages to ensure they were signed with specified HTS addresses</source>
+        <translation>Verify messages to ensure they were signed with specified HTS addresses</translation>
     </message>
     <message>
         <location line="+99"/>
@@ -1165,7 +1165,7 @@
     </message>
     <message>
         <location line="-213"/>
-        <source>Request payments (generates QR codes and navcoin: URIs)</source>
+        <source>Request payments (generates QR codes and HTS: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1212,7 +1212,7 @@
     </message>
     <message>
         <location line="-49"/>
-        <source>Open a navcoin: URI or payment request</source>
+        <source>Open a HTS: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1222,7 +1222,7 @@
     </message>
     <message>
         <location line="+43"/>
-        <source>You can use an external trusted source to download the blockchain from.&lt;BR&gt;The following URL points to a bootstrap copy provided by the NavCoin Core Team.&lt;BR&gt;Where would you like to download it from?</source>
+        <source>You can use an external trusted source to download the blockchain from.&lt;BR&gt;The following URL points to a bootstrap copy provided by the HTS Core Team.&lt;BR&gt;Where would you like to download it from?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1232,10 +1232,10 @@
     </message>
     <message numerus="yes">
         <location line="+498"/>
-        <source>%n active connection(s) to NavCoin network</source>
+        <source>%n active connection(s) to HTS network</source>
         <translation>
-            <numerusform>%n active connection to NavCoin network</numerusform>
-            <numerusform>%n active connections to NavCoin network</numerusform>
+            <numerusform>%n active connection to HTS network</numerusform>
+            <numerusform>%n active connections to HTS network</numerusform>
         </translation>
     </message>
     <message>
@@ -1271,12 +1271,12 @@
     </message>
     <message>
         <location line="+22"/>
-        <source>Connected to NavCoin network.</source>
+        <source>Connected to HTS network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+12"/>
-        <source>Connecting to NavCoin network...</source>
+        <source>Connecting to HTS network...</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
@@ -1339,7 +1339,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. &lt;br&gt;&lt;br&gt;For more information on the proposal, please visit &lt;a href=&quot;https://navcoin.org/community-fund&quot;&gt;this link&lt;/a&gt;&lt;br&gt;&lt;br&gt;Would you like the Nav Coin Network to update the staking rewards to setup a decentralised community fund that will help grow the network?</source>
+        <source>The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. &lt;br&gt;&lt;br&gt;For more information on the proposal, please visit &lt;a href=&quot;https://HTS.org/community-fund&quot;&gt;this link&lt;/a&gt;&lt;br&gt;&lt;br&gt;Would you like the Nav Coin Network to update the staking rewards to setup a decentralised community fund that will help grow the network?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1374,7 +1374,7 @@
     </message>
     <message>
         <location line="-615"/>
-        <source>Show the %1 help message to get a list with possible NavCoin command-line options</source>
+        <source>Show the %1 help message to get a list with possible HTS command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1452,12 +1452,12 @@
     </message>
     <message>
         <location line="+24"/>
-        <source>NavCoin uses an unique parallel cluster of nodes called NavTech to protect the privacy of your transactions.</source>
+        <source>HTS uses an unique parallel cluster of nodes called NavTech to protect the privacy of your transactions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+29"/>
-        <source>You will find below the list of the NavCoin Foundation Servers. Feel free to modify this list to include your prefered servers:</source>
+        <source>You will find below the list of the HTS Foundation Servers. Feel free to modify this list to include your prefered servers:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1634,8 +1634,8 @@
     </message>
     <message>
         <location line="+27"/>
-        <source>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the NavCoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the HTS client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1644,7 +1644,7 @@
     </message>
     <message>
         <location line="+17"/>
-        <source>Connect to the NavCoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the HTS network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1699,7 +1699,7 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the NavCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the HTS network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1872,7 +1872,7 @@
     </message>
     <message>
         <location line="+22"/>
-        <source>87 312.312 123 NAV</source>
+        <source>87 312.312 123 HTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1882,7 +1882,7 @@
     </message>
     <message>
         <location line="+22"/>
-        <source>1 312.312 NAV</source>
+        <source>1 312.312 HTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1894,7 +1894,7 @@
         <location line="-40"/>
         <location line="+102"/>
         <location line="+62"/>
-        <source>132 431.41 NAV</source>
+        <source>132 431.41 HTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1914,7 +1914,7 @@
     </message>
     <message>
         <location line="+105"/>
-        <source>Connecting to NavCoin network...</source>
+        <source>Connecting to HTS network...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1994,7 +1994,7 @@
     </message>
     <message>
         <location line="-127"/>
-        <source>&apos;navcoin://&apos; is not a valid URI. Use &apos;navcoin:&apos; instead.</source>
+        <source>&apos;HTS://&apos; is not a valid URI. Use &apos;HTS:&apos; instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2019,7 +2019,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid NavCoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid HTS address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2149,13 +2149,13 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../navcoinunits.cpp" line="+217"/>
+        <location filename="../HTSunits.cpp" line="+217"/>
         <source>Amount</source>
         <translation type="unfinished">Amount</translation>
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+135"/>
-        <source>Enter a NavCoin address or OpenAlias address (e.g. %1)</source>
+        <source>Enter a HTS address or OpenAlias address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2648,7 +2648,7 @@
     <message>
         <location line="+14"/>
         <location line="+26"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the NavCoin network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the HTS network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2917,7 +2917,7 @@
     <message>
         <location line="+30"/>
         <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for navcoin transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for HTS transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2942,7 +2942,7 @@
     </message>
     <message>
         <location line="-449"/>
-        <source>You don&apos;t have any NAVTech server added. </source>
+        <source>You don&apos;t have any HTSTech server added. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2953,7 +2953,7 @@
     </message>
     <message>
         <location line="+136"/>
-        <source>Manage NAVTech servers</source>
+        <source>Manage HTSTech servers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3038,7 +3038,7 @@
     </message>
     <message>
         <location line="+181"/>
-        <source>NAVTech server returned a different number of addresses.</source>
+        <source>HTSTech server returned a different number of addresses.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3179,7 +3179,7 @@
     </message>
     <message>
         <location line="+106"/>
-        <source>Warning: Invalid NavCoin address</source>
+        <source>Warning: Invalid HTS address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3218,7 +3218,7 @@
     </message>
     <message>
         <location line="+180"/>
-        <source>The NavCoin address to send the payment to</source>
+        <source>The HTS address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3234,7 +3234,7 @@
     </message>
     <message>
         <location line="-1008"/>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less navcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less HTSs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3264,7 +3264,7 @@
     </message>
     <message>
         <location line="+39"/>
-        <source>A message that was attached to the navcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the NavCoin network.</source>
+        <source>A message that was attached to the HTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the HTS network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3274,7 +3274,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <source>A&amp;mount (NAV):</source>
+        <source>A&amp;mount (HTS):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3331,12 +3331,12 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>You can sign messages/agreements with your addresses to prove you can receive navcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive HTSs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The NavCoin address to sign the message with</source>
+        <source>The HTS address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3378,8 +3378,8 @@
     </message>
     <message>
         <location line="+24"/>
-        <source>Sign the message to prove you own this NavCoin address</source>
-        <translation>Sign the message to prove you own this NavCoin address</translation>
+        <source>Sign the message to prove you own this HTS address</source>
+        <translation>Sign the message to prove you own this HTS address</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -3409,13 +3409,13 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>The NavCoin address the message was signed with</source>
+        <source>The HTS address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+51"/>
-        <source>Verify the message to ensure it was signed with the specified NavCoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified NavCoin address</translation>
+        <source>Verify the message to ensure it was signed with the specified HTS address</source>
+        <translation>Verify the message to ensure it was signed with the specified HTS address</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -4129,7 +4129,7 @@
 <context>
     <name>UnitDisplayStatusBarControl</name>
     <message>
-        <location filename="../navcoingui.cpp" line="+121"/>
+        <location filename="../HTSgui.cpp" line="+121"/>
         <source>Unit to show amounts in. Click to select another unit.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4244,7 +4244,7 @@
     </message>
     <message>
         <location line="+5"/>
-        <source>NavCoin needs to scan the chain... Please, wait.</source>
+        <source>HTS needs to scan the chain... Please, wait.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4262,7 +4262,7 @@
     </message>
     <message>
         <location line="+31"/>
-        <source>Use the following address to receive NavCoins:</source>
+        <source>Use the following address to receive HTSs:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4302,9 +4302,9 @@
     </message>
 </context>
 <context>
-    <name>navcoin-core</name>
+    <name>HTS-core</name>
     <message>
-        <location filename="../navcoinstrings.cpp" line="+381"/>
+        <location filename="../HTSstrings.cpp" line="+381"/>
         <source>Options:</source>
         <translation>Options:</translation>
     </message>
@@ -4385,8 +4385,8 @@
     </message>
     <message>
         <location line="-288"/>
-        <source>NavCoin Core</source>
-        <translation type="unfinished">NavCoin Core</translation>
+        <source>HTS Core</source>
+        <translation type="unfinished">HTS Core</translation>
     </message>
     <message>
         <location line="+1"/>
