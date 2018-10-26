@@ -167,7 +167,40 @@ struct BlockHasher
 {
     size_t operator()(const uint256& hash) const { return hash.GetCheapHash(); }
 };
+inline int64_t GetCoinYearReward(int nHeight) {
+    int64_t YearPercent = 10;
 
+    if (nHeight <= 20000)
+        YearPercent = 250;
+    else if (nHeight <= 40000)
+        YearPercent = 200;
+    else if (nHeight <= 50000)
+        YearPercent = 175;
+    else if (nHeight <= 60000)
+        YearPercent = 150;
+    else if (nHeight <= 70000)
+        YearPercent = 125;
+    else if (nHeight <= 80000)
+        YearPercent = 120;
+    else if (nHeight <= 90000)
+        YearPercent = 110;
+    else if (nHeight <= 100000)
+        YearPercent = 250;
+    else if (nHeight <= 110000)
+        YearPercent = 200;
+    else if (nHeight <= 120000)
+        YearPercent = 150;
+    else if (nHeight <= 130000)
+        YearPercent = 100;
+    else if (nHeight <= 140000)
+        YearPercent = 75;
+ //   else if (nHeight <= 140000)
+   //     YearPercent = 75;
+    else
+        YearPercent = 50;
+
+    return YearPercent * CENT; // per year
+}
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
 extern CTxMemPool mempool;

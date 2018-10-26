@@ -55,7 +55,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Game is afoot!";
+    const char* pszTimestamp = "Hotshot Coin is for hotshots like me and you";
     const CScript genesisOutputScript = CScript() << ParseHex("04bf5608f13e9b2781b839ea78adbd1cb90d8fc17dcc67028e93e65223ea77f8bc8d8eed1191f37dd0ad20f371912d86e1c2e7369251cb06d2a3fdc5e26262d6df") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -88,21 +88,21 @@ public:
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 900000;
         consensus.BIP34Hash = uint256S("0xecb7444214d068028ec1fa4561662433452c1cbbd6b0f8eeb6452bcfa1d0a7d6");
-        consensus.powLimit = ArithToUint256(~arith_uint256(0) >> 16);
+        consensus.powLimit = ArithToUint256(~arith_uint256(0) >> 1);
         consensus.nPowTargetTimespan = 30;
         consensus.nPowTargetSpacing = 30;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 15120; // 75% of 20160
         consensus.nMinerConfirmationWindow = 20160;
-        consensus.nStakeMinAge = 60 * 60 * 2;	// minimum for coin age: 2 hours
-        consensus.nTargetSpacing = 30; // Blocktime: 30 secs
+        consensus.nStakeMinAge = 60 * 60 * 9;	// minimum for coin age: 2 hours
+        consensus.nTargetSpacing = 3 * 60; // Blocktime: 30 secs
         consensus.nStakeCombineThreshold = 1000 * COIN;
         consensus.nStakeSplitThreshold = 2 * consensus.nStakeCombineThreshold;
         consensus.nDailyBlockCount =  (24 * 60 * 60) / consensus.nTargetSpacing;
         consensus.nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
         consensus.nTargetTimespan = 25 * 30;
-        consensus.nLastPOWBlock = 20000;
+        consensus.nLastPOWBlock = 300;
         consensus.nBlocksPerVotingCycle = 2880 * 7; // 7 Days
         consensus.nMinimumQuorum = 0.5;
         consensus.nQuorumVotes = consensus.nBlocksPerVotingCycle * consensus.nMinimumQuorum;
@@ -113,10 +113,10 @@ public:
         consensus.nCommunityFundMinAge = 50;
         consensus.nProposalMinimalFee = 5000000000;
         consensus.sigActivationTime = 1512990000;
-        consensus.nCoinbaseTimeActivationHeight = 20000;
+        consensus.nCoinbaseTimeActivationHeight = 20000000;
         consensus.nBlockSpreadCFundAccumulation = 500;
-        consensus.nCommunityFundAmount = 0.25 * COIN;
-        consensus.nCommunityFundAmountV2 = 0.5 * COIN;
+        consensus.nCommunityFundAmount = 0 * COIN;
+        consensus.nCommunityFundAmountV2 = 0 * COIN;
         consensus.nCyclesProposalVoting = 6;
         consensus.nCyclesPaymentRequestVoting = 8;
         consensus.nPaymentRequestMaxVersion = 2;
@@ -181,16 +181,41 @@ public:
         pchMessageStart[1] = 0x50;
         pchMessageStart[2] = 0x34;
         pchMessageStart[3] = 0x20;
-        nDefaultPort = 44440;
+        nDefaultPort = 37999;
         nPruneAfterHeight = 100000;
-        bnProofOfWorkLimit = arith_uint256(~arith_uint256() >> 16);
+        bnProofOfWorkLimit = arith_uint256(~arith_uint256() >> 1);
 
-        genesis = CreateGenesisBlock(1460561040, 6945, 0x1f00ffff, 1, 0);
-
+        genesis = CreateGenesisBlock(1460561040, 6947, 0x1f00ffff, 1, 0);
+/*
+        printf("Generating genesis block...\n");
+        uint32_t nounce = 1;
+		while(1) {
+            //printf("Nounce: %d\n", nounce);
+			genesis.nNonce = nounce;
+			consensus.hashGenesisBlock = genesis.GetHash();
+			
+			if(consensus.hashGenesisBlock.GetHex() < std::string("0000ffffff000000000000000000000000000000000000000000000000000000")) {
+			//if(hashGenesisBlock.GetHex() < bnProofOfWorkLimit.GetHex()) {
+			//if(consensus.hashGenesisBlock.GetHex() < std::string("0000082da923a04678394f873852c7f08b777af30224b6e23296f586370e80ae")) {
+				printf("nounce: %x\n",nounce);
+				break;
+			} else {
+				if( nounce % 10000 == 0)
+					printf("nounce: %x, hash: %s, merklehash:%s\n",nounce, consensus.hashGenesisBlock.GetHex().c_str(),genesis.hashMerkleRoot.ToString().c_str());
+				++nounce;
+			}
+		} 
+		
+        printf("genesis: %s\n",consensus.hashGenesisBlock.GetHex().c_str());
+        printf("merklehash: %s\n",genesis.hashMerkleRoot.ToString().c_str());	*/
+           // for(; genesis.GetHash() > consensus.powLimit; genesis.nNonce++){ }
+           // printf("new testnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+           // printf("new testnet genesis nonce: %d\n", genesis.nNonce);
+           // printf("new testnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
 	      consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x00006a4e3e18c71c6d48ad6c261e2254fa764cf29607a4357c99b712dfbb8e6a"));
-        assert(genesis.hashMerkleRoot == uint256S("0xc507eec6ccabfd5432d764afceafba42d2d946594b8a60570cb2358a7392c61a"));
+        assert(consensus.hashGenesisBlock == uint256S("0x282d283af72258299b261e8d848b289d478b5f609ff40ed42f5df4e2eaaa39ea"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5d4638e673335459fc2fa140ca5bcc1ab4a21691a91bcd2c7858b0dfe12cb051"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,85);
@@ -198,12 +223,12 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        vSeeds.push_back(CDNSSeedData("nav.community", "seed.nav.community"));
-        vSeeds.push_back(CDNSSeedData("navcoin.org", "seed.navcoin.org"));
+       // vSeeds.push_back(CDNSSeedData("nav.community", "seed.nav.community"));
+     //   vSeeds.push_back(CDNSSeedData("navcoin.org", "seed.navcoin.org"));
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
@@ -211,8 +236,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x00006a4e3e18c71c6d48ad6c261e2254fa764cf29607a4357c99b712dfbb8e6a"))
-            (10000, uint256S("0x844f1eab31e8773328ba21970362b4fcff19622f13787cbbe164649ad2393b7a"))
+            ( 0, uint256S("0x282d283af72258299b261e8d848b289d478b5f609ff40ed42f5df4e2eaaa39ea")),
+/*            (10000, uint256S("0x844f1eab31e8773328ba21970362b4fcff19622f13787cbbe164649ad2393b7a"))
             (10000, uint256S("0x844f1eab31e8773328ba21970362b4fcff19622f13787cbbe164649ad2393b7a"))
             (20000, uint256S("0xfea6d227117db665c5cff2fca0b29d850c5e7f064463d001f5228e80a7e21624"))
             (30000, uint256S("0x5e6212b3b23ed3e5092d7765f7ae36512ecdc254f84c9988161e955d94c91a48"))
@@ -235,7 +260,7 @@ public:
             (1750000,uint256S("0x713cbac2df077bacb25dedf4acd60745f102cbe53ede019b738a6864fc0b12c6"))
             (2000000,uint256S("0x41b723e003cab30d326a0fae995521554ab59e550e1e0013187b3267d09dd42c"))
             (2250000,uint256S("0x1f7d459f6dcb3752868395819ac676adccfb0d0ec904a60b9fcb15879bcc5228"))
-            (2400000,uint256S("0x0cdb7f4f763be43ddc209ffeac440ba34c850f8210d52eb010fb0e6296dbe3ea")),
+            (2400000,uint256S("0x0cdb7f4f763be43ddc209ffeac440ba34c850f8210d52eb010fb0e6296dbe3ea")),*/
             1535607904, // * UNIX timestamp of last checkpoint block
             5067164,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)

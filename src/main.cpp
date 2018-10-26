@@ -1804,12 +1804,12 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 
     if (nHeight == 1)
     {
-        CAmount nSubsidy = 59800000 * COIN;
+        CAmount nSubsidy = 1000000 * COIN;
         return nSubsidy;
     }
 
     if (nHeight <= Params().GetConsensus().nLastPOWBlock)
-        return CAmount(50 * COIN);
+        return CAmount(1 * COIN);
 
     return 0;
 }
@@ -8638,6 +8638,7 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, int64_t nTime, con
 // staker's coin stake reward based on coin age spent (coin-days)
 int64_t GetProofOfStakeReward(int nHeight, int64_t nCoinAge, int64_t nFees, CBlockIndex* pindexPrev)
 {
+/*
     int64_t nRewardCoinYear;
     nRewardCoinYear = MAX_MINT_PROOF_OF_STAKE;
 
@@ -8653,7 +8654,11 @@ int64_t GetProofOfStakeReward(int nHeight, int64_t nCoinAge, int64_t nFees, CBlo
         nRewardCoinYear = 0.5 * MAX_MINT_PROOF_OF_STAKE;
 
     int64_t nSubsidy = nCoinAge * nRewardCoinYear / 365;
+*/
+	int64_t nSubsidy;
 
+	int64_t coinYearReward = GetCoinYearReward(nHeight);
+	nSubsidy = nCoinAge * coinYearReward * 33 / (365 * 33 + 8);
     return  nSubsidy + nFees;
 }
 
