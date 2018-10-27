@@ -1,6 +1,0 @@
-usr/local/bin/HTS-qt usr/bin
-share/pixmaps/HTS32.xpm usr/share/pixmaps
-share/pixmaps/HTS16.xpm usr/share/pixmaps
-share/pixmaps/HTS128.png usr/share/pixmaps
-debian/HTS-qt.desktop usr/share/applications
-debian/HTS-qt.protocol usr/share/kde4/services/

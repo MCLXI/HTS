@@ -27,7 +27,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     // txNew.vout[0].scriptPubKey.clear();
     txNew.vout[0].nValue = genesisReward;
     txNew.vout[0].scriptPubKey.clear();
-    txNew.strDZeel = "HTS genesis block";
+    txNew.strDZeel = "NavCoin genesis block";
 
     CBlock genesis;
     genesis.nTime    = nTime;
@@ -217,14 +217,14 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x282d283af72258299b261e8d848b289d478b5f609ff40ed42f5df4e2eaaa39ea"));
         assert(genesis.hashMerkleRoot == uint256S("0x5d4638e673335459fc2fa140ca5bcc1ab4a21691a91bcd2c7858b0dfe12cb051"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,40);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,85);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,150);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,40+128);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
        // vSeeds.push_back(CDNSSeedData("nav.community", "seed.nav.community"));
-     //   vSeeds.push_back(CDNSSeedData("HTS.org", "seed.HTS.org"));
+     //   vSeeds.push_back(CDNSSeedData("navcoin.org", "seed.navcoin.org"));
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -390,7 +390,7 @@ public:
         }
 
         vSeeds.push_back(CDNSSeedData("testnav.community", "testseed.nav.community"));
-        vSeeds.push_back(CDNSSeedData("testHTS.org", "testseed.HTS.org"));
+        vSeeds.push_back(CDNSSeedData("testnavcoin.org", "testseed.navcoin.org"));
 
         assert(consensus.hashGenesisBlock == hashGenesisBlock);
         assert(genesis.hashMerkleRoot == hashMerkleRoot);
@@ -533,7 +533,7 @@ public:
         uint256 hashMerkleRoot = uint256S("0x2d9101b87fe7b9deaea41849c1f3bed71e060739147802a238fe968f75ad0fd9");
         uint32_t nNonce = 2043184832;
         // 5) Rebuild. Launch daemon.
-        // 6) Generate first block using RPC command "./HTS-cli generate 1"
+        // 6) Generate first block using RPC command "./navcoin-cli generate 1"
 
         genesis = CreateGenesisBlockTestnet(nTimestamp, nNonce, 0x1d00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -553,7 +553,7 @@ public:
         }
 
         vSeeds.push_back(CDNSSeedData("devnav.community", "devseed.nav.community"));
-        vSeeds.push_back(CDNSSeedData("devnet.HTS.org", "devseed.HTS.org"));
+        vSeeds.push_back(CDNSSeedData("devnet.navcoin.org", "devseed.navcoin.org"));
 
         assert(consensus.hashGenesisBlock == hashGenesisBlock);
         assert(genesis.hashMerkleRoot == hashMerkleRoot);
@@ -703,7 +703,7 @@ public:
         }
 
         vSeeds.push_back(CDNSSeedData("testnav.community", "testseed.nav.community"));
-        vSeeds.push_back(CDNSSeedData("testHTS.org", "testseed.HTS.org"));
+        vSeeds.push_back(CDNSSeedData("testnavcoin.org", "testseed.navcoin.org"));
 
         consensus.hashGenesisBlock = genesis.GetHash();
 

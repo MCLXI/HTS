@@ -18,8 +18,8 @@
 #include "skinize.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "navtechinit.h"
-#include "navtechsetup.h"
+//#include "navtechinit.h"
+//#include "navtechsetup.h"
 
 #include "base58.h"
 #include "coincontrol.h"
@@ -57,7 +57,7 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
 
     // Coin Control
     connect(ui->pushButtonCoinControl, SIGNAL(clicked()), this, SLOT(coinControlButtonClicked()));
-    connect(ui->noNavtechButton, SIGNAL(clicked()), this, SLOT(showNavTechDialog()));
+   // connect(ui->noNavtechButton, SIGNAL(clicked()), this, SLOT(showNavTechDialog()));
     connect(ui->checkBoxCoinControlChange, SIGNAL(stateChanged(int)), this, SLOT(coinControlChangeChecked(int)));
     connect(ui->lineEditCoinControlChange, SIGNAL(textEdited(const QString &)), this, SLOT(coinControlChangeEdited(const QString &)));
 
@@ -122,7 +122,7 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
     minimizeFeeSection(settings.value("fFeeSectionMinimized").toBool());
     ui->anonsendCheckbox->setChecked(settings.value("fAnonSend").toBool());
 
-    checkNavtechServers();
+    //checkNavtechServers();
 }
 
 void SendCoinsDialog::anonsendCheckboxClick()
@@ -131,7 +131,7 @@ void SendCoinsDialog::anonsendCheckboxClick()
 
     settings.setValue("fAnonSend", ui->anonsendCheckbox->isChecked());
 }
-
+/*
 void SendCoinsDialog::checkNavtechServers()
 {
     bool notEnoughServers = vAddedAnonServers.size() < 1 && mapMultiArgs["-addanonserver"].size() < 1;
@@ -141,7 +141,7 @@ void SendCoinsDialog::checkNavtechServers()
     if(notEnoughServers)
       ui->anonsendCheckbox->setChecked(false);
 }
-
+*/
 void SendCoinsDialog::setClientModel(ClientModel *clientModel)
 {
     this->clientModel = clientModel;
@@ -222,9 +222,9 @@ void SendCoinsDialog::on_sendButton_clicked()
     QList<SendCoinsRecipient> recipients;
     bool valid = true;
 
-    int nEntropy = GetArg("anon_entropy",HTSTECH_DEFAULT_ENTROPY);
+//    int nEntropy = GetArg("anon_entropy",HTSTECH_DEFAULT_ENTROPY);
 
-    unsigned int nTransactions = (rand() % nEntropy) + 2;
+  //  unsigned int nTransactions = (rand() % nEntropy) + 2;
 
     SendCoinsEntry *entry = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(0)->widget());
     if(entry)
@@ -233,18 +233,19 @@ void SendCoinsDialog::on_sendButton_clicked()
         {
             SendCoinsRecipient recipient = entry->getValue();
             CAmount nAmount = recipient.amount;
-            double nId = rand() % pindexBestHeader->GetMedianTimePast();
-
+            double nId = rand() % pindexBestHeader->GetMedianTimePast();}
+/*
             if(ui->anonsendCheckbox->checkState() != 0) {
                 try
                 {
-                    Navtech navtech;
+			return;
+                    //Navtech navtech;
 
-                    UniValue navtechData = navtech.CreateAnonTransaction(recipient.address.toStdString() , recipient.amount / (nTransactions * 2), nTransactions);
+                    //UniValue navtechData = navtech.CreateAnonTransaction(recipient.address.toStdString() , recipient.amount / (nTransactions * 2), nTransactions);
 
-                    UniValue pubKey = find_value(navtechData, "public_key");
+//                    UniValue pubKey = find_value(navtechData, "public_key");
 
-                    std::vector<UniValue> serverNavAddresses(find_value(navtechData, "anonaddress").getValues());
+                    //std::vector<UniValue> serverNavAddresses(find_value(navtechData, "anonaddress").getValues());
 
                     if(serverNavAddresses.size() != nTransactions)
                     {
@@ -351,7 +352,7 @@ void SendCoinsDialog::on_sendButton_clicked()
         else
         {
             valid = false;
-        }
+        }*/
     }
 
     if(!valid || recipients.isEmpty())
@@ -528,7 +529,7 @@ void SendCoinsDialog::clear()
 
     updateTabsAndLabels();
 }
-
+/*
 void SendCoinsDialog::showNavTechDialog()
 {
     navtechsetup* setupNavTech = new navtechsetup();
@@ -539,7 +540,7 @@ void SendCoinsDialog::showNavTechDialog()
 
     checkNavtechServers();
 }
-
+*/
 void SendCoinsDialog::reject()
 {
     clear();
@@ -756,7 +757,7 @@ void SendCoinsDialog::minimizeFeeSection(bool fMinimize)
     //ui->horizontalLayoutSmartFee->setContentsMargins(0, (fMinimize ? 0 : 6), 0, 0);
 
     if(fMinimize)
-        checkNavtechServers();
+        int mimi=1;
     else
         ui->noNavtechLabel  ->setVisible(false);
         ui->anonsendCheckbox->setVisible(false);

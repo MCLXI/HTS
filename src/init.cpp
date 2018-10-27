@@ -107,7 +107,7 @@ enum BindFlags {
 static const char* FEE_ESTIMATES_FILENAME="fee_estimates.dat";
 
 static float fBootstrapProgress = 0.0;
-
+/*
 static int xferinfo(void *p,
                     curl_off_t dltotal, curl_off_t dlnow,
                     curl_off_t ultotal, curl_off_t ulnow)
@@ -127,7 +127,7 @@ static int xferinfo(void *p,
 
     return 0;
 }
-
+*/
 size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
     size_t written;
     written = fwrite(ptr, size, nmemb, stream);
@@ -853,7 +853,7 @@ void InitLogging()
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     LogPrintf("HTS version %s\n", FormatFullVersion());
 }
-
+/*
 void DownloadBlockchain(std::string url)
 {
 
@@ -934,7 +934,7 @@ void DownloadBlockchain(std::string url)
         throw std::runtime_error("Failed!");
 
     }
-}
+}*/
 
 /** Initialize HTS.
  *  @pre Parameters should be parsed and config file should be read.
@@ -953,7 +953,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         try
         {
 
-            DownloadBlockchain(sBootstrap);
+           // DownloadBlockchain(sBootstrap);
 
         }
         catch(const std::exception& e)

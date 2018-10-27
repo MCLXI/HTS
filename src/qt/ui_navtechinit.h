@@ -6,8 +6,8 @@
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_HTSTECHINIT_H
-#define UI_HTSTECHINIT_H
+#ifndef UI_NAVTECHINIT_H
+#define UI_NAVTECHINIT_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -126,4 +126,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_HTSTECHINIT_H
+#endif // UI_NAVTECHINIT_H

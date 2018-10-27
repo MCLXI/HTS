@@ -1,8 +1,0 @@
-/usr/bin/HTS-cli		--	gen_context(system_u:object_r:HTS_exec_t,s0)
-/usr/sbin/HTSd		--	gen_context(system_u:object_r:HTS_exec_t,s0)
-/usr/lib(64)?/HTS/HTSd		--	gen_context(system_u:object_r:HTS_exec_t,s0)
-
-/etc/HTS(/.*)?		gen_context(system_u:object_r:HTS_conf_t,s0)
-/var/lib/HTS(/.*)?		gen_context(system_u:object_r:HTS_var_lib_t,s0)
-
-(/var)?/run/HTSd(/.*)?   gen_context(system_u:object_r:HTS_var_run_t,s0)

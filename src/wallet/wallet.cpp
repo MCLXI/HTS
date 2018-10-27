@@ -2659,7 +2659,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
     wtxNew.BindWallet(this);
 
     CMutableTransaction txNew;
-
+/*
     txNew.nVersion = IsCommunityFundEnabled(pindexBestHeader,Params().GetConsensus()) ? CTransaction::TXDZEEL_VERSION_V2 : CTransaction::TXDZEEL_VERSION;
 
     if(wtxNew.nCustomVersion > 0) txNew.nVersion = wtxNew.nCustomVersion;
@@ -2673,7 +2673,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
 
     if (strDZeel.length() > 512)
       txNew.strDZeel.resize(512);
-
+*/
     // Discourage fee sniping.
     //
     // For a large miner the value of the transactions in the best block and

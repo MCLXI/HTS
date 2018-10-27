@@ -10,7 +10,7 @@
 #include "core_io.h"
 #include "init.h"
 #include "main.h"
-#include "navtech.h"
+//#include "navtech.h"
 #include "net.h"
 #include "netbase.h"
 #include "policy/rbf.h"
@@ -34,7 +34,7 @@ using namespace std;
 
 int64_t nWalletUnlockTime;
 static CCriticalSection cs_nWalletUnlockTime;
-Navtech navtech;
+//Navtech navtech;
 
 std::string HelpRequiringPassphrase()
 {
@@ -88,7 +88,7 @@ void WalletTxToJSON(const CWalletTx& wtx, UniValue& entry)
     entry.push_back(Pair("walletconflicts", conflicts));
     entry.push_back(Pair("time", wtx.GetTxTime()));
     entry.push_back(Pair("timereceived", (int64_t)wtx.nTimeReceived));
-    entry.push_back(Pair("anon-destination", wtx.strDZeel));
+    //entry.push_back(Pair("anon-destination", wtx.strDZeel));
     // Add opt-in RBF status
     std::string rbfStatus = "no";
     if (confirms <= 0) {
@@ -723,6 +723,7 @@ UniValue donatefund(const UniValue& params, bool fHelp)
 
 UniValue anonsend(const UniValue& params, bool fHelp)
 {
+	return NullUniValue;
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
 
@@ -747,7 +748,7 @@ UniValue anonsend(const UniValue& params, bool fHelp)
             + HelpExampleCli("anonsend", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\" 0.1 \"\" \"\"")
             + HelpExampleRpc("anonsend", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\", 0.1, \"donation\", \"seans outpost\"")
         );
-
+/*
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
     if (nAmount <= 0)
@@ -784,8 +785,8 @@ UniValue anonsend(const UniValue& params, bool fHelp)
     if (!address.IsValid())
       throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid HTS address");
 
-    UniValue navtechData = navtech.CreateAnonTransaction(params[0].get_str(), nAmount / (nTransactions * 2), nTransactions);
-    std::vector<UniValue> serverNavAddresses(find_value(navtechData, "anonaddress").getValues());
+    //UniValue navtechData = navtech.CreateAnonTransaction(params[0].get_str(), nAmount / (nTransactions * 2), nTransactions);
+//    std::vector<UniValue> serverNavAddresses(find_value(navtechData, "anonaddress").getValues());
 
     if(serverNavAddresses.size() != nTransactions)
       throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "HTSTech server returned a different number of addresses.");
@@ -814,8 +815,8 @@ UniValue anonsend(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked();
 
     CAmount nAmountAlreadyProcessed = 0;
-    CAmount nMinAmount = find_value(navtechData, "min_amount").get_int() * COIN;
-    UniValue pubKey = find_value(navtechData, "public_key");
+  //  CAmount nMinAmount = find_value(navtechData, "min_amount").get_int() * COIN;
+   // UniValue pubKey = find_value(navtechData, "public_key");
     double nId = rand() % pindexBestHeader->GetMedianTimePast();
 
     for(unsigned int i = 0; i < serverNavAddresses.size(); i++)
@@ -836,12 +837,12 @@ UniValue anonsend(const UniValue& params, bool fHelp)
 
         nAmountAlreadyProcessed += nAmountRound;
 
-        string encryptedAddress = navtech.EncryptAddress(params[0].get_str(), pubKey.get_str(), serverNavAddresses.size(), i+(i==serverNavAddresses.size()?0:1), nId);
+       // string encryptedAddress = navtech.EncryptAddress(params[0].get_str(), pubKey.get_str(), serverNavAddresses.size(), i+(i==serverNavAddresses.size()?0:1), nId);
         wtx.strDZeel = encryptedAddress;
         SendMoney(serverNavAddress.Get(), nAmountRound, fSubtractFeeFromAmount, wtx, encryptedAddress);
     }
 
-    return wtx.GetHash().GetHex();
+    return wtx.GetHash().GetHex();*/
 }
 
 UniValue getanondestination(const UniValue& params, bool fHelp)
@@ -890,13 +891,13 @@ UniValue getanondestination(const UniValue& params, bool fHelp)
     if (!address.IsValid())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid HTS address");
 
-    UniValue navtechData = navtech.CreateAnonTransaction(params[0].get_str());
+  //  UniValue navtechData = navtech.CreateAnonTransaction(params[0].get_str());
 
-    CHTSAddress serverNavAddress(find_value(navtechData, "anonaddress").get_str());
-    if (!serverNavAddress.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid HTS address provided by HTSTech server");
+//    CHTSAddress serverNavAddress(find_value(navtechData, "anonaddress").get_str());
+  //  if (!serverNavAddress.IsValid())
+    //    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid HTS address provided by HTSTech server");
 
-    return navtechData;
+//    return navtechData;
 }
 
 
