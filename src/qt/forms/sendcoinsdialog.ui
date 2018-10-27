@@ -751,7 +751,7 @@
           <string notr="true"/>
          </property>
          <property name="text">
-          <string>You don't have any HTSTech server added. </string>
+          <string>Welcome to HTS Wallet </string>
          </property>
         </widget>
        </item>
