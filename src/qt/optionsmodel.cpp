@@ -72,8 +72,8 @@ void OptionsModel::Init(bool resetSettings)
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))
-        settings.setValue("strThirdPartyTxUrls", "https://www.navexplorer.com/tx/%s");
-    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://www.navexplorer.com/tx/%s").toString();
+        settings.setValue("strThirdPartyTxUrls", "http://explorer.hotshotcoin.org/tx/%s");
+    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "http://explorer.hotshotcoin.org/tx/%s").toString();
 
     if (!settings.contains("fCoinControlFeatures"))
         settings.setValue("fCoinControlFeatures", false);

@@ -348,8 +348,14 @@ void SendCoinsDialog::on_sendButton_clicked()
     }
 
     // now send the prepared transaction
-    WalletModel::SendCoinsReturn sendStatus = model->sendCoins(currentTransaction);
+    //WalletModel::SendCoinsReturn sendStatus = model->sendCoins(currentTransaction);
     // process sendStatus and on error generate message shown to user
+    WalletModel::SendCoinsReturn sendStatus;
+    // now send the prepared transaction
+    if (model->getOptionsModel()->getCoinControlFeatures()) // coin control enabled
+        sendStatus = model->sendCoins(currentTransaction, CoinControlDialog::coinControl);
+    else
+        sendStatus = model->sendCoins(currentTransaction);
     processSendCoinsReturn(sendStatus);
 
     if (sendStatus.status == WalletModel::OK)

@@ -261,11 +261,11 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         }
         else
         {   // User-entered HTS address / amount:
-            if(!validateAddress(rcp.isanon?rcp.destaddress:rcp.address))
-            {
-                return InvalidAddress;
-            }
-            if(rcp.amount <= 0)
+           // if(!validateAddress(rcp.isanon?rcp.destaddress:rcp.address))
+            //{
+              //  return InvalidAddress;
+            //}
+          /*  if(rcp.amount <= 0)
             {
                 return InvalidAmount;
             }
@@ -277,9 +277,23 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
             vecSend.push_back(recipient);
 
             if(rcp.isanon)
-                anondestination = rcp.anondestination;
+                anondestination = rcp.anondestin*/
+            if(!validateAddress(rcp.address))
+            {
+                return InvalidAddress;
+            }
+            if(rcp.amount <= 0)
+            {
+                return InvalidAmount;
+            }
+            setAddress.insert(rcp.address);
+            ++nAddresses;
 
-            total += !rcp.fSubtractFeeFromAmount && rcp.isanon ? rcp.amount + rcp.anonfee: rcp.amount;
+            CScript scriptPubKey = GetScriptForDestination(CHTSAddress(rcp.address.toStdString()).Get());
+            CRecipient recipient = {scriptPubKey, rcp.amount, rcp.fSubtractFeeFromAmount};
+            vecSend.push_back(recipient);
+
+            total += rcp.amount;
         }
     }
     if(setAddress.size() != nAddresses)
