@@ -95,7 +95,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 15120; // 75% of 20160
         consensus.nMinerConfirmationWindow = 20160;
-        consensus.nStakeMinAge = 60 * 60 * 9;	// minimum for coin age: 2 hours
+        consensus.nStakeMinAge = 60 * 60 * 4;	// minimum for coin age: 2 hours
         consensus.nTargetSpacing = 3 * 60; // Blocktime: 30 secs
         consensus.nStakeCombineThreshold = 1000 * COIN;
         consensus.nStakeSplitThreshold = 2 * consensus.nStakeCombineThreshold;

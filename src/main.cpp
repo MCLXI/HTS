@@ -129,8 +129,8 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
 
-arith_uint256 bnProofOfStakeLimit(~arith_uint256() >> 20);
-arith_uint256 bnProofOfStakeLimitV2(~arith_uint256() >> 20);
+arith_uint256 bnProofOfStakeLimit(~arith_uint256() >> 1);
+arith_uint256 bnProofOfStakeLimitV2(~arith_uint256() >> 1);
 
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
