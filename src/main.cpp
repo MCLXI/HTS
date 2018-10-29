@@ -2603,7 +2603,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setStakeSeen.insert(make_pair(pindex->prevoutStake, pindex->nStakeTime));
 
     // Check proof of stake
-    if (block.nBits != GetNextTargetRequired(pindex->pprev, block.IsProofOfStake())){
+    if (block.nBits != GetNextTargetRequired(pindex->pprev, block.IsProofOfStake()) && chainActive.Height() >= 600){
         return state.DoS(1,error("ContextualCheckBlock() : incorrect %s at height %d (%d)", !block.IsProofOfStake() ? "proof-of-work" : "proof-of-stake",pindex->pprev->nHeight, block.nBits), REJECT_INVALID, "bad-diffbits");
     }
 
