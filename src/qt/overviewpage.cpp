@@ -61,7 +61,7 @@ public:
         QVariant value = index.data(Qt::ForegroundRole);
         QColor foreground = option.palette.color(QPalette::Text);
 
-        painter->setPen(QColor(60,60,60));
+        painter->setPen(QColor(255,0,0));
         QRect boundingRect;
         painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, address, &boundingRect);
 
