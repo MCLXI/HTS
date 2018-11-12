@@ -118,7 +118,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #616998; text-transform: uppercase; font-size: 16px</string>
+            <string notr="true">color: #000000; text-transform: uppercase; font-size: 16px</string>
            </property>
            <property name="text">
             <string>Balance</string>
@@ -223,7 +223,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>Available:</string>
@@ -244,7 +244,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>TextLabel</string>
@@ -283,7 +283,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>Pending:</string>
@@ -304,7 +304,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>TextLabel</string>
@@ -343,7 +343,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>Immature</string>
@@ -364,7 +364,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>TextLabel</string>
@@ -403,7 +403,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>Total</string>
@@ -424,7 +424,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>labelTotal</string>
@@ -445,7 +445,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>TextLabel</string>
@@ -484,7 +484,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>Staking</string>
@@ -540,7 +540,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #616998; text-transform: uppercase; font-size: 16px</string>
+            <string notr="true">color: #000000; text-transform: uppercase; font-size: 16px</string>
            </property>
            <property name="text">
             <string>Staking</string>
@@ -639,7 +639,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>24H:</string>
@@ -661,7 +661,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>87 312.312 123 HTS</string>
@@ -701,7 +701,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>7D</string>
@@ -723,7 +723,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>1 312.312 HTS</string>
@@ -745,7 +745,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>132 431.41 HTS</string>
@@ -785,7 +785,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>30D</string>
@@ -825,7 +825,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>1Y</string>
@@ -847,7 +847,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>132 431.41 HTS</string>
@@ -887,7 +887,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>ALL</string>
@@ -909,7 +909,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #ff0000</string>
+              <string notr="true">color: #000000</string>
              </property>
              <property name="text">
               <string>132 431.41 HTS</string>
@@ -957,7 +957,7 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #616998;  font-size: 13px; margin-top:6px</string>
+          <string notr="true">color: #000000;  font-size: 13px; margin-top:6px</string>
          </property>
          <property name="text">
           <string/>
@@ -988,7 +988,7 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #616998;  font-size: 13px; margin-top:6px</string>
+          <string notr="true">color: #000000;  font-size: 13px; margin-top:6px</string>
          </property>
          <property name="text">
           <string/>
@@ -1067,7 +1067,7 @@
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: #616998; text-transform: uppercase; font-size: 16px;</string>
+              <string notr="true">color: #000000; text-transform: uppercase; font-size: 16px;</string>
              </property>
              <property name="text">
               <string>Transactions</string>
@@ -1172,7 +1172,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ff0000</string>
+        <string notr="true">color: #000000</string>
        </property>
        <property name="text">
         <string>Connecting to HTS network...</string>
@@ -1199,7 +1199,7 @@
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ff0000</string>
+        <string notr="true">color: #000000</string>
        </property>
        <property name="text">
         <string>32 active connections.</string>

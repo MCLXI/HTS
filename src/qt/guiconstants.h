@@ -27,19 +27,19 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_POSITIVE QColor(11, 173, 3)
 /* Transaction list -- bare address (without label) */
 //#define COLOR_BAREADDRESS QColor(198, 9, 9)
-#define COLOR_BAREADDRESS QColor(245, 166, 35)
+#define COLOR_BAREADDRESS QColor(0, 0, 0)
 /* Transaction list -- anon transaction */
 #define COLOR_ANON QColor(245, 166, 35)
 /* Transaction list -- TX status decoration - open until date */
-#define COLOR_TX_STATUS_OPENUNTILDATE QColor(64, 64, 255)
+#define COLOR_TX_STATUS_OPENUNTILDATE QColor(0, 0, 0)
 /* Transaction list -- TX status decoration - offline */
-#define COLOR_TX_STATUS_OFFLINE QColor(192, 192, 192)
+#define COLOR_TX_STATUS_OFFLINE QColor(0, 0, 0)
 /* Transaction list -- TX status decoration - danger, tx needs attention */
 #define COLOR_TX_STATUS_DANGER QColor(200, 100, 100)
 /* Transaction list -- TX status decoration - default color */
-#define COLOR_BLACK QColor(266, 166, 35)
+#define COLOR_BLACK QColor(0, 0, 0)
 /* Transaction list -- Address - default color */
-#define COLOR_TXLIST QColor(266, 166, 35)
+#define COLOR_TXLIST QColor(0, 0, 0)
 
 /* Tooltips longer than this (in characters) are converted into rich text,
    so that they can be word-wrapped.
