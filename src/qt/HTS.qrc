@@ -40,7 +40,6 @@
         <file alias="key">res/icons/key.png</file>
         <file alias="filesave">res/icons/filesave.png</file>
         <file alias="splash">res/icons/splash.png</file>
-        <file alias="splash_testnet">res/icons/splash_testnet.png</file>
         <file alias="debugwindow">res/icons/debugwindow.png</file>
         <file alias="open">res/icons/open.png</file>
         <file alias="info">res/icons/info.png</file>

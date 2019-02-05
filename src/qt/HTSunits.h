@@ -129,6 +129,3 @@ private:
 typedef HTSUnits::Unit HTSUnit;
 
 #endif // HTS_QT_HTSUNITS_H
-
-
-

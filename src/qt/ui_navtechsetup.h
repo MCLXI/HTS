@@ -6,8 +6,8 @@
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_NAVTECHSETUP_H
-#define UI_NAVTECHSETUP_H
+#ifndef UI_HTSTECHSETUP_H
+#define UI_HTSTECHSETUP_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -140,4 +140,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_NAVTECHSETUP_H
+#endif // UI_HTSTECHSETUP_H

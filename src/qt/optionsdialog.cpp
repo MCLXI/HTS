@@ -121,7 +121,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
         }
     }
 #if QT_VERSION >= 0x040700
-    ui->thirdPartyTxUrls->setPlaceholderText("http://explorer.hotshotcoin.org/tx/%s");
+    ui->thirdPartyTxUrls->setPlaceholderText("https://www.navexplorer.com/tx/%s");
 #endif
 
     ui->unit->setModel(new HTSUnits(this));
