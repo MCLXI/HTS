@@ -541,7 +541,7 @@ int main(int argc, char *argv[])
 #endif
 
    Q_INIT_RESOURCE(HTS);
-  // Q_INIT_RESOURCE(HTS_locale);
+   Q_INIT_RESOURCE(HTS_locale);
 
     HTSApplication app(argc, argv);
 #if QT_VERSION > 0x050100
