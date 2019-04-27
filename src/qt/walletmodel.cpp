@@ -261,7 +261,8 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         }
         else
         {   // User-entered HTS address / amount:
-            if(!validateAddress(rcp.isanon?rcp.destaddress:rcp.address))
+		bool moo = false;
+            if(!validateAddress(moo?rcp.destaddress:rcp.address))
             {
                 return InvalidAddress;
             }
@@ -269,17 +270,17 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
             {
                 return InvalidAmount;
             }
-            setAddress.insert(rcp.isanon?rcp.destaddress:rcp.address);
+            setAddress.insert(moo?rcp.destaddress:rcp.address);
             ++nAddresses;
 
-            CScript scriptPubKey = GetScriptForDestination(CHTSAddress(rcp.isanon ? rcp.destaddress.toStdString() : rcp.address.toStdString()).Get());
-            CRecipient recipient = {scriptPubKey, !rcp.fSubtractFeeFromAmount && rcp.isanon ? rcp.amount + rcp.anonfee: rcp.amount, rcp.fSubtractFeeFromAmount, rcp.anondestination.toStdString()};
+            CScript scriptPubKey = GetScriptForDestination(CHTSAddress(moo ? rcp.destaddress.toStdString() : rcp.address.toStdString()).Get());
+            CRecipient recipient = {scriptPubKey, !rcp.fSubtractFeeFromAmount && moo ? rcp.amount + rcp.anonfee: rcp.amount, rcp.fSubtractFeeFromAmount, rcp.anondestination.toStdString()};
             vecSend.push_back(recipient);
 
-            if(rcp.isanon)
+            if(moo)
                 anondestination = rcp.anondestination;
 
-            total += !rcp.fSubtractFeeFromAmount && rcp.isanon ? rcp.amount + rcp.anonfee: rcp.amount;
+            total += !rcp.fSubtractFeeFromAmount && moo ? rcp.amount + rcp.anonfee: rcp.amount;
         }
     }
     if(setAddress.size() != nAddresses)

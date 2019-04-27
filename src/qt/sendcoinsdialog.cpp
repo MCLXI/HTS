@@ -78,7 +78,7 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
     connect(clipboardPriorityAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardPriority()));
     connect(clipboardLowOutputAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardLowOutput()));
     connect(clipboardChangeAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardChange()));
-    connect(ui->anonsendCheckbox, SIGNAL(clicked()), this, SLOT(anonsendCheckboxClick()));
+   // connect(ui->anonsendCheckbox, SIGNAL(clicked()), this, SLOT(anonsendCheckboxClick()));
     connect(ui->fullAmountBtn,  SIGNAL(clicked()), this, SLOT(useFullAmount()));
 
     ui->labelCoinControlQuantity->addAction(clipboardQuantityAction);
@@ -120,13 +120,14 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
     ui->customFee->setValue(settings.value("nTransactionFee").toLongLong());
     ui->checkBoxMinimumFee->setChecked(settings.value("fPayOnlyMinFee").toBool());
     minimizeFeeSection(settings.value("fFeeSectionMinimized").toBool());
-    ui->anonsendCheckbox->setChecked(settings.value("fAnonSend").toBool());
+    //ui->anonsendCheckbox->setChecked(settings.value("fAnonSend").toBool());
 
     //checkNavtechServers();
 }
 
 void SendCoinsDialog::anonsendCheckboxClick()
 {
+return;
     QSettings settings;
 
     settings.setValue("fAnonSend", ui->anonsendCheckbox->isChecked());
